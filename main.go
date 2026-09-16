@@ -18,9 +18,9 @@ import (
 	pkgerr "github.com/pkg/errors"
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	"github.com/Nico-DM/crafting-recipes/internal/build"
-	"github.com/Nico-DM/crafting-recipes/internal/myerr"
-	"github.com/Nico-DM/crafting-recipes/internal/store"
+	"github.com/Nico-DM/craftingo/internal/build"
+	"github.com/Nico-DM/craftingo/internal/myerr"
+	"github.com/Nico-DM/craftingo/internal/store"
 )
 
 func main() {

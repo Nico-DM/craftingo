@@ -19,7 +19,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 
-	"github.com/Nico-DM/crafting-recipes/internal/store"
+	"github.com/Nico-DM/craftingo/internal/store"
 )
 
 var httpRequestsTotal = promauto.NewCounterVec(

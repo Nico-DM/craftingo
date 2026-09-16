@@ -27,6 +27,6 @@ func initTracing(ctx context.Context) (func(context.Context) error, error) {
 	)
 
 	otel.SetTracerProvider(tp)
-	tracer = tp.Tracer("crafting-recipes")
+	tracer = tp.Tracer("craftingo")
 	return tp.Shutdown, nil
 }

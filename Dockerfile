@@ -11,13 +11,13 @@ ARG GIT_SHA=unknown
 ARG BUILD_TIME=unknown
 
 RUN CGO_ENABLED=0 go build \
-	-ldflags "-X github.com/Nico-DM/crafting-recipes/internal/build.GitSHA=${GIT_SHA} -X github.com/Nico-DM/crafting-recipes/internal/build.BuildTime=${BUILD_TIME}" \
-	-o /crafting-recipes .
+	-ldflags "-X github.com/Nico-DM/craftingo/internal/build.GitSHA=${GIT_SHA} -X github.com/Nico-DM/craftingo/internal/build.BuildTime=${BUILD_TIME}" \
+	-o /craftingo .
 
 FROM gcr.io/distroless/static-debian12
 
-COPY --from=builder /crafting-recipes /crafting-recipes
+COPY --from=builder /craftingo /craftingo
 
 EXPOSE 8899
 
-ENTRYPOINT ["/crafting-recipes"]
+ENTRYPOINT ["/craftingo"]

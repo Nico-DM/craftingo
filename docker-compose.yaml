@@ -9,7 +9,7 @@ services:
       - "8899:8899"
     environment:
       ENV: local
-      OTEL_SERVICE_NAME: crafting-recipes
+      OTEL_SERVICE_NAME: craftingo
       OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4317
       OTEL_EXPORTER_OTLP_TRACES_INSECURE: "true"
     volumes:

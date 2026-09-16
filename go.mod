@@ -1,4 +1,4 @@
-module github.com/Nico-DM/crafting-recipes
+module github.com/Nico-DM/craftingo
 
 go 1.26.1
 
