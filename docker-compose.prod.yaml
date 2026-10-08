@@ -1,0 +1,39 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        GIT_SHA: ${GIT_SHA:-unknown}
+        BUILD_TIME: ${BUILD_TIME:-unknown}
+    restart: unless-stopped
+    environment:
+      ENV: prod
+    volumes:
+      - app_data:/data
+    command: ["-data", "/data", "-port", "8899"]
+    # Solo accesible dentro de la red de compose (Caddy hace de proxy).
+    expose:
+      - "8899"
+
+  caddy:
+    image: caddy:2.10-alpine
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN:-craftingo.duckdns.org}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  # Reutiliza el volumen si ya corriste: docker run -v craftingo_data:/data ...
+  app_data:
+    name: craftingo_data
+  caddy_data:
+  caddy_config:
