@@ -1,0 +1,82 @@
+id	name	type	source	reason	match_method	match_detail	candidates	suggested_1	suggested_2	suggested_3
+dark-shard-amulet-archfey	Dark Shard Amulet, Archfey	Wondrous Item	Xanathar's Guide to Everything	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-celestial	Dark Shard Amulet, Celestial	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-fathomless	Dark Shard Amulet, Fathomless	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-fiend	Dark Shard Amulet, Fiend	Wondrous Item	Xanathar's Guide to Everything	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-genie-dao	Dark Shard Amulet, Genie (Dao)	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-genie-djinni	Dark Shard Amulet, Genie (Djinni)	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-genie-efreeti	Dark Shard Amulet, Genie (Efreeti)	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-genie-marid	Dark Shard Amulet, Genie (Marid)	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-great-old-one	Dark Shard Amulet, Great Old One	Wondrous Item	Xanathar's Guide to Everything	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-hexblade	Dark Shard Amulet, Hexblade	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+dark-shard-amulet-undead-undying	Dark Shard Amulet, Undead/Undying	Wondrous Item	Crafting	variant_base_check	variant_base	comma_base	Dark Shard Amulet	Dark Shard Amulet		
+rod-of-the-pact-keeper-plus-1-archfey	Rod of the Pact Keeper +1, Archfey	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-celestial	Rod of the Pact Keeper +1, Celestial	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-fathomless	Rod of the Pact Keeper +1, Fathomless	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-fiend	Rod of the Pact Keeper +1, Fiend	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-genie-dao	Rod of the Pact Keeper +1, Genie (Dao)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-genie-djinni	Rod of the Pact Keeper +1, Genie (Djinni)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-genie-efreeti	Rod of the Pact Keeper +1, Genie (Efreeti)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-genie-marid	Rod of the Pact Keeper +1, Genie (Marid)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-great-old-one	Rod of the Pact Keeper +1, Great Old One	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-hexblade	Rod of the Pact Keeper +1, Hexblade	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-1-undead-undying	Rod of the Pact Keeper +1, Undead/Undying	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+1 Rod of the Pact Keeper	+1 Rod of the Pact Keeper		
+cloak-of-personality	Cloak of Personality	Wondrous Item	Crafting	unmatched	none			Cloak of Invisibility	Cloak of Protection	Cloak of Arachnida
+wraps-of-unarmed-power-plus-1	Wraps of Unarmed Power +1	Wondrous Item	Crafting	unmatched	none			Gauntlets of Ogre Power	Staff of Power	Pearl of Power
+rod-of-the-pact-keeper-plus-2-archfey	Rod of the Pact Keeper +2, Archfey	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-celestial	Rod of the Pact Keeper +2, Celestial	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-fathomless	Rod of the Pact Keeper +2, Fathomless	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-fiend	Rod of the Pact Keeper +2, Fiend	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-genie-dao	Rod of the Pact Keeper +2, Genie (Dao)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-genie-djinni	Rod of the Pact Keeper +2, Genie (Djinni)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-genie-efreeti	Rod of the Pact Keeper +2, Genie (Efreeti)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-genie-marid	Rod of the Pact Keeper +2, Genie (Marid)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-great-old-one	Rod of the Pact Keeper +2, Great Old One	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-hexblade	Rod of the Pact Keeper +2, Hexblade	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-2-undead-undying	Rod of the Pact Keeper +2, Undead/Undying	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+2 Rod of the Pact Keeper	+2 Rod of the Pact Keeper		
+battling-clothes-plus-1	Battling Clothes +1	Wondrous Item	Crafting	unmatched	none			Fine Clothes	Common Clothes	Traveler's Clothes
+gloves-of-coordination	Gloves of Coordination	Wondrous Item	Crafting	unmatched	none			Gloves of Missile Snaring	Glaive of Certain Death	Glaive of Verdict
+periapt-of-awareness	Periapt of Awareness	Wondrous Item	Crafting	unmatched	none			Periapt of Health	Pot of Awakening	Oil of Sharpness
+wraps-of-unarmed-power-plus-2	Wraps of Unarmed Power +2	Wondrous Item	Crafting	unmatched	none			Gauntlets of Ogre Power	Staff of Power	Pearl of Power
+dragon-scale-mail-amethyst	Dragon Scale Mail, Amethyst	Armor	Crafting	variant_base_check	variant_base	comma_base	Dragon Scale Mail	Dragon Scale Mail		
+dragon-scale-mail-crystal	Dragon Scale Mail, Crystal	Armor	Crafting	variant_base_check	variant_base	comma_base	Dragon Scale Mail	Dragon Scale Mail		
+dragon-scale-mail-emerald	Dragon Scale Mail, Emerald	Armor	Crafting	variant_base_check	variant_base	comma_base	Dragon Scale Mail	Dragon Scale Mail		
+dragon-scale-mail-sapphire	Dragon Scale Mail, Sapphire	Armor	Crafting	variant_base_check	variant_base	comma_base	Dragon Scale Mail	Dragon Scale Mail		
+dragon-scale-mail-topaz	Dragon Scale Mail, Topaz	Armor	Crafting	variant_base_check	variant_base	comma_base	Dragon Scale Mail	Dragon Scale Mail		
+rod-of-the-pact-keeper-plus-3-archfey	Rod of the Pact Keeper +3, Archfey	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-celestial	Rod of the Pact Keeper +3, Celestial	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-fathomless	Rod of the Pact Keeper +3, Fathomless	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-fiend	Rod of the Pact Keeper +3, Fiend	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-genie-dao	Rod of the Pact Keeper +3, Genie (Dao)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-genie-djinni	Rod of the Pact Keeper +3, Genie (Djinni)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-genie-efreeti	Rod of the Pact Keeper +3, Genie (Efreeti)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-genie-marid	Rod of the Pact Keeper +3, Genie (Marid)	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-great-old-one	Rod of the Pact Keeper +3, Great Old One	Rod	Dungeon Master's Guide	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-hexblade	Rod of the Pact Keeper +3, Hexblade	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+rod-of-the-pact-keeper-plus-3-undead-undying	Rod of the Pact Keeper +3, Undead/Undying	Rod	Crafting	variant_base_check	variant_base	base+plus_move	+3 Rod of the Pact Keeper	+3 Rod of the Pact Keeper		
+battling-clothes-plus-2	Battling Clothes +2	Wondrous Item	Crafting	unmatched	none			Fine Clothes	Common Clothes	Traveler's Clothes
+candle-of-invocation-chaotic-evil	Candle of Invocation, Chaotic Evil	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-chaotic-good	Candle of Invocation, Chaotic Good	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-chaotic-neutral	Candle of Invocation, Chaotic Neutral	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-lawful-evil	Candle of Invocation, Lawful Evil	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-lawful-good	Candle of Invocation, Lawful Good	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-lawful-neutral	Candle of Invocation, Lawful Neutral	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-neutral	Candle of Invocation, Neutral	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-neutral-evil	Candle of Invocation, Neutral Evil	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+candle-of-invocation-neutral-good	Candle of Invocation, Neutral Good	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Candle of Invocation	Candle of Invocation		
+wraps-of-unarmed-power-plus-3	Wraps of Unarmed Power +3	Wondrous Item	Crafting	unmatched	none			Gauntlets of Ogre Power	Staff of Power	Pearl of Power
+arrows-plus-4	Arrows +4 (20)	Ammunition	Crafting	unmatched	none			Arrows (20)	Crossbow Bolts (20)	Arrow of Slaying (*)
+blowgun-needles-plus-4	Blowgun Needles +4 (50)	Ammunition	Crafting	unmatched	none			Blowgun Needles (50)	Blowgun Needle	+3 Blowgun Needle
+crossbow-bolts-plus-4	Crossbow Bolts +4 (20)	Ammunition	Crafting	unmatched	none			Crossbow Bolts (20)	Crossbow Bolt	Crossbow Bolt Case
+sling-bullets-plus-4	Sling Bullets +4 (20)	Ammunition	Crafting	unmatched	none			Sling Bullets (20)	Sling Bullet	+3 Sling Bullet
+shield-plus-4	Shield +4	Shield	Crafting	unmatched	none			Shield	+3 Shield	+2 Shield
+weapon-plus-4	Weapon +4	Weapon	Crafting	unmatched	none			+3 Weapon	+2 Weapon	+1 Weapon
+battling-clothes-plus-3	Battling Clothes +3	Wondrous Item	Crafting	unmatched	none			Fine Clothes	Common Clothes	Traveler's Clothes
+robe-of-the-archmagi-black	Robe of the Archmagi, Black	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Robe of the Archmagi	Robe of the Archmagi		
+robe-of-the-archmagi-gray	Robe of the Archmagi, Gray	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Robe of the Archmagi	Robe of the Archmagi		
+robe-of-the-archmagi-white	Robe of the Archmagi, White	Wondrous Item	Dungeon Master's Guide	variant_base_check	variant_base	comma_base	Robe of the Archmagi	Robe of the Archmagi		
+cudgel	Cudgel	Weapon, Martial Melee	Combat Module	unmatched	none			Camel	Candle	Jug
+giant-yoyo	Giant Yoyo	Weapon, Martial Melee	Combat Module	unmatched	none			Giant Slayer	Giant Slayer Sword	Giant Slayer Axe
+hooked-sword	Hooked Sword	Weapon, Martial Melee	Combat Module	unmatched	none			Moon-Touched Sword	Bloodshed Shortsword	+3 Hooked Shortspear
+tonfa	Tonfa	Weapon, Martial Melee	Combat Module	unmatched	none			Soap	Pony	Iron
+magnum	Magnum	Weapon, Firearm	Combat Module	unmatched	none			Maul	Platinum	Wagon

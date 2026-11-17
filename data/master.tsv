@@ -1,0 +1,895 @@
+name	rarity	source	magic	oota	type	recipes	short_description
+Arrows (20)	Common	Player's Handbook	FALSE	TRUE	Ammunition	3x Metal, 2x Hardwood;2x Mineral, 2x Hardwood;2x Bone, 2x Hardwood	-
+Blowgun Needles (50)	Common	Player's Handbook	FALSE	TRUE	Ammunition	5x Metal;4x Bone	-
+Crossbow Bolts (20)	Common	Player's Handbook	FALSE	TRUE	Ammunition	2x Metal, 2x Hardwood	-
+Sling Bullets (20)	Common	Player's Handbook	FALSE	TRUE	Ammunition	5x Metal;4x Mineral	-
+Leather Armor	Common	Player's Handbook	FALSE	TRUE	Armor, Light	8x Leather	-
+Padded Armor	Common	Player's Handbook	FALSE	TRUE	Armor, Light	8x Textile	-
+Studded Leather Armor	Common	Player's Handbook	FALSE	TRUE	Armor, Light	6x Leather, 2x Metal	-
+Breastplate	Common	Player's Handbook	FALSE	TRUE	Armor, Medium	3x Leather, 5x Metal	-
+Chain Shirt	Common	Player's Handbook	FALSE	TRUE	Armor, Medium	4x Metal	-
+Half Plate Armor	Common	Player's Handbook	FALSE	TRUE	Armor, Medium	2x Leather, 6x Metal	-
+Hide Armor	Common	Player's Handbook	FALSE	TRUE	Armor, Medium	8x Hide	-
+Scale Mail	Common	Player's Handbook	FALSE	TRUE	Armor, Medium	1x Leather, 3x Metal	-
+Chain Mail	Common	Player's Handbook	FALSE	TRUE	Armor, Heavy	6x Metal	-
+Plate Armor	Common	Player's Handbook	FALSE	TRUE	Armor, Heavy	1x Half Plate Armor, 7x Metal	-
+Ring Mail	Common	Player's Handbook	FALSE	TRUE	Armor, Heavy	2x Leather, 1x Metal	-
+Splint Armor	Common	Player's Handbook	FALSE	TRUE	Armor, Heavy	1x Leather, 2x Metal, 1x Textile	-
+Backpack	Common	Player's Handbook	FALSE	TRUE	Container	4x Hide/Leather, 4x Textile	-
+Barrel	Common	Player's Handbook	FALSE	TRUE	Container	3x Metal, 3x Hardwood	-
+Basket	Common	Player's Handbook	FALSE	TRUE	Container	3x Plant/Textile	-
+Bottle	Common	Player's Handbook	FALSE	TRUE	Container	3x Glass;3x Earthenware;4x Metal	-
+Bucket	Common	Player's Handbook	FALSE	TRUE	Container	1x Textile, 2x Hardwood	-
+Chest	Common	Player's Handbook	FALSE	TRUE	Container	1x Metal, 7x Hardwood	-
+Flask or Tankard	Common	Player's Handbook	FALSE	TRUE	Container	2x Glass, 1x Metal;2x Leather, 1x Metal;2x Earthenware, 1x Metal;4x Metal;2x Bone, 1x Metal	-
+Jug or Pitcher	Common	Player's Handbook	FALSE	TRUE	Container	3x Earthenware	-
+Pot, Iron	Common	Player's Handbook	FALSE	TRUE	Container	5x Metal	-
+Pouch	Common	Player's Handbook	FALSE	TRUE	Container	1x Hide/Leather, 1x Textile	-
+Sack	Common	Player's Handbook	FALSE	TRUE	Container	3x Hide/Leather, 3x Textile	-
+Vial	Common	Player's Handbook	FALSE	TRUE	Container	2x Glass;2x Earthenware	-
+Waterskin	Common	Player's Handbook	FALSE	TRUE	Container	3x Flesh/Hide/Leather	-
+Crystal	Common	Player's Handbook	FALSE	TRUE	Focus, Arcane	2x Gem	-
+Orb	Common	Player's Handbook	FALSE	TRUE	Focus, Arcane	3x Gem	-
+Rod	Common	Player's Handbook	FALSE	TRUE	Focus, Arcane	3x Metal	-
+Staff	Common	Player's Handbook	FALSE	TRUE	Focus, Arcane	5x Metal;4x Bone/Hardwood	-
+Wand	Common	Player's Handbook	FALSE	TRUE	Focus, Arcane	3x Hardwood	-
+Sprig of Mistletoe	Common	Player's Handbook	FALSE	TRUE	Focus, Druidic	2x Vital Plant	-
+Totem	Common	Player's Handbook	FALSE	TRUE	Focus, Druidic	3x Bone/Hardwood	-
+Wooden Staff	Common	Player's Handbook	FALSE	TRUE	Focus, Druidic	4x Hardwood	-
+Yew Wand	Common	Player's Handbook	FALSE	TRUE	Focus, Druidic	3x Vital Hardwood	-
+Amulet	Common	Player's Handbook	FALSE	TRUE	Focus, Holy Symbol	3x Metal;2x Mineral;2x Bone/Hardwood	-
+Emblem	Common	Player's Handbook	FALSE	TRUE	Focus, Holy Symbol	3x Dye, 1x Metal	-
+Reliquary	Common	Player's Handbook	FALSE	TRUE	Focus, Holy Symbol	1x Case, 1x Radiant Material	-
+Ale, Gallon	Common	Player's Handbook	FALSE	TRUE	Food and Drink	3x Plant	-
+Bread, Loaf	Common	Player's Handbook	FALSE	TRUE	Food and Drink	3x Plant	-
+Cheese, Hunk	Common	Player's Handbook	FALSE	TRUE	Food and Drink	3x (Milk) Fluid	-
+Meat, Chunk	Common	Player's Handbook	FALSE	TRUE	Food and Drink	3x Flesh	-
+Wine, Common	Common	Player's Handbook	FALSE	TRUE	Food and Drink	3x Foodstuff	-
+Wine, Fine	Common	Player's Handbook	FALSE	TRUE	Food and Drink	6x Foodstuff	-
+Abacus	Common	Player's Handbook	FALSE	TRUE	Gear	2x Metal, 2x Wood;1x Mineral, 2x Wood;1x Bone, 2x Wood	-
+Acid	Common	Player's Handbook	FALSE	TRUE	Gear	3x Acidic Fluid	-
+Alchemist's Fire	Common	Player's Handbook	FALSE	TRUE	Gear	3x Fluid, 3x Fiery	-
+Antitoxin	Common	Player's Handbook	FALSE	TRUE	Gear	3x Fluid, 3x Vital;3x Vital Plant	-
+Ball Bearings (1,000)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Bedroll	Common	Player's Handbook	FALSE	TRUE	Gear	3x Hide/Leather/Textile	-
+Bell	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Blanket	Common	Player's Handbook	FALSE	TRUE	Gear	3x Hide/Leather/Textile	-
+Block and Tackle	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal, 2x Textile, 3x Hardwood	-
+Book	Common	Player's Handbook	FALSE	TRUE	Gear	2x Paper/Parchment, 1x Hide/Leather/Textile/Hardwood	-
+Caltrops (20)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Candle (5)	Common	Player's Handbook	FALSE	TRUE	Gear	1x Plant/Textile, 2x Wax	-
+Case, Crossbow Bolt	Common	Player's Handbook	FALSE	TRUE	Gear	3x Wood	-
+Case, Map or Scroll	Common	Player's Handbook	FALSE	TRUE	Gear	2x Bone/Wood, 1x Wax	-
+Chain (10 feet)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Chalk (10)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Mineral	-
+Climber's Kit	Common	Player's Handbook	FALSE	TRUE	Gear	2x Leather/Textile, 1x Metal	-
+Clothes, Common	Common	Player's Handbook	FALSE	TRUE	Gear	4x Textile, 2x Hide/Leather	-
+Clothes, Costume	Common	Player's Handbook	FALSE	TRUE	Gear	4x Textile, 2x Hide/Leather	-
+Clothes, Fine	Common	Player's Handbook	FALSE	TRUE	Gear	1x Leather, 1x Metal, 4x Textile	-
+Clothes, Travelers	Common	Player's Handbook	FALSE	TRUE	Gear	2x Leather, 2x Hide, 2x Textile	-
+Component Pouch	Common	Player's Handbook	FALSE	TRUE	Gear	1x Pouch, 3x Theurgic	-
+Crowbar	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Fishing Tackle	Common	Player's Handbook	FALSE	TRUE	Gear	1x Bone, 1x Flesh, 1x Metal, 1x Textile, 4x Hardwood	-
+Grappling Hook	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Hammer	Common	Player's Handbook	FALSE	TRUE	Gear	2x Metal, 2x Hardwood;1x Mineral, 2x Hardwood;1x Bone, 2x Hardwood	-
+Hammer, Sledge	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal, 2x Hardwood	-
+Healer's Kit	Common	Player's Handbook	FALSE	TRUE	Gear	1x Plant, 1x Textile, 1x Wood	-
+Holy Water	Common	Player's Handbook	FALSE	TRUE	Gear	3x Radiant Fluid	-
+Hourglass	Common	Player's Handbook	FALSE	TRUE	Gear	2x Glass, 1x Mineral, 1x Wood	-
+Hunting Trap	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Ink	Common	Player's Handbook	FALSE	TRUE	Gear	1x Fluid, 1x Dye	-
+Ink Pen	Common	Player's Handbook	FALSE	TRUE	Gear	2x Bone/Wood, 1x Metal	-
+Ladder (10-foot)	Common	Player's Handbook	FALSE	TRUE	Gear	2x Pole (10-foot), 5x Textile	-
+Lamp	Common	Player's Handbook	FALSE	TRUE	Gear	2x Earthenware, 1x Textile, 1x Wax	-
+Lantern, Bullseye	Common	Player's Handbook	FALSE	TRUE	Gear	2x Metal, 2x Textile, 1x Wax	-
+Lantern, Hooded	Common	Player's Handbook	FALSE	TRUE	Gear	2x Metal, 1x Textile, 1x Wax	-
+Lock	Common	Player's Handbook	FALSE	TRUE	Gear	2x Metal	-
+Magnifying Glass	Common	Player's Handbook	FALSE	TRUE	Gear	2x Glass, 1x Metal	-
+Manacles	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Mess Kit	Common	Player's Handbook	FALSE	TRUE	Gear	1x Case, 3x Metal;1x Case, 2x Bone/Wood	-
+Mirror, Steel	Common	Player's Handbook	FALSE	TRUE	Gear	2x Metal	-
+Oil	Common	Player's Handbook	FALSE	TRUE	Gear	3x Void Fluid	-
+Paper (10 sheets)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Textile	-
+Parchment (10 sheets)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Hide	-
+Perfume	Common	Player's Handbook	FALSE	TRUE	Gear	3x Dye, 3x Fluid	-
+Pick, Miner's	Common	Player's Handbook	FALSE	TRUE	Gear	2x Metal, 2x Hardwood;1x Mineral, 2x Hardwood;1x Bone, 2x Hardwood	-
+Piton (20)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Pole (10-foot)	Common	Player's Handbook	FALSE	TRUE	Gear	8x Hardwood	-
+Quiver	Common	Player's Handbook	FALSE	TRUE	Gear	2x Hide/Leather, 2x Textile	-
+Ram, Portable	Common	Player's Handbook	FALSE	TRUE	Gear	5x Hardwood	-
+Rations (1 day)	Common	Player's Handbook	FALSE	TRUE	Gear	2x Foodstuff, 1x Spice	-
+Ring	Common	Crafting	FALSE	TRUE	Gear	2x Metal;3x Metal	-
+Robe	Common	Player's Handbook	FALSE	TRUE	Gear	6x Textile	-
+Rope, Hempen (50 feet)	Common	Player's Handbook	FALSE	TRUE	Gear	8x Textile	-
+Rope, Silk (50 feet)	Common	Player's Handbook	FALSE	TRUE	Gear	8x (Bug) Fluid	-
+Scale, Merchant's	Common	Player's Handbook	FALSE	TRUE	Gear	1x Bone, 2x Metal, 1x Mineral, 2x Hardwood	-
+Sealing Wax	Common	Player's Handbook	FALSE	TRUE	Gear	3x Wax	-
+Shovel	Common	Player's Handbook	FALSE	TRUE	Gear	1x Metal, 2x Hardwood	-
+Signal Whistle	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal;2x Bone/Wood	-
+Soap	Common	Player's Handbook	FALSE	TRUE	Gear	3x Flesh	-
+Spellbook	Common	Player's Handbook	FALSE	TRUE	Gear	2x Paper/Parchment, 1x Hide/Leather/Textile/Hardwood	-
+Spikes, Iron (10)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Metal	-
+Spyglass	Common	Player's Handbook	FALSE	TRUE	Gear	2x Magnifying Glass, 4x Metal, 2x Leather;2x Magnifying Glass, 3x Bone/Wood, 2x Leather	-
+Tent, Two-Person	Common	Player's Handbook	FALSE	TRUE	Gear	8x Hide/Leather/Textile	-
+Tinderbox	Common	Player's Handbook	FALSE	TRUE	Gear	1x Metal, 1x Mineral, 1x Wax, 1x Wood	-
+Torch (10)	Common	Player's Handbook	FALSE	TRUE	Gear	2x Textile, 2x Wood, 1x Oil	-
+Whetstone (set of 10)	Common	Player's Handbook	FALSE	TRUE	Gear	3x Mineral	-
+Poison, Basic	Common	Player's Handbook	FALSE	TRUE	Poison	5x Poisonous Fluid	-
+Assassin's Blood	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	3x Poisonous Fluid	-
+Burnt Othur Fumes	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	3x Poisonous Fluid, 2x Zephyrous	-
+Carrion Crawler Mucus	Uncommon	Dungeon Master's Guide	FALSE	TRUE	Poison	3x (Carrion Crawler) Poisonous Fluid	-
+Drow Poison	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	3x Poisonous Fluid	-
+Essence of Ether	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	2x Posionous Fluid, 1x Zephyrous	-
+Malice	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	1x Poisonous Fluid, 1x Void, 1x Zephyrous	-
+Oil of Taggit	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	1x Oil, 3x Posionous Fluid	-
+Pale Tincture	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	2x Poisonous Fluid, 1x Necrotic	-
+Serpent Venom	Uncommon	Dungeon Master's Guide	FALSE	TRUE	Poison	3x (Giant Snake) Poisonous Fluid	-
+Torpor	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	3x Posionous Fluid, 2x Psychic	-
+Truth Serum	Uncommon	Dungeon Master's Guide	FALSE	FALSE	Poison	2x Poisonous Fluid, 1x Psychic	-
+Midnight Tears	Rare	Dungeon Master's Guide	FALSE	FALSE	Poison	2x Poisonous Fluid, 1x Necrotic	-
+Purple Worm Poison	Rare	Dungeon Master's Guide	FALSE	TRUE	Poison	3x (Purple Worm) Poisonous Fluid	-
+Wyvern Poison	Rare	Dungeon Master's Guide	FALSE	TRUE	Poison	3x (Wyvern) Poisonous Fluid	-
+Shield	Common	Player's Handbook	FALSE	TRUE	Shield	5x Metal;4x Bone/Hardwood	-
+Barding	Common	Player's Handbook	FALSE	TRUE	Tack and Harness	4x Leather Armor/Studded Leather Armor;4x Chain Shirt/Scale Mail/Breastplate/Half Plate Armor/Ring Mail/Chain Mail/Splint Armor/Plate Armor;4x Padded Armor/Hide Armor	-
+Bit and Bridle	Common	Player's Handbook	FALSE	TRUE	Tack and Harness	2x Leather/Textile, 1x Metal	-
+Feed (10 days)	Common	Player's Handbook	FALSE	TRUE	Tack and Harness	3x Foodstuff	-
+Saddlebags	Common	Player's Handbook	FALSE	TRUE	Tack and Harness	1x Metal, 2x Textile	-
+Exotic Saddle	Common	Player's Handbook	FALSE	TRUE	Tack and Harness, Saddle	4x Leather, 2x Metal	-
+Military Saddle	Common	Player's Handbook	FALSE	TRUE	Tack and Harness, Saddle	3x Leather, 1x Metal	-
+Pack Saddle	Common	Player's Handbook	FALSE	TRUE	Tack and Harness, Saddle	3x Leather/Textile, 1x Metal	-
+Riding Saddle	Common	Player's Handbook	FALSE	TRUE	Tack and Harness, Saddle	3x Leather/Textile, 1x Metal	-
+Disguise Kit	Common	Player's Handbook	FALSE	TRUE	Tools	1x Hide, 1x Leather, 2x Textile	-
+Forgery Kit	Common	Player's Handbook	FALSE	TRUE	Tools	1x Dye, 2x Glass, 1x Mineral, 2x Wax;1x Dye, 2x Earthenware, 1x Mineral, 2x Wax	-
+Herbalism Kit	Common	Player's Handbook	FALSE	TRUE	Tools	2x Glass, 1x Metal, 2x Wax, 1x Wood;2x Earthenware, 1x Metal, 2x Wax, 1x Wood	-
+Navigator's Tools	Common	Player's Handbook	FALSE	TRUE	Tools	2x Glass, 3x Metal;2x Glass, 2x Wood	-
+Poisoner's Kit	Common	Player's Handbook	FALSE	TRUE	Tools	2x Glass, 1x Metal, 2x Wax, 1x Wood;2x Earthenware, 1x Metal, 2x Wax, 1x Wood	-
+Thieves' Tools	Common	Player's Handbook	FALSE	TRUE	Tools	5x Metal;4x Bone/Wood	-
+Alchemist's Supplies	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	2x Glass, 2x Metal, 2x Wax, 1x Wood;2x Earthenware, 2x Metal, 2x Wax, 1x Wood	-
+Brewer's Supplies	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	2x Glass, 1x Metal, 2x Wax, 2x Wood;2x Earthenware, 1x Metal, 2x Wax, 2x Wood	-
+Calligrapher's Supplies	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	1x Dye, 2x Glass, 1x Mineral, 2x Wax;1x Dye, 2x Earthenware, 1x Mineral, 2x Wax	-
+Carpenter's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	3x Metal, 1x Textile, 1x Wax, 1x Wood;2x Mineral, 1x Textile, 1x Wax, 1x Wood;2x Bone, 1x Textile, 1x Wax, 1x Wood	-
+Cartographer's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	1x Dye, 2x Glass, 1x Mineral, 2x Wax;1x Dye, 2x Earthenware, 1x Mineral, 2x Wax	-
+Cobbler's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	2x Bone/Wood, 1x Dye, 1x Leather, 1x Textile, 1x Wax	-
+Cook's Utensils	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	5x Metal;4x Bone/Wood	-
+Glassblower's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	4x Metal	-
+Jeweler's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	1x Dye, 1x Gem, 1x Glass, 1x Metal/Wood, 1x Mineral, 1x Wax	-
+Leatherworker's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	1x Dye, 1x Leather, 1x Textile, 1x Wax, 2x Wood	-
+Mason's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	1x Bone, 1x Dye, 2x Metal, 1x Mineral, 1x Textile, 1x Wood	-
+Painter's Supplies	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	2x Dye, 1x Earthenware/Glass, 2x Textile, 2x Wood	-
+Potter's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	1x Bone, 1x Dye, 2x Metal, 1x Mineral, 1x Textile, 1x Wood	-
+Smith's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	1x Bone, 1x Dye, 1x Leather, 2x Metal, 1x Mineral, 1x Textile, 1x Wood	-
+Tinker's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	3x Metal, 2x Wood;2x Bone, 2x Wood	-
+Weaver's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	2x Dye, 2x Metal, 2x Textile, 2x Wood;1x Bone, 2x Dye, 2x Textile, 2x Wood	-
+Woodcarver's Tools	Common	Player's Handbook	FALSE	TRUE	Tools, Artisan's	4x Metal, 1x Wood;3x Mineral, 1x Wood	-
+Dice Set	Common	Player's Handbook	FALSE	TRUE	Tools, Gaming Set	3x Earthenware;3x Bone/Wood	-
+Dragonchess Set	Common	Player's Handbook	FALSE	TRUE	Tools, Gaming Set	3x Earthenware;4x Metal;3x Mineral;3x Bone/Wood	-
+Playing Card Set	Common	Player's Handbook	FALSE	TRUE	Tools, Gaming Set	2x Bone/Parchment/Textile/Wood, 2x Dye	-
+Three-Dragon Ante Set	Common	Player's Handbook	FALSE	TRUE	Tools, Gaming Set	2x Bone/Textile/Wood, 2x Dye	-
+Bagpipes	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	1x Flesh, 1x Hide, 2x Metal, 1x Wax;1x Bone/Hardwood, 1x Flesh, 1x Hide, 1x Wax	-
+Bandore	Common	Crafting	FALSE	TRUE	Tools, Instrument	3x Bone/Hardwood, 2x Flesh, 2x Wax	-
+Cittern	Common	Crafting	FALSE	TRUE	Tools, Instrument	3x Bone/Hardwood, 2x Flesh, 2x Wax	-
+Concertina	Common	Crafting	FALSE	TRUE	Tools, Instrument	2x Hardwood, 2x Leather, 2x Metal	-
+Drum	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	1x Flesh, 1x Hide, 2x Metal, 1x Wax;1x Bone/Hardwood, 1x Flesh, 1x Hide, 1x Wax	-
+Dulcimer	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	3x Metal;2x Hardwood	-
+Flute	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	2x Bone/Hardwood, 1x Wax	-
+Harp	Common	Crafting	FALSE	TRUE	Tools, Instrument	3x Flesh, 1x Wax, 3x Hardwood	-
+Horn	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	4x Metal, 1x Wax;3x Bone/Hardwood, 1x Wax	-
+Lute	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	3x Bone/Hardwood, 2x Flesh, 2x Wax	-
+Lyre	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	2x Bone/Hardwood, 3x Flesh, 2x Wax	-
+Mandolin	Common	Crafting	FALSE	TRUE	Tools, Instrument	3x Metal, 2x Wax, 3x Hardwood;2x Metal, 2x Wax, 3x Hardwood	-
+Pan Flute	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	2x Bone/Hardwood, 1x Wax	-
+Shawm	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	2x Bone/Hardwood, 1x Wax	-
+Viol	Common	Player's Handbook	FALSE	TRUE	Tools, Instrument	2x Flesh, 1x Wax, 3x Hardwood	-
+Silvered Ammunition (10)	Common	Crafting	TRUE	TRUE	Ammunition	10x (Metal) Ammunition, 4x Mercurial Metal	Made of silver, deals an additional weapon damage die on critical hits against shape-shifted creatures when consumed.
+Unbreakable Arrow (10)	Common	Xanathar's Guide to Everything	TRUE	FALSE	Ammunition	10x (Metal) Arrows, 4x Forceful;10x (Mineral) Arrows, 4x Forceful;10x (Bone) Arrows, 4x Forceful	Can't be broken unless within an antimagic field.
+Walloping Ammunition (10)	Common	Xanathar's Guide to Everything	TRUE	FALSE	Ammunition	10x (Metal) Ammunition, 4x Forceful;10x (Mineral) Ammunition, 4x Forceful;10x (Bone) Ammunition, 4x Forceful	Knocks prone (STR, DC 10) creatures hit when consumed.
+Armor of Gleaming	Common	Xanathar's Guide to Everything	TRUE	FALSE	Armor	1x (Metal) Armor, 6x Void	Never gets dirty.
+Cast-Off Armor	Common	Xanathar's Guide to Everything	TRUE	FALSE	Armor	1x (Leather) Armor, 6x Mercurial;1x (Metal) Armor, 6x Mercurial;1x (Hide/Textile) Armor, 6x Mercurial	Can doff as an action.
+Smoldering Armor	Common	Xanathar's Guide to Everything	TRUE	FALSE	Armor	1x (Leather) Armor, 6x Fiery;1x (Metal) Armor, 6x Fiery;1x (Hide/Textile) Armor, 6x Fiery	Creates wisps of harmless, odorless smoke when worn.
+Potion of Climbing (3)	Common	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Forceful	Grants a climb speed and ADV on STR (Athletics) to climb for 1 hour when consumed.
+Potion of Healing (3)	Common	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Vital;3x Vital Plant	Grants 2d4+2 HP when consumed.
+Spell Scroll, 1st Level	Common	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 1st-level spell (DC 13, ATK +5) when consumed.
+Spell Scroll, Cantrip	Common	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 2x Chaotic, Cast the Cantrip	Cast a specific cantrip (DC 13, ATK +5) when consumed.
+Shield of Expression	Common	Xanathar's Guide to Everything	TRUE	FALSE	Shield	1x (Metal) Shield, 6x Mercurial;1x (Bone/Hardwood) Shield, 6x Mercurial	Has a face and can change its expression when held.
+Staff of Adornment	Common	Xanathar's Guide to Everything	TRUE	FALSE	Staff	1x (Metal) Staff, 6x Zephyrous;1x (Bone/Hardwood) Staff, 6x Zephyrous	Can float up to 3 light items on its tip when held.
+Staff of Birdcalls	Common	Xanathar's Guide to Everything	TRUE	FALSE	Staff	1x (Hardwood) Staff, 4x Phantasmal, 1x Theurgic	Can create birdcalls when held (10 charges).
+Staff of Flowers	Common	Xanathar's Guide to Everything	TRUE	FALSE	Staff	1x (Hardwood) Staff, 1x Theurgic, 4x Vital	Can sprout flowers on itself or the ground when held (10 charges).
+Wand of Conducting	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wand	1x Wand, 4x Phantasmal, 1x Theurgic	Can create orchestral music when waved (3 charges).
+Wand of Pyrotechnics	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wand	1x Wand, 2x Radiant, 1x Theurgic, 2x Thundering	Can create tiny fireworks when held (7 charges).
+Wand of Scowls	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wand	1x Wand, 4x Psychic, 1x Theurgic	Can force creatures to scowl when held (CHA, DC 10), can become a Wand of Smiles (3 charges).
+Wand of Smiles	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wand	1x Wand, 4x Psychic, 1x Theurgic	Can force creatures to smile when held (CHA, DC 10), can become a Wand of Scowls (3 charges).
+Moon-Touched Sword (Sword)	Common	Xanathar's Guide to Everything	TRUE	FALSE	Weapon	1x (Sword) Weapon, 6x Radiant	Sheds moonlight in darkness when unsheathed.
+Silvered Weapon	Common	Crafting	TRUE	TRUE	Weapon	1x (Metal) Weapon, 6x Mercurial Metal	Made of silver, deals an additional weapon damage die on critical hits against shape-shifted creatures.
+Bead of Nourishment (10)	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Foodstuff, 4x Vital	Provides as much nourishment as 1 day of rations when consumed.
+Bead of Refreshment (10)	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Foodstuff, 4x Mercurial	Transforms up to a pint of nonmagical, hamless liquid into drinking water when consumed.
+Boots of False Tracks	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	4x Leather, 6x Phantasmal	Can leave tracks of other kinds of Humanoids when worn by a Humanoid.
+Candle of the Deep (5)	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	5x Candle, 4x Mercurial	Can't be extinguished by water.
+Charlatan's Die	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x (Earthenware) Dice Set, 6x Inert;1x (Bone/Hardwood) Dice Set, 6x Inert	Can be controlled to roll a specific number when attuned.
+Cloak of Billowing	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	8x Textile, 6x Zephyrous	Can billow dramatically when worn.
+Cloak of Many Fashions	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	8x Textile, 6x Mercurial	Can change style, color, and apparent quality when worn.
+Clockwork Amulet	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x (Metal) Amulet, 3x Dimensional, 2x Inert	Can forgo a single d20 roll to get a 10 on an attack roll when worn.
+Clothes of Mending	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Traveler's Clothes, 6x Mercurial	Mends itself to counteract daily wear and tear.
+Dark Shard Amulet, Archfey	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Phantasmal	Can be used as a focus and cast a single warlock cantrip when archfey warlock attuned.
+Dark Shard Amulet, Celestial	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Radiant	Can be used as a focus and cast a single warlock cantrip when celestial warlock attuned.
+Dark Shard Amulet, Fathomless	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Cold	Can be used as a focus and cast a single warlock cantrip when fathomless warlock attuned.
+Dark Shard Amulet, Fiend	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Fiendish	Can be used as a focus and cast a single warlock cantrip when fiend warlock attuned.
+Dark Shard Amulet, Genie (Dao)	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Inert	Can be used as a focus and cast a single warlock cantrip when dao warlock attuned.
+Dark Shard Amulet, Genie (Djinni)	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Zephyrous	Can be used as a focus and cast a single warlock cantrip when djinni warlock attuned.
+Dark Shard Amulet, Genie (Efreeti)	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Fiery	Can be used as a focus and cast a single warlock cantrip when efreeti warlock attuned.
+Dark Shard Amulet, Genie (Marid)	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Mercurial	Can be used as a focus and cast a single warlock cantrip when marid warlock attuned.
+Dark Shard Amulet, Great Old One	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Void	Can be used as a focus and cast a single warlock cantrip when great old one warlock attuned.
+Dark Shard Amulet, Hexblade	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Chaotic	Can be used as a focus and cast a single warlock cantrip when hexblade warlock attuned.
+Dark Shard Amulet, Undead/Undying	Common	Crafting	TRUE	FALSE	Wondrous Item	1x Dimensional (Mineral) Amulet, 5x Necrotic	Can be used as a focus and cast a single warlock cantrip when undead/undying warlock attuned.
+Dread Helm	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	4x Metal, 6x Phantasmal	Makes your eyes glow red when worn.
+Ear Horn of Hearing	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	2x Metal, 6x Phantasmal;2x Bone/Hardwood, 6x Phantasmal	Supresses deafened when held up to ear.
+Enduring Spellbook	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 6x Forceful	Can't be damaged by fire, water or age.
+Ersatz Eye	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	2x Glass, 6x Phantasmal	Replaces a real eye and allows to see normally when embedded in eye socket.
+Hat of Vermin	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	4x Textile, 1x Theurgic, 4x Vital	Can summon a regular bat, frog or rat for 1 hour (3 charges).
+Hat of Wizardry	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	4x Textile, 5x Theurgic	Can be used as a focus and cast a single wizard cantrip when wizard attuned.
+Heward's Handy Spice Pouch	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Pouch, 4x Spice, 4x Dimensional, 1x Theurgic	Can create a pinch of nonmagical seasoning when held (10 charges).
+Horn of Silent Alarm	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	2x Metal, 4x Phantasmal, 1x Theurgic;2x Bone/Hardwood, 4x Phantasmal, 1x Theurgic	Causes only one creature within 600 feet to hear the blare when blown (3 charges).
+Lock of Trickery	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Lock, 6x Mercurial	Appears to be ordinary but imposes DIS on DEX to pick the lock; comes with a key.
+Mystery Key	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	2x Metal, 3x Chaotic	Has a 5% chance to unlock a single lock when inserted.
+Orb of Direction	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Orb, 6x Theurgic	Grants the ability to determine north when held on the Material Plane.
+Orb of Time	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Orb, 6x Theurgic	Grants the ability to determine the time of day when held on the Material Plane.
+Perfume of Bewitching	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Perfume, 3x Psychic	Grants ADV on CHA directed at CR ≤ 1 Humanoids for 1 hour when consumed.
+Pipe of Smoke Monsters	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	3x Bone, 6x Fiery	Can create tiny creature-shaped puffs of smoke when smoked.
+Pole of Angling	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Pole (10-Foot), 6x Mercurial	Can transform into a fishing rod or back into a 10-foot pole when held.
+Pole of Collapsing	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Pole (10-Foot), 6x Mercurial	Can collapse into a 1-foot-long rod or revert to a 10-foot pole when held.
+Pot of Awakening	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	8x Earthenware, 3x Vital	Turns a single shrub into a commanded Awakened Shrub 30 days after being planted.
+Prosthetic Limb	Common	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	5x Metal, 6x Theurgic;4x Bone/Hardwood, 6x Theurgic	Replaces a lost limb when attached.
+Rope of Mending	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Hempen Rope, 6x Mercurial	Can be cut and magically knit back together.
+Ruby of the War Mage	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Fiery Gem, 6x Theurgic	Can be attached to a weapon to use it as a focus when spellcaster attuned.
+Talking Doll	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	4x Textile, 6x Phantasmal	Can record and then speak up to 6 short phrases following observable conditions when attuned.
+Tankard of Sobriety	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x (Glass) Tankard, 6x Mercurial;1x (Leather) Tankard, 6x Mercurial;1x (Earthenware) Tankard, 6x Mercurial;1x (Metal) Tankard, 6x Mercurial;1x (Bone) Tankard, 6x Mercurial	Prevents inebriation from nonmagical alcoholic beverages when drank from this tankard.
+Veteran's Cane	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item	1x Longsword, 3x Hardwood, 3x Mercurial	Can transform permanently into an ordinary, nonmagical longsword when grasped.
+Instrument of Illusions	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item, Instrument	1x (Metal) Instrument, 6x Phantasmal;1x (Bone/Hardwood) Instrument, 6x Phantasmal	Can create harmless, illusory visual effects in the surrounding area when attuned.
+Instrument of Scribing	Common	Xanathar's Guide to Everything	TRUE	FALSE	Wondrous Item, Instrument	1x (Metal) Instrument, 4x Phantasmal, 1x Theurgic;1x (Bone/Hardwood) Instrument, 4x Phantasmal, 1x Theurgic	Can write a 24-hour-lasting message on a nonmagical object when attuned (3 charges).
+Illuminator's Tattoo	Common	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	4x Ink, 5x Phantasmal	
+Masquerade Tattoo	Common	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	4x Ink, 3x Mercurial, 2x Phantasmal	
+Spellwrought Tattoo, 1st Level	Common	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	4x Ink, 2x Theurgic	
+Spellwrought Tattoo, Cantrip	Common	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	4x Ink, 3x Theurgic	
+Adamantine Ammunition (10)	Uncommon	Crafting	TRUE	TRUE	Ammunition	10x +1 (Metal) Ammunition, 4x Inert Metal	Made of adamantine, automatically scores a critical hit against objects when consumed.
+Arrows +1 (20)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Arrows;As (Mineral) Arrows;As (Bone) Arrows	Grants +1 to ATK and DMG with bows when consumed.
+Blowgun Needles +1 (50)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Blowgun Needles;As (Bone) Blowgun Needles	Grants +1 to ATK and DMG with blowguns when consumed.
+Crossbow Bolts +1 (20)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As Crossbow Bolts	Grants +1 to ATK and DMG with crossbows when consumed.
+Sling Bullets +1 (20)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Sling Bullets;As (Mineral) Sling Bullets	Grants +1 to ATK and DMG with slings when consumed.
+Adamantine Armor	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Metal) Armor, 8x Inert Metal	Made of adamantine, ignores critical hits against you when worn.
+Mariner's Armor	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Armor	1x (Leather) Armor, 6x Mercurial;1x (Metal) Armor, 6x Mercurial;1x (Hide/Textile) Armor, 6x Mercurial	Grants swimming speed and floats to surface while at 0 HP when worn.
+Mithral Armor	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Armor	1x (Metal) Armor, 6x Phantasmal Metal	Made of mithral, doesn't impose DIS on DEX (Stealth) and weighs half as usual when worn.
+Oil of Slipperiness (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	1x Oil, 2x Mercurial	
+Philter of Love (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	1x Perfume, 2x Psychic	Charms the drinker towards the next creature it sees during the next 10 minutes when consumed.
+Potion of Acid Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Acidic	Grants resistance to acid DMG for 1 hour when consumed.
+Potion of Animal Friendship (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 2x Psychic, 1x Vital	
+Potion of Cold Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Cold	Grants resistance to cold DMG for 1 hour when consumed.
+Potion of Fire Breath (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Fiery	
+Potion of Fire Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Fiery	Grants resistance to fire DMG for 1 hour when consumed.
+Potion of Force Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Forceful	Grants resistance to force DMG for 1 hour when consumed.
+Potion of Greater Healing (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Vital;3x Vital Plant	Grants 4d4+4 HP when consumed.
+Potion of Growth (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Mercurial	
+Potion of Hill Giant Strength (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	2x Fluid, 1x (Hill) Inert Bone, 2x Forceful	
+Potion of Lightning Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Lightning	Grants resistance to lightning DMG for 1 hour when consumed.
+Potion of Necrotic Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Necrotic	Grants resistance to necrotic DMG for 1 hour when consumed.
+Potion of Poison (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	3x C Potion of Healing, 3x Poisonous;3x C Potion of Healing, 3x Poisonous	Looks like a Potion of Healing, but deals 3d6 poison DMG and causes poisoned (CON 13) when consumed.
+Potion of Poison Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Poisonous	Grants resistance to poison DMG for 1 hour when consumed.
+Potion of Psychic Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Psychic	Grants resistance to psychic DMG for 1 hour when consumed.
+Potion of Radiant Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Radiant	Grants resistance to radiant DMG for 1 hour when consumed.
+Potion of Thunder Resistance (3)	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Thundering	Grants resistance to thunder DMG for 1 hour when consumed.
+Potion of Water Breathing (3)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Zephyrous	
+Ring of Jumping	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Forceful	Cast jump on yourself at will as a BA when attuned.
+Ring of Mind Shielding	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Inert	Grant immunity to magic that reveals thoughts, lies, alignment, or creature type, and house your soul when you die, when attuned.
+Ring of Swimming	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 6x Forceful	
+Ring of Warmth	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 1x Hide, 8x Fiery	
+Ring of Water Walking	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 1x Gem, 8x Mercurial	Allows for standing and walking on liquids as if they were solid ground when worn.
+Immovable Rod	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 3x Forceful, 3x Inert	
+Rod of the Pact Keeper +1, Archfey	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Phantasmal	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Archfey warlock attuned.
+Rod of the Pact Keeper +1, Celestial	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Radiant	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Celestial warlock attuned.
+Rod of the Pact Keeper +1, Fathomless	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Cold	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Fathomless warlock attuned.
+Rod of the Pact Keeper +1, Fiend	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Fiendish	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Fiend warlock attuned.
+Rod of the Pact Keeper +1, Genie (Dao)	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Inert	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Dao Genie warlock attuned.
+Rod of the Pact Keeper +1, Genie (Djinni)	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Zephyrous	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Djinni Genie warlock attuned.
+Rod of the Pact Keeper +1, Genie (Efreeti)	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Fiery	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Efreeti Genie warlock attuned.
+Rod of the Pact Keeper +1, Genie (Marid)	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Mercurial	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Marid Genie warlock attuned.
+Rod of the Pact Keeper +1, Great Old One	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Void	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Great Old One warlock attuned.
+Rod of the Pact Keeper +1, Hexblade	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Chaotic	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Hexblade warlock attuned.
+Rod of the Pact Keeper +1, Undead/Undying	Uncommon	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Necrotic	Grants +1 to spell ATK and save DC and can restore one warlock spell slot when Undead/Undying warlock attuned.
+Spell Scroll, 2nd Level	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 2x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 2nd-level spell (DC 13, ATK +5) when consumed.
+Spell Scroll, 3rd Level	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 3rd-level spell (DC 15, ATK +7) when consumed.
+Sentinel Shield	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Shield	1x +1 (Metal) Shield, 8x Phantasmal;1x 1+ (Bone/Hardwood) Shield, 8x Phantasmal	Grants ADV on initiative and WIS (Perception) when held.
+Shield +1	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Shield	As (Metal) Shield;As (Bone/Hardwood) Shield	Grants +1 to AC (for a total of +3) when held.
+Staff of the Adder	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Hardwood) Staff, 4x Mercurial, 4x Poisonous	Can transform its head into a poisonous snake and shit
+Staff of the Python	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Bone) Staff, 4x Mercurial, 4x Poisonous	Can trsnform into a giant constrictor snake.
+Wand of Magic Detection	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wand	1x Wand, 1x Gem, 5x Theurgic	Cast detect magic when held (3 charges).
+Wand of Magic Missiles	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 4x Forceful, 3x Theurgic	
+Wand of Secrets	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 5x Theurgic	Pulse and point to nearest trap or secret door within 30 feet when held (3 charges).
+Wand of the War Mage +1	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wand	1x Wand, 8x Theurgic	Grants +1 to spell ATK and ignore half cover when spellcaster attuned.
+Wand of Web	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 1x Gem, 6x Forceful, 1x Theurgic	
+Adamantine Weapon	Uncommon	Crafting	TRUE	TRUE	Weapon	1x +1 (Metal) Weapon, 6x Inert Metal	Made of adamantine, automatically scores a critical hit against objects.
+Dragon's Wrath Weapon, Slumbering	Uncommon	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon	1x +1 (Leather) Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x +1 (Metal) Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x +1 (Mineral) Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x +1 (Bone/Hardwood) Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Deals 5 splash DMG (corresponding to the kind of Dragon used for materials or last steeped) on a natural 20 when attuned.
+Weapon +1	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Weapon	As (Leather) Weapon;As (Metal) Weapon;As (Mineral) Weapon;As (Bone/Hardwood) Weapon	Grants +1 to ATK and DMG with this weapon.
+Weapon of Warning	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Weapon	1x +1 (Leather) Weapon, 8x Theurgic;1x +1 (Metal) Weapon, 8x Theurgic;1x +1 (Mineral) Weapon, 8x Theurgic;1x +1 (Bone/Hardwood) Weapon, 8x Theurgic	Grants ADV on initiative and can't be surprised when attuned.
+Moon Sickle +1	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Weapon, Simple Melee	1x Mercurial +1 Sickle, 8x Vital	
+Javelin of Lightning	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Weapon, Simple Ranged	1x +1 (Metal) Javelin, 7x Lightning	Can turn into a bolt of lightning when hurled.
+Trident of Fish Command	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +1 Trident, 4x Psychic, 1x Theurgic, 2x Vital	
+Alchemy Jug	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Jug, 2x Acidic, 2x Dimensional, 2x Mercurial	Weighs 12 lbs, can hold up to 1 gallon and produce one of acid (8 oz), basic poison (½ oz), beer (4 g), honey (1 g), mayonnaise (2 g), oil (1 q), vinegar (2 g), fresh (8 g) or salt water (12 g), or wine (1 g).
+All-Purpose Tool +1	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Hardwood, 2x Metal, 3x Chaotic, 5x Mercurial	
+Amulet of Proof Against Detection and Location	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Metal) Amulet, 1x Gem, 8x Inert;1x (Mineral) Amulet, 1x Gem, 8x Inert;1x (Bone/Hardwood) Amulet, 1x Gem, 8x Inert	
+Amulet of the Devout +1	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x (Metal) Amulet, 8x Radiant;1x (Mineral) Amulet, 8x Radiant;1x (Bone/Hardwood) Amulet, 8x Radiant	
+Arcane Grimoire +1	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 8x Theurgic	
+Bag of Holding	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Sack, 6x Dimensional	Weighs 15 lbs, can hold up to 500 lbs/64 ft³ in an extradimensional space (2 ft diameter mouth, 4 ft deep).
+Bag of Tricks, Gray	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Pouch, 3x Hide, 1x Chaotic, 1x Theurgic	
+Bag of Tricks, Rust	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Pouch, 3x Hide, 1x Chaotic, 1x Theurgic	
+Bag of Tricks, Tan	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Pouch, 3x Hide, 1x Chaotic, 1x Theurgic	
+Bloodwell Vial +1	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x (Glass) Vial, 5x Vital, 3x Theurgic;1x (Earthenware) Vial, 5x Vital, 3x Theurgic	
+Boots of Elvenkind	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Textile, 1x Leather, 1x Hardwood, 8x Phantasmal	Grants ADV on Stealth relying on moving silently, and remove sound from steps when worn
+Boots of Striding and Springing	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Leather, 2x Metal, 8x Forceful	Grants triple jump distance and sets speed on 30 feet if lower when attuned.
+Boots of the Winterlands	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Hide, 2x Metal, 8x Cold	Grants resistance to cold DMG, ignore difficult terrain created by ice and snow, and tolerate up to -50ºF (or -100ºF with heavy clothes) when attuned.
+Bracers of Archery	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Metal, 8x Phantasmal	Grants proficiency and +2 to DMG with bows when attuned.
+Brooch of Shielding	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	2x Metal, 4x Forceful, 4x Inert	Grants resistance to force DMG and immunity to magic missile when attuned.
+Broom of Flying	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Hardwood, 2x Plant, 8x Zephyrous	
+Cap of Water Breathing	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Textile, 6x Zephyrous	Creates an air bubble around your head to allow for breathing underwater when worn
+Circlet of Blasting	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Metal, 7x Fiery	Cast scorching ray (+5 to hit) once when worn.
+Cloak of Elvenkind	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	6x Textile, 2x Plant, 8x Phantasmal	Grants ADV on Stealth to hide, and DIS on enemies' Perception to see you, when attuned with its hood up.
+Cloak of Personality	Uncommon	Crafting	TRUE	FALSE	Wondrous Item	8x Textile, 8x Psychic	Set CHA to 19 if it was lower when attuned.
+Cloak of Protection	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x Textile, 8x Forceful	Grants +1 to AC and saves when attuned.
+Cloak of the Manta Ray	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	6x Textile, 3x Mercurial, 3x Zephyrous	Grants water breathing and a swimming speed when worn with its hood up.
+Decanter of Endless Water	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Glass) Flask, 6x Dimensional;1x (Leather) Flask, 6x Dimensional;1x (Earthenware) Flask, 6x Dimensional;1x (Metal) Flask, 6x Dimensional;1x (Bone) Flask, 6x Dimensional	Can produce a geyser of infinite water when held.
+Deck of Illusions (full)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Parchment) Playing Card Set, 3x Chaotic, 3x Phantasmal	
+Dragon Vessel, Slumbering	Uncommon	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x (Glass) Bottle/Flask/Vial, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x (Leather) Flask/Waterskin, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x (Earthenware) Bottle/Flask/Vial, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x (Metal) Bottle/Flask, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x (Bone) Flask, 1x (Dragon) Material, 6x [Trait] (of the same trait)	Can fill with ale, olive oil, a Potion of Healing, or a Potion of Climbing when attuned.
+Dragon-Touched Focus, Slumbering	Uncommon	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x (Gem) Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x (Metal) Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x (Mineral) Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x (Bone/Hardwood) Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Grants ADV on initiative and can be used as spellcasting focus when spellcaster attuned.
+Dragonhide Belt +1	Uncommon	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x (Dragon) Hide, 3x Leather, 8x Phantasmal	Made of dragonhide, grants +1 to save DC of ki features and can regain ki when monk attuned.
+Driftglobe	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Glass, 3x Radiant, 2x Zephyrous	
+Dust of Disappearance	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	3x Phantasmal Mineral	Grants invisible to surrounding targets for 2d4 minutes when consumed.
+Dust of Dryness (10 pinches)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Mercurial Mineral	
+Elemental Gem, Blue Sapphire	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Zephyrous Gem, 2x Dimensional	Made of blue sapphire, summons an Air Elemental (as in conjure elemental) when broken.
+Elemental Gem, Emerald	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Mercurial Gem, 2x Dimensional	Made of emerald, summons a Water Elemental (as in conjure elemental) when broken.
+Elemental Gem, Red Corundum	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Fiery Gem, 2x Dimensional	Made of red corundum, summons an Fire Elemental (as in conjure elemental) when broken.
+Elemental Gem, Yellow Diamond	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Inert Gem, 2x Dimensional	Made of yellow diamond, summons an Earth Elemental (as in conjure elemental) when broken.
+Emerald Pen	Uncommon	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x Ink Pen, 1x Mercurial Gem, 5x Phantasmal	Made with emerald, requires no ink to write, and can cast illusory script at will.
+Eversmoking Bottle	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Metal) Bottle, 3x Fiery, 2x Zephyrous	
+Eyes of Charming	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Glass, 2x Metal, 4x Psychic, 3x Theurgic	Cast charm person (DC 13) on humanoid that can see you when attuned (3 charges).
+Eyes of Minute Seeing	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Glass, 2x Metal, 6x Phantasmal	
+Eyes of the Eagle	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	2x Glass, 3x Metal, 8x Phantasmal	Grants ADV on sight WIS (Perception) and ability to see distant details when worn.
+Feywild Shard	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Phantasmal Gem, 4x Chaotic, 3x Theurgic	
+Figurine of Wondrous Power, Silver Raven	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	3x Mercurial Metal, 5x Mercurial, 2x Vital	Made of silver, can become a raven with animal messenger for 12 hours when thrown.
+Gauntlets of Ogre Power	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Metal, 8x Forceful	Set STR to 19 if it was lower when attuned.
+Gem of Brightness	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Gem, 6x Radiant	Can shed light and blind creatures when held (50 charges, doesn't recharge).
+Gloves of Missile Snaring	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Textile, 8x Forceful	React to ranged weapon attacks hitting you with a hand free to reduce DMG by 1d10+DEX, and potentially catch the missile if reduced to 0, when attuned.
+Gloves of Swimming and Climbing	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Textile, 4x Forceful, 4x Mercurial	Grants +5 to STR checks to climb and swim, and don't require extra movement, when attuned.
+Gloves of Thievery	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Textile, 8x Mercurial	Invisible while worn, grants +5 to Sleight of Hand and DEX checks to pick locks when worn.
+Goggles of Night	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Glass, 1x Leather, 2x Metal, 6x Phantasmal	Grants darkvision up to (or increase its range by) 60 ft when worn.
+Guardian Emblem	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Emblem, 6x Forceful, 1x Theurgic	
+Hat of Disguise	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Textile, 8x Phantasmal	Cast disguise self at will when attuned.
+Headband of Intellect	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Gem, 1x Metal, 8x Theurgic	Set INT to 19 if it was lower when attuned.
+Helm of Comprehending Languages	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Glass, 3x Metal, 6x Theurgic	Cast comprehend languages at will when worn.
+Helm of Telepathy	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Glass, 4x Metal, 8x Psychic	Cast detect thoughts (DC 13) at will and can cast suggestion (DC 13) on target when attuned.
+Keoghtom's Ointment (5 doses)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Plant, 4x Vital	
+Lantern of Revealing	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Hooded Lantern, 3x Radiant, 3x Theurgic	Reveals invisible creatures and objects when lit.
+Medallion of Thoughts	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Bone, 1x Gem, 1x Textile, 7x Theurgic	Cast detect thoughts (DC 13) when attuned (3 charges).
+Nature's Mantle	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	8x Textile, 6x Phantasmal, 2x Vital	
+Necklace of Adaptation	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Metal, 8x Zephyrous	Breathe normally in any environment, and grants ADV on saves against harmful gases and vapors (like cloudkill, stinking cloud, inhaled poisons, and breath weapons of some drsgons) when attuned.
+Pearl of Power	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Theurgic Gem, 8x Theurgic	Can grant one spell slot of 3rd level or lower when spellcaster attuned.
+Periapt of Health	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 2x Metal, 6x Vital	
+Periapt of Wound Closure	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 2x Metal, 8x Vital	Automatically stabilize when starting your turn dying, and double Hit Dice's healing, when attuned.
+Quiver of Ehlonna	Uncommon	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Quiver, 8x Dimensional	Can hold a lot of ammunition and long objects in 3 extradimensional compartments.
+Robe of Useful Items	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Robe, 1x Chaotic, 1x Dimensional, 2x Mercurial	
+Rope of Climbing	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Silk Rope, 6x Theurgic	Made of 60 ft of silk, weighs 3 lbs, can hold up to 3000 lbs and animates to move, fasten, knot, or coil itself when holding one end (AC 20, 20 HP, regain 1 HP every 5 minutes, destroyed if 0 HP).
+Saddle of the Cavalier	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Exotic Saddle, 6x Forceful	
+Scaled Ornament, Slumbering	Uncommon	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	4x Textile, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Grants ADV on saves against charmed or frightened when attuned.
+Sending Stones (pair)	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Mineral, 5x Psychic	Cast sending once targeting the holder of the other stone.
+Slippers of Spider Climbing	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Textile, 8x Mercurial	Grants climbing speed equal to walking speed, and allows for moving across non-slippery walls and cealings with hands free, when attuned.
+Stone of Good Luck	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Theurgic Gem, 8x Chaotic	
+Wind Fan	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Textile, 1x Hardwood, 1x Chaotic, 6x Zephyrous	
+Winged Boots	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Metal, 3x Textile, 4x Zephyrous, 3x Theurgic	Grants flying speed equal to walking speed for 4 hours (regain 2 hours of flight per 12 hours not flying) when attuned.
+Wraps of Unarmed Power +1	Uncommon	Crafting	TRUE	TRUE	Wondrous Item	4x Leather, 8x Forceful;4x Textile, 8x Forceful	Grants +1 to ATK and DMG with unarmed strikes and can make them deal force DMG when worn.
+Instrument of the Bards, Doss Lute	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Lute, 3x Chaotic, 4x Phantasmal	
+Instrument of the Bards, Fochlucan Bandore	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Bandore, 3x Chaotic, 4x Phantasmal	
+Instrument of the Bards, Mac-Fuirmidh Cittern	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Cittern, 3x Chaotic, 4x Phantasmal	
+Pipes of Haunting	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	2x Bone, 1x Textile, 6x Psychic, 1x Theurgic	Frightens hostile creatures (WIS, DC 15) when played with proficiency (3 charges).
+Pipes of the Sewers	Uncommon	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Hide/Textile, 3x Hardwood, 3x Psychic, 1x Theurgic, 2x Vital	Call swarm of rats and potentially sway them to obey you when attuned with proficiency (3 charges).
+Rhythm-Maker's Drum +1	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Instrument	1x (Metal) Drum, 8x Phantasmal;1x (Bone/Hardwood) Drum, 8x Phantasmal	
+Barrier Tattoo, Small	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	5x Ink, 8x Forceful	
+Coiling Grasp Tattoo	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	5x Ink, 8x Forceful	
+Eldritch Claw Tattoo	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	5x Ink, 7x Forceful	
+Spellwrought Tattoo, 2nd Level	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	5x Ink, 3x Theurgic	
+Spellwrought Tattoo, 3rd Level	Uncommon	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	5x Ink, 4x Theurgic	
+Arrows +2 (20)	Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Arrows;As (Mineral) Arrows;As (Bone) Arrows	Grants +2 to ATK and DMG with bows when consumed.
+Blowgun Needles +2 (50)	Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Blowgun Needles;As (Bone) Blowgun Needles	Grants +2 to ATK and DMG with blowguns when consumed.
+Crossbow Bolts +2 (20)	Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As Crossbow Bolts	Grants +2 to ATK and DMG with crossbows when consumed.
+Sling Bullets +2 (20)	Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Sling Bullets;As (Mineral) Sling Bullets	Grants +2 to ATK and DMG with slings when consumed.
+Armor +1	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	As (Leather) Armor;As (Metal) Armor;As (Hide/Textile) Armor	Grants +1 to AC when worn.
+Armor of Acid Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Acidic;1x (Metal) +1 Armor, 8x Acidic;1x (Hide/Textile) +1 Armor, 8x Acidic	Grants resistance to acid DMG when attuned.
+Armor of Cold Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Cold;1x (Metal) +1 Armor, 8x Cold;1x (Hide/Textile) +1 Armor, 8x Cold	Grants resistance to cold DMG when attuned.
+Armor of Fire Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Fiery;1x (Metal) +1 Armor, 8x Fiery;1x (Hide/Textile) +1 Armor, 8x Fiery	Grants resistance to fire DMG when attuned.
+Armor of Force Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Forceful;1x (Metal) +1 Armor, 8x Forceful;1x (Hide/Textile) +1 Armor, 8x Forceful	Grants resistance to force DMG when attuned.
+Armor of Lightning Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Lightning;1x (Metal) +1 Armor, 8x Lightning;1x (Hide/Textile) +1 Armor, 8x Lightning	Grants resistance to lightning DMG when attuned.
+Armor of Necrotic Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Necrotic;1x (Metal) +1 Armor, 8x Necrotic;1x (Hide/Textile) +1 Armor, 8x Necrotic	Grants resistance to necrotic DMG when attuned.
+Armor of Poison Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Poisonous;1x (Metal) +1 Armor, 8x Poisonous;1x (Hide/Textile) +1 Armor, 8x Poisonous	Grants resistance to poison DMG when attuned.
+Armor of Pyschic Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Psychic;1x (Metal) +1 Armor, 8x Psychic;1x (Hide/Textile) +1 Armor, 8x Psychic	Grants resistance to psychic DMG when attuned.
+Armor of Radiant Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Radiant;1x (Metal) +1 Armor, 8x Radiant;1x (Hide/Textile) +1 Armor, 8x Radiant	Grants resistance to radiant DMG when attuned.
+Armor of Thunder Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x (Leather) +1 Armor, 8x Thundering;1x (Metal) +1 Armor, 8x Thundering;1x (Hide/Textile) +1 Armor, 8x Thundering	Grants resistance to thunder DMG when attuned.
+Elven Chain	Rare	Dungeon Master's Guide	TRUE	FALSE	Armor	1x +1 Chain Shirt, 8x Phantasmal	
+Glamoured Studded Leather Armor	Rare	Dungeon Master's Guide	TRUE	FALSE	Armor	1x +1 Studded Leather Armor, 8x Phantasmal	
+Elixir of Health (3)	Rare	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Vital;3x Vital Plant	Removes disease, blinded, deafened, paralyzed and poisoned when consumed.
+Oil of Etherealness (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	1x Oil, 2x Dimensional	
+Potion of Clairvoyance (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Theurgic	
+Potion of Diminution (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Mercurial	
+Potion of Fire Giant Strength (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	2x Fluid, 1x (Fire) Inert Bone, 2x Forceful	
+Potion of Frost Giant Strength (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	2x Fluid, 1x (Frost) Inert Bone , 2x Forceful	
+Potion of Gaseous Form (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Zephyrous	
+Potion of Heroism (3)	Rare	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 2x Radiant, 1x Vital	Grants 10 TEMP HP and effects of bless for 1 hour when consumed.
+Potion of Invulnerability (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 2x Forceful, 1x Inert	
+Potion of Mind Reading (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Psychic	
+Potion of Stone Giant Strength (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	2x Fluid, 1x (Stone) Inert Bone, 2x Forceful	
+Potion of Superior Healing (3)	Rare	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Vital;3x Vital Plant	Grants 8d4+8 HP when consumed.
+Ring of Acid Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Acidic Gem, 8x Acidic	Set with pearl, grants resistance to acid DMG when attuned.
+Ring of Animal Influence	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Hardwood, 3x Psychic, 1x Theurgic, 3x Vital	
+Ring of Cold Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Cold Gem, 8x Cold	Set with tourmaline, grants resistance to cold DMG when attuned.
+Ring of Evasion	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 4x Mercurial, 3x Theurgic	
+Ring of Feather Falling	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Zephyrous	
+Ring of Fire Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Fiery Gem, 8x Fiery	Set with garnet, grants resistance to fire DMG when attuned.
+Ring of Force Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Forceful Gem, 8x Forceful	Set with sapphire, grants resistance to force DMG when attuned.
+Ring of Free Action	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Mercurial	Ignore difficult terrain, and magic can't reduce your speed or paralyze/restrain you when attuned.
+Ring of Lightning Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Lightning Gem, 8x Lightning	Set with citrine, grants resistance to lightning DMG when attuned.
+Ring of Necrotic Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Necrotic Gem, 8x Necrotic	Set with jet, grants resistance to necrotic DMG when attuned.
+Ring of Poison Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Poisonous Gem, 8x Poisonous	Set with amethyst, grants resistance to poison DMG when attuned.
+Ring of Protection	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Forceful	Grants +1 to AC and saves when attuned.
+Ring of Pyschic Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Psychic Gem, 8x Psychic	Set with jade, grants resistance to psychic DMG when attuned.
+Ring of Radiant Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Radiant Gem, 8x Radiant	Set with topaz, grants resistance to radiant DMG when attuned.
+Ring of Spell Storing	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Theurgic	Store up to 5 levels worth of spells cast on it, and allows to cast them (with the original caster's spell slot, save DC, attack bonus and ability modifier) when attuned.
+Ring of the Ram	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 5x Forceful, 2x Theurgic	Can make ranged spell attack (+7) against creature within 60 ft to deal 2d10 force DMG and push 5 ft per charge, or try to break an object within 60 ft with STR (+5/charge) when attuned (3 charges).
+Ring of Thunder Resistance	Rare	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 1x Thundering Gem, 8x Thundering	Set with spinel, grants resistance to thunder DMG when attuned.
+Ring of X-ray Vision	Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Theurgic	
+Rod of Rulership	Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 7x Psychic	
+Rod of the Pact Keeper +2, Archfey	Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Phantasmal	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Archfey warlock attuned.
+Rod of the Pact Keeper +2, Celestial	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Radiant	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Celestial warlock attuned.
+Rod of the Pact Keeper +2, Fathomless	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Cold	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Fathomless warlock attuned.
+Rod of the Pact Keeper +2, Fiend	Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Fiendish	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Fiend warlock attuned.
+Rod of the Pact Keeper +2, Genie (Dao)	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Inert	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Dao Genie warlock attuned.
+Rod of the Pact Keeper +2, Genie (Djinni)	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Zephyrous	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Djinni Genie warlock attuned.
+Rod of the Pact Keeper +2, Genie (Efreeti)	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Fiery	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Efreeti Genie warlock attuned.
+Rod of the Pact Keeper +2, Genie (Marid)	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Mercurial	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Marid Genie warlock attuned.
+Rod of the Pact Keeper +2, Great Old One	Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Void	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Great Old One warlock attuned.
+Rod of the Pact Keeper +2, Hexblade	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Chaotic	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Hexblade warlock attuned.
+Rod of the Pact Keeper +2, Undead/Undying	Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Necrotic	Grants +2 to spell ATK and save DC and can restore one warlock spell slot when Undead/Undying warlock attuned.
+Tentacle Rod	Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 4x Mercurial, 3x Void	
+Scroll of Protection from Aberrations	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Void	Creates a barrier that can't be crossed by Aberrations for 5 minutes when consumed.
+Scroll of Protection from Beasts	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Vital	Creates a barrier that can't be crossed by Beasts for 5 minutes when consumed.
+Scroll of Protection from Celestials	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Radiant	Creates a barrier that can't be crossed by Celestials for 5 minutes when consumed.
+Scroll of Protection from Constructs	Rare	Crafting	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Theurgic	Creates a barrier that can't be crossed by Constructs for 5 minutes when consumed.
+Scroll of Protection from Dragons	Rare	Crafting	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Chaotic	Creates a barrier that can't be crossed by Dragons for 5 minutes when consumed.
+Scroll of Protection from Elementals	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Dimensional	Creates a barrier that can't be crossed by Elementals for 5 minutes when consumed.
+Scroll of Protection from Fey	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Phantasmal	Creates a barrier that can't be crossed by Fey for 5 minutes when consumed.
+Scroll of Protection from Fiends	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Fiendish	Creates a barrier that can't be crossed by Fiends for 5 minutes when consumed.
+Scroll of Protection from Giants	Rare	Crafting	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Inert	Creates a barrier that can't be crossed by Giants for 5 minutes when consumed.
+Scroll of Protection from Humanoids	Rare	Crafting	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Vital	Creates a barrier that can't be crossed by Humanoid for 5 minutes when consumed.
+Scroll of Protection from Monstrosities	Rare	Crafting	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Chaotic	Creates a barrier that can't be crossed by Monstrosities for 5 minutes when consumed.
+Scroll of Protection from Oozes	Rare	Crafting	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Acidic	Creates a barrier that can't be crossed by Oozes for 5 minutes when consumed.
+Scroll of Protection from Plants	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Vital	Creates a barrier that can't be crossed by Plants for 5 minutes when consumed.
+Scroll of Protection from Undead	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Necrotic	Creates a barrier that can't be crossed by Undead for 5 minutes when consumed.
+Spell Scroll, 4th Level	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 2x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 4th-level spell (DC 15, ATK +7) when consumed.
+Spell Scroll, 5th Level	Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 5th-level spell (DC 17, ATK +9) when consumed.
+Arrow-Catching Shield	Rare	Dungeon Master's Guide	TRUE	TRUE	Shield	1x (Metal) Shield, 8x Forceful;1x (Bone/Hardwood) Shield, 8x Forceful	Grants +2 to AC against ranged and can redirect them when attuned.
+Shield +2	Rare	Dungeon Master's Guide	TRUE	TRUE	Shield	As (Metal) Shield;As (Bone/Hardwood) Shield	Grants +2 to AC (for a total of +4) when held.
+Staff of Charming	Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff, 5x Psychic, 2x Theurgic;1x (Bone/Hardwood) Staff, 5x Psychic, 2x Theurgic	
+Staff of Healing	Rare	Dungeon Master's Guide	TRUE	TRUE	Staff	1x (Metal) Staff, 5x Vital, 2x Theurgic;1x (Bone/Hardwood) Staff, 5x Vital, 2x Theurgic	Cast healing spells when bard, cleric, or druid attuned (10 charges).
+Staff of Swarming Insects	Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff, 3x Dimensional, 2x Theurgic, 2x Vital;1x (Bone/Hardwood) Staff, 3x Dimensional, 2x Theurgic, 2x Vital	
+Staff of the Woodlands	Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff, 3x Mercurial, 2x Theurgic, 2x Vital, 1000 GP;1x (Bone/Hardwood) Staff, 3x Mercurial, 2x Theurgic, 2x Vital, 1000x GP	
+Staff of Withering	Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff, 5x Necrotic, 2x Theurgic;1x (Bone/Hardwood) Staff, 5x Necrotic, 2x Theurgic	
+Wand of Binding	Rare	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 5x Psychic, 2x Theurgic	
+Wand of Enemy Detection	Rare	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 1x Theurgic Gem, 8x Theurgic	
+Wand of Fear	Rare	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 5x Psychic, 2x Theurgic	
+Wand of Fireballs	Rare	Dungeon Master's Guide	TRUE	TRUE	Wand	1x Wand, 5x Fiery, 2x Theurgic	Cast or upcast fireball (DC 15) when spellcaster attuned (7 charges).
+Wand of Lightning Bolts	Rare	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 5x Lightning, 2x Theurgic	
+Wand of Paralysis	Rare	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 5x Inert, 2x Theurgic	
+Wand of the War Mage +2	Rare	Dungeon Master's Guide	TRUE	TRUE	Wand	1x Wand, 8x Theurgic	Grants +2 to spell ATK and ignore half cover when spellcaster attuned.
+Wand of Wonder	Rare	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 5x Chaotic, 2x Theurgic	
+Dragon Slayer (Sword)	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +2 (Sword) Weapon, 4x Chaotic, 4x Necrotic	+1 Weapon, deals 3d6 extra DMG to Dragons.
+Dragon's Wrath Weapon, Stirring	Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon	1x UC (Leather) Slumbering Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x UC (Metal) Slumbering Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x UC (Mineral) Slumbering Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x UC (Bone/Hardwood) Slumbering Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like slumbering, but must be steeped on a Young Dragon's hoard to be Weapon +1 and deal 1d6 extra DMG.
+Flame Tongue (Sword)	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +2 (Sword) Weapon, 8x Fiery	
+Giant Slayer (Axe/Sword)	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +2 (Axe/Sword, Metal) Weapon, 4x Inert, 4x Necrotic;1x +2 (Axe, Mineral) Weapon, 4x Inert, 4x Necrotic;1x +2 (Axe, Bone) Weapon, 4x Inert, 4x Necrotic	
+Sword of Life Stealing (Sword)	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +2 (Sword) Weapon, 8x Necrotic	
+Sword of Wounding (Sword)	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +2 (Sword) Weapon, 8x Necrotic	
+Vicious Weapon	Rare	Dungeon Master's Guide	TRUE	TRUE	Weapon	1x +2 (Leather) Weapon, 8x Forceful;1x +2 (Metal) Weapon, 8x Forceful;1x +2 (Mineral) Weapon, 8x Forceful;1x +2 (Bone/Hardwood) Weapon, 8x Forceful	Deals extra 7 DMG on critical hits.
+Weapon +2	Rare	Dungeon Master's Guide	TRUE	TRUE	Weapon	As (Leather) Weapon;As (Metal) Weapon;As (Mineral) Weapon;As (Bone/Hardwood) Weapon	Grants +2 to ATK and DMG with this weapon.
+Dagger of Venom	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Simple Melee	1x +2 Dagger, 7x Posionous	
+Mace of Disruption	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Simple Melee	1x +2 Mace, 8x Radiant	
+Mace of Smiting	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Simple Melee	1x +2 Mace, 8x Theurgic	Grants +1 to ATK and DMG (or +3 if Construct), deals 7 damage on 20 (or 14), and destroys Constructs of 25 HP or less.
+Mace of Terror	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Simple Melee	1x +2 Mace, 5x Psychic, 2x Theurgic	
+Moon Sickle +2	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Weapon, Simple Melee	1x Mercurial +2 Sickle, 8x Vital	
+Crystal Blade (Sword)	Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon	1x +2 (Sword) Weapon, 1x Radiant (Dragon) Gem, 2x Radiant, 1x Theurgic, 3x Vital	Made from a Crystal Dragon, deals 1d8 extra radiant DMG, can shed light, and can grant HP equal to DMG dealt when attuned (3 charges).
+Devotee's Censer	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Weapon, Martial Melee	1x +2 Flail, 4x Radiant, 4x Vital	
+Sun Blade	Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +2 Longsword, 8x Radiant	
+Dragon Wing Bow	Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon, Martial Ranged	1x +3 Shortbow/Longbow, 8x (Dragon) Bone/Gem/Metal of the same trait	Made from Dragon materials, deals 1d6 extra DMG corresponding to Dragon type and produces own ammo when attuned.
+Alchemical Compendium	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Mercurial, 1x Theurgic	
+All-Purpose Tool +2	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Hardwood, 2x Metal, 3x Chaotic, 5x Mercurial	
+Amulet of Health	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Metal) Amulet, 8x Vital;1x (Mineral) Amulet, 8x Vital;1x (Bone/Hardwood) Amulet, 8x Vital	Set CON to 19 if it was lower when attuned.
+Amulet of the Devout +2	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x (Metal) Amulet, 8x Radiant;1x (Mineral) Amulet, 8x Radiant;1x (Bone/Hardwood) Amulet, 8x Radiant	
+Arcane Grimoire +2	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 8x Theurgic	
+Astral Shard	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Dimensional Gem, 7x Dimensional	
+Astromancy Archive	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	4x Fiery Metal, 4x Theurgic	
+Atlas of Endless Horizons	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Dimensional, 1x Theurgic	
+Bag of Beans (7)	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	7x Plant, 1x Chaotic, 1x Dimensional, 2x Vital	
+Battling Clothes +1	Rare	Crafting	TRUE	TRUE	Wondrous Item	1x Clothes, 4x Forceful, 4x Theurgic	Grants +1 AC and can grant the effects of runes normally applied on armor.
+Bead of Force (7)	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Forceful Gem	
+Bell Branch	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	3x Metal, 6x Dimensional, 1x Theurgic	
+Belt of Dwarvenkind	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Leather, 3x Metal, 8x Forceful	
+Belt of Hill Giant Strength	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	2x Leather, 3x Metal, 4x Forceful, 4x Inert	Grants 21 STR when attuned.
+Bloodwell Vial +2	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x (Glass) Vial, 5x Vital, 3x Theurgic;1x (Earthenware) Vial, 5x Vital, 3x Theurgic	
+Boots of Levitation	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Textile, 8x Zephyrous	Cast levitate on yourself at will when attuned.
+Boots of Speed	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	2x Leather, 1x Metal, 3x Textile, 6x Mercurial, 1x Theurgic	Can double walking speed for a total of 10 minutes when attuned.
+Bowl of Commanding Water Elementals	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Metal, 4x Dimensional, 3x Mercurial	
+Bracers of Defense	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	3x Metal, 8x Forceful	Grants +2 to AC when attuned and not using armor or shield.
+Brazier of Commanding Fire Elementals	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Metal, 4x Dimensional, 3x Fiery	
+Cape of the Mountebank	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x Textile, 4x Dimensional, 4x Fiery	
+Censer of Controlling Air Elementals	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Earthenware, 4x Dimensional, 3x Zephyrous	
+Chime of Opening	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Metal, 4x Thundering	
+Cloak of Displacement	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x Phantasmal Leather	
+Cloak of the Bat	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x Textile, 2x Mercurial, 3x Phantasmal, 3x Zephyrous	Grants ADV on Stealth checks, and (when in dim light or darkness) grants 40 ft flying speed and can cast polymorph on yourself (become a bat, retain your INT/WIS/CHA) when attuned.
+Cube of Force	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Glass, 4x Forceful, 3x Theurgic	
+Daern's Instant Fortress	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Inert Metal, 6x Mercurial	
+Dimensional Shackles	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Manacles, 8x Inert	Prevents teleportation and extradimensional movement when placed on an incapacitated creature (can try to free itself with a DC 30 STR check every 30 days).
+Dragon Vessel, Stirring	Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x UC (Glass) Slumbering Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x UC (Leather) Slumbering Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x UC (Earthenware) Slumbering Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x UC (Metal) Slumbering Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x UC (Bone) Slumbering Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait)	Like slumbering, but must be steeped on a Young Dragon's hoard to also fill with a Potion of Greater Healing or a Potion of Fire Breath.
+Dragon-Touched Focus, Stirring	Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x UC (Gem) Slumbering Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x UC (Metal) Slumbering Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x UC (Mineral) Slumbering Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x UC (Bone/Hardwood) Slumbering Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like slumbering, but must be steeped on a Young Dragon's hoard to gain a passive effect determined by the family of Dragon (Chromatiic: DMG, Gem: teleport, Metallic: saves).
+Dragonhide Belt +2	Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x (Dragon) Hide, 3x Leather, 8x Phantasmal	Made of dragonhide, grants +2 to save DC of ki features and can regain ki when monk attuned.
+Duplicitous Manuscript	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Phantasmal, 1x Theurgic	
+Elemental Essence Shard, Air	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Zephyrous Gem, 7x Zephyrous	
+Elemental Essence Shard, Earth	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Inert Gem, 7x Inert	
+Elemental Essence Shard, Fire	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Fiery Gem, 7x Fiery	
+Elemental Essence Shard, Water	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Mercurial Gem, 7x Mercurial	
+Far Realm Shard	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Void Gem, 7x Void	
+Figurine of Wondrous Power, Bronze Griffon	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Lightning Metal, 2x Mercurial, 2x Vital	
+Figurine of Wondrous Power, Ebony Fly	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Void Hardwood, 2x Mercurial, 2x Vital	
+Figurine of Wondrous Power, Golden Lions (2)	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Radiant Metal, 2x Mercurial, 2x Vital	
+Figurine of Wondrous Power, Ivory Goats (3)	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Inert Bone, 2x Mercurial, 2x Vital	
+Figurine of Wondrous Power, Marble Elephant	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Radiant Mineral, 2x Mercurial, 2x Vital	
+Figurine of Wondrous Power, Onyx Dog	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Theurgic Mineral, 2x Mercurial, 2x Vital	
+Figurine of Wondrous Power, Serpentine Owl	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Psychic Mineral, 2x Mercurial, 2x Vital	
+Folding Boat	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Hardwood, 6x Mercurial	
+Fulminating Treatise	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Chaotic, 1x Theurgic	
+Gem of Seeing	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Gem, 1x Metal, 1x Hardwood, 7x Theurgic	Can grant truesight for 10 minutes when attuned (3 charges).
+Gloves of Coordination	Rare	Crafting	TRUE	FALSE	Wondrous Item	3x Textile, 8x Mercurial	Set DEX to 19 if it was lower when attuned.
+Heart Weaver's Primer	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Psychic, 1x Theurgic	
+Helm of Teleportation	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Metal, 5x Dimensional, 2x Theurgic	
+Heward's Handy Haversack	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Backpack, 2x Pouch, 6x Dimensional	
+Horn of Blasting	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	2x Bone/Hardwood, 1x Textile, 6x Thundering	Emits a thunderous blast (CON, DC 15) when blown, has a chance to explode.
+Horn of Valhalla, Brass	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Fiery Metal, 4x Dimensional	
+Horn of Valhalla, Silver	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Mercurial Metal, 4x Dimensional	
+Horseshoes of Speed	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Cold Metal, 2x Mercurial	
+Ioun Stone, Awareness	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Theurgic	
+Ioun Stone, Protection	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Gem, 8x Forceful	Grants +1 to AC when attuned and orbiting your head.
+Ioun Stone, Reserve	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Theurgic	
+Ioun Stone, Sustenance	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Vital	
+Iron Bands of Bilarro	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Cold Metal, 4x Mercurial	
+Libram of Souls and Flesh	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Necrotic, 1x Theurgic	
+Mantle of Spell Resistance	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	6x Textile, 8x Inert	
+Necklace of Fireballs (7)	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Fiery Gem, 1x Metal	
+Outer Essence Shard, Chaotic	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Chaotic Gem, 7x Chaotic	
+Outer Essence Shard, Evil	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Fiendish Gem, 7x Fiendish	
+Outer Essence Shard, Good	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Radiant Gem, 7x Radiant	
+Outer Essence Shard, Lawful	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Inert Gem, 7x Inert	
+Periapt of Awareness	Rare	Crafting	TRUE	FALSE	Wondrous Item	1x Gem, 2x Metal, 8x Phantasmal	Set WIS to 19 if it was lower when attuned.
+Periapt of Proof Against Poison	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 1x Mercurial Metal, 7x Poisonous	
+Planecaller's Codex	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Fiendish, 1x Theurgic	
+Portable Hole	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	6x Textile, 6x Dimensional	
+Prayer Bead, Blessing	Rare	Crafting	TRUE	FALSE	Wondrous Item	1x Gem, 1x Radiant	
+Prayer Bead, Curing	Rare	Crafting	TRUE	FALSE	Wondrous Item	1x Gem, 1x Vital	
+Prayer Bead, Favor	Rare	Crafting	TRUE	FALSE	Wondrous Item	1x Gem, 2x Vital	
+Prayer Bead, Smiting	Rare	Crafting	TRUE	FALSE	Wondrous Item	1x Gem, 2x Radiant	
+Prayer Bead, Summons	Rare	Crafting	TRUE	FALSE	Wondrous Item	1x Gem, 3x Dimensional	
+Prayer Bead, Wind Walking	Rare	Crafting	TRUE	FALSE	Wondrous Item	1x Gem, 3x Zephyrous	
+Prayer Beads, Necklace of	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Metal, 1-6x Prayer Bead	
+Protective Verses	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 7x Forceful, 1x Theurgic	
+Quaal's Feather Token, Anchor	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Totem, 3x Inert, 1x feather	
+Quaal's Feather Token, Bird	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Totem, 1x Dimensional, 2x Zephyrous, 1x feather	
+Quaal's Feather Token, Fan	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Totem, 1x Mercurial, 2x Zephyrous, 1x feather	
+Quaal's Feather Token, Swan Boat	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Totem, 3x Mercurial, 1x feather	
+Quaal's Feather Token, Tree	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Totem, 3x Vital, 1x feather	Creates an oak tree when consumed outdoors.
+Quaal's Feather Token, Whip	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Totem, 3x Mercurial, 1x feather	
+Robe of Eyes	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Robe, 4x Phantasmal, 4x Theurgic	
+Rope of Entanglement	Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Hempen Rope, 8x Theurgic	Can restrain (DEX, DC 15) a creature within 20 feet when held.
+Scaled Ornament, Stirring	Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x UC Slumbering Scaled Ornament, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like slumbering, but must be steeped on a Young Dragon's hoard to grant +1 AC, ignore charmed and frightened, and grant ADV to creatures within 30ft.
+Shadowfell Shard	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Necrotic Gem, 7x Necrotic	
+Stone of Controlling Earth Elementals	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Gem, 2x Mineral, 4x Dimensional, 3x Inert	Summons an Earth Elemental (as in conjure elemental) when touching the ground.
+Wings of Flying	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x Textile, 5x Mercurial, 2x Theurgic	
+Wraps of Unarmed Power +2	Rare	Crafting	TRUE	TRUE	Wondrous Item	4x Leather, 8x Forceful;4x Textile, 8x Forceful	Grants +2 to ATK and DMG with unarmed strikes and can make them deal force DMG when worn.
+Instrument of the Bards, Canaith Mandolin	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Mandolin, 3x Chaotic, 4x Phantasmal	
+Instrument of the Bards, Cli Lyre	Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Lyre, 3x Chaotic, 4x Phantasmal	
+Lyre of Building	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Instrument	1x Lyre, 4x Mercurial, 3x Forceful	
+Reveler's Concertina	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Instrument	1x Concertina, 8x Psychic	
+Rhythm-Maker's Drum +2	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Instrument	1x (Metal) Drum, 8x Phantasmal;1x (Bone/Hardwood) Drum, 8x Phantasmal	
+Barrier Tattoo, Medium	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	6x Ink, 8x Forceful	
+Shadowfell Brand Tattoo	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	6x Ink, 3x Phantasmal, 4x Void	
+Spellwrought Tattoo, 4th Level	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	6x Ink, 3x Theurgic	
+Spellwrought Tattoo, 5th Level	Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	6x Ink, 4x Theurgic	
+Ammunition of Slaying, Aberrations (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Necrotic, 2x Psychic;10x +3 (Mineral) Ammunition, 2x Necrotic, 2x Psychic;10x +3 (Bone) Ammunition, 2x Necrotic, 2x Psychic	Deals 6d10 piercing DMG (CON, DC 17) to Aberrations when consumed.
+Ammunition of Slaying, Beasts (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 4x Necrotic;10x +3 (Mineral) Ammunition, 4x Necrotic;10x +3 (Bone) Ammunition, 4x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Beasts when consumed.
+Ammunition of Slaying, Celestials (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Fiendish, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Fiendish, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Fiendish, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Celestials when consumed.
+Ammunition of Slaying, Constructs (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Inert, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Constructs when consumed.
+Ammunition of Slaying, Dragons (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Chaotic, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Chaotic, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Chaotic, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Dragons when consumed.
+Ammunition of Slaying, Dragons (Amethyst, 10)	Very Rare	Crafting	TRUE	FALSE	Ammunition	10x +3 (Metal) Ammunition, 2x Forceful, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Forceful, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Forceful, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Amethyst Dragons when consumed.
+Ammunition of Slaying, Dragons (Black, Copper, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Inert, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Black and Copper Dragons when consumed.
+Ammunition of Slaying, Dragons (Blue, Bronze, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Inert, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Blue and Bronze Dragons when consumed.
+Ammunition of Slaying, Dragons (Brass, Gold, Red, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Cold, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Cold, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Cold, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Brass, Gold and Red Dragons when consumed.
+Ammunition of Slaying, Dragons (Crystal, 10)	Very Rare	Crafting	TRUE	FALSE	Ammunition	10x +3 (Metal) Ammunition, 2x Necrotic, 2x Void;10x +3 (Mineral) Ammunition, 2x Necrotic, 2x Void;10x +3 (Bone) Ammunition, 2x Necrotic, 2x Void	Deals 6d10 piercing DMG (CON, DC 17) to Crystral Dragons when consumed.
+Ammunition of Slaying, Dragons (Emerald, 10)	Very Rare	Crafting	TRUE	FALSE	Ammunition	10x +3 (Metal) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Inert, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Emerald Dragons when consumed.
+Ammunition of Slaying, Dragons (Green, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Necrotic, 2x Psychic;10x +3 (Mineral) Ammunition, 2x Necrotic, 2x Psychic;10x +3 (Bone) Ammunition, 2x Necrotic, 2x Psychic	Deals 6d10 piercing DMG (CON, DC 17) to Green Dragons when consumed.
+Ammunition of Slaying, Dragons (Sapphire, 10)	Very Rare	Crafting	TRUE	FALSE	Ammunition	10x +3 (Metal) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Inert, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Sapphire Dragons when consumed.
+Ammunition of Slaying, Dragons (Silver, White, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Fiery, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Fiery, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Fiery, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Silver and White Dragons when consumed.
+Ammunition of Slaying, Dragons (Topaz, 10)	Very Rare	Crafting	TRUE	FALSE	Ammunition	10x +3 (Metal) Ammunition, 2x Radiant, 2x Vital;10x +3 (Mineral) Ammunition, 2x Radiant, 2x Vital;10x +3 (Bone) Ammunition, 2x Radiant, 2x Vital	Deals 6d10 piercing DMG (CON, DC 17) to Topaz Dragons when consumed.
+Ammunition of Slaying, Elementals (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Dimensional, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Dimensional, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Dimensional, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Elementals when consumed.
+Ammunition of Slaying, Elementals (Air, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Inert, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Air Elementals when consumed.
+Ammunition of Slaying, Elementals (Earth, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Necrotic, 2x Thundering;10x +3 (Mineral) Ammunition, 2x Necrotic, 2x Thundering;10x +3 (Bone) Ammunition, 2x Necrotic, 2x Thundering	Deals 6d10 piercing DMG (CON, DC 17) to Earth Elementals when consumed.
+Ammunition of Slaying, Elementals (Fire, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Cold, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Cold, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Cold, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Fire Elementals when consumed.
+Ammunition of Slaying, Elementals (Water, 10)	Very Rare	Crafting	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Lightning, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Lightning, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Lightning, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Water Elementals when consumed.
+Ammunition of Slaying, Fey (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Cold, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Cold, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Cold, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Fey when consumed.
+Ammunition of Slaying, Fiends (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Necrotic, 2x Radiant;10x +3 (Mineral) Ammunition, 2x Necrotic, 2x Radiant;10x +3 (Bone) Ammunition, 2x Necrotic, 2x Radiant	Deals 6d10 piercing DMG (CON, DC 17) to Fiends when consumed.
+Ammunition of Slaying, Giants (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Necrotic, 2x Phantasmal;10x +3 (Mineral) Ammunition, 2x Necrotic, 2x Phantasmal;10x +3 (Bone) Ammunition, 2x Necrotic, 2x Phantasmal	Deals 6d10 piercing DMG (CON, DC 17) to Giants when consumed.
+Ammunition of Slaying, Humanoids (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 4x Necrotic;10x +3 (Mineral) Ammunition, 4x Necrotic;10x +3 (Bone) Ammunition, 4x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Humanoids when consumed.
+Ammunition of Slaying, Monstrosities (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Chaotic, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Chaotic, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Chaotic, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Monstrosities when consumed.
+Ammunition of Slaying, Oozes (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Mineral) Ammunition, 2x Inert, 2x Necrotic;10x +3 (Bone) Ammunition, 2x Inert, 2x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Oozes when consumed.
+Ammunition of Slaying, Plants (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 4x Necrotic;10x +3 (Mineral) Ammunition, 4x Necrotic;10x +3 (Bone) Ammunition, 4x Necrotic	Deals 6d10 piercing DMG (CON, DC 17) to Plants when consumed.
+Ammunition of Slaying, Undead (10)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	10x +3 (Metal) Ammunition, 2x Necrotic, 2x Vital;10x +3 (Mineral) Ammunition, 2x Necrotic, 2x Vital;10x +3 (Bone) Ammunition, 2x Necrotic, 2x Vital	Deals 6d10 piercing DMG (CON, DC 17) to Undead when consumed.
+Arrows +3 (20)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Arrows;As (Mineral) Arrows;As (Bone) Arrows	Grants +3 to ATK and DMG with bows when consumed.
+Blowgun Needles +3 (50)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Blowgun Needles;As (Bone) Blowgun Needles	Grants +3 to ATK and DMG with blowguns when consumed.
+Crossbow Bolts +3 (20)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As Crossbow Bolts	Grants +3 to ATK and DMG with crossbows when consumed.
+Sling Bullets +3 (20)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Ammunition	As (Metal) Sling Bullets;As (Mineral) Sling Bullets	Grants +3 to ATK and DMG with slings when consumed.
+Armor +2	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	As (Leather) Armor;As (Metal) Armor;As (Hide/Textile) Armor	Grants +2 to AC when worn.
+Dragon Scale Mail, Amethyst	Very Rare	Crafting	TRUE	FALSE	Armor	1x Forceful (Dragon) Gem, 6x Gem, 1x Leather	Made of scales from an Amethyst Dragon, grants defenses against Dragons and force DMG when attuned.
+Dragon Scale Mail, Black	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Acidic (Dragon) Hide, 7x Leather;1x Acidic (Dragon) Hide, 7x Leather	Made of scales from a Black Dragon, grants defenses against Dragons and acid DMG when attuned.
+Dragon Scale Mail, Blue	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Lightning (Dragon) Hide, 7x Leather;1x Lightning (Dragon) Hide, 7x Leather	Made of scales from a Blue Dragon, grants defenses against Dragons and lightning DMG when attuned.
+Dragon Scale Mail, Brass	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Fiery (Dragon) Metal, 1x Leather, 6x Metal	Made of scales from a Brass Dragon, grants defenses against Dragons and fire DMG when attuned.
+Dragon Scale Mail, Bronze	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Lightning (Dragon) Metal, 1x Leather, 6x Metal	Made of scales from a Bronze Dragon, grants defenses against Dragons and lightning DMG when attuned.
+Dragon Scale Mail, Copper	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Acid (Dragon) Metal, 1x Leather, 6x Metal	Made of scales from a Copper Dragon, grants defenses against Dragons and acid DMG when attuned.
+Dragon Scale Mail, Crystal	Very Rare	Crafting	TRUE	FALSE	Armor	1x Radiant (Dragon) Gem, 6x Gem, 1x Leather	Made of scales from a Crystal Dragon, grants defenses against Dragons and radiant DMG when attuned.
+Dragon Scale Mail, Emerald	Very Rare	Crafting	TRUE	FALSE	Armor	1x Psychic (Dragon) Gem, 6x Gem, 1x Leather	Made of scales from an Emerald Dragon, grants defenses against Dragons and psychic DMG when attuned.
+Dragon Scale Mail, Gold	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Radiant (Dragon) Metal, 1x Leather, 6x Metal	Made of scales from a Gold Dragon, grants defenses against Dragons and fire DMG when attuned.
+Dragon Scale Mail, Green	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Poisonous (Dragon) Hide, 7x Leather;1x Poisonous (Dragon) Hide, 7x Leather	Made of scales from a Green Dragon, grants defenses against Dragons and poison DMG when attuned.
+Dragon Scale Mail, Red	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Fiery (Dragon) Hide, 7x Leather;1x Fiery (Dragon) Hide, 7x Leather	Made of scales from a Red Dragon, grants defenses against Dragons and fire DMG when attuned.
+Dragon Scale Mail, Sapphire	Very Rare	Crafting	TRUE	FALSE	Armor	1x Thundering (Dragon) Gem, 6x Gem, 1x Leather	Made of scales from a Sapphire Dragon, grants defenses against Dragons and thunder DMG when attuned.
+Dragon Scale Mail, Silver	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Cold (Dragon) Metal, 1x Leather, 6x Metal	Made of scales from a Silver Dragon, grants defenses against Dragons and cold DMG when attuned.
+Dragon Scale Mail, Topaz	Very Rare	Crafting	TRUE	FALSE	Armor	1x Necrotic (Dragon) Gem, 6x Gem, 1x Leather	Made of scales from a Topaz Dragon, grants defenses against Dragons and necrotic DMG when attuned.
+Dragon Scale Mail, White	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Armor	1x Cold (Dragon) Hide, 7x Leather;1x Cold (Dragon) Hide, 7x Leather	Made of scales from a White Dragon, grants defenses against Dragons and cold DMG when attuned.
+Dwarven Plate Armor	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Armor	1x +2 Plate Armor, 8x Inert	
+Oil of Sharpness (3)	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	1x Oil, 2x Mercurial	
+Potion of Cloud Giant Strength (3)	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	2x Fluid, 1x (Cloud) Inert Bone, 2x Forceful	
+Potion of Flying (3)	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Zephyrous	
+Potion of Longevity (3)	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Potion	3x Fluid, 3x Vital	
+Potion of Invisibility (3)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Phantasmal	Grants invisible for 1 hour (ends if attack or cast a spell) when consumed.
+Potion of Speed (3)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Mercurial	Grants effects of haste for 1 minute when consumed.
+Potion of Supreme Healing (3)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Vital;3x Vital Plant	Grants 10d4+20 HP when consumed.
+Potion of Vitality (3)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Potion	3x Fluid, 3x Vital	Removes exhaustion, disease and poison, and max HD for 24 hours when consumed.
+Ring of Regeneration	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Vital	
+Ring of Shooting Stars	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 3x Fiery, 3x Lightning, 1x Theurgic	
+Ring of Telekinesis	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 1x Gem, 8x Forceful	
+Rod of Absorption	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 3x Inert, 3x Theurgic	
+Rod of Alertness	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Rod	1x Rod, 3x Phantasmal, 1x Radiant, 3x Theurgic	Grants alertness, cast spells and can form a protective aura when attuned.
+Rod of Security	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 4x Dimensional, 3x Vital	
+Rod of the Pact Keeper +3, Archfey	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Phantasmal	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Archfey warlock attuned.
+Rod of the Pact Keeper +3, Celestial	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Radiant	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Celestial warlock attuned.
+Rod of the Pact Keeper +3, Fathomless	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Cold	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Fathomless warlock attuned.
+Rod of the Pact Keeper +3, Fiend	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Fiendish	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Fiend warlock attuned.
+Rod of the Pact Keeper +3, Genie (Dao)	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Inert	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Dao Genie warlock attuned.
+Rod of the Pact Keeper +3, Genie (Djinni)	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Zephyrous	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Djinni Genie warlock attuned.
+Rod of the Pact Keeper +3, Genie (Efreeti)	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Fiery	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Efreeti Genie warlock attuned.
+Rod of the Pact Keeper +3, Genie (Marid)	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Mercurial	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Marid Genie warlock attuned.
+Rod of the Pact Keeper +3, Great Old One	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 8x Void	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Great Old One warlock attuned.
+Rod of the Pact Keeper +3, Hexblade	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Chaotic	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Hexblade warlock attuned.
+Rod of the Pact Keeper +3, Undead/Undying	Very Rare	Crafting	TRUE	FALSE	Rod	1x Rod, 8x Necrotic	Grants +3 to spell ATK and save DC and can restore one warlock spell slot when Undead/Undying warlock attuned.
+Spell Scroll, 6th Level	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 2x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 6th-level spell (DC 17, ATK +9) when consumed.
+Spell Scroll, 7th Level	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 7th-level spell (DC 18, ATK +10) when consumed.
+Spell Scroll, 8th Level	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 4x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 8th-level spell (DC 18, ATK +10) when consumed.
+Animated Shield	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Shield	1x +3 (Metal) Shield, 8x Zephyrous;1x +3 (Bone/Hardwood) Shield, 8x Zephyrous	
+Sapphire Buckler	Very Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Shield	4x Thundering (Dragon) Gem, 2x Psychic, 2x Void	Made from a Sapphire Dragon scale, grants resistance to psychic and thunder DMG, can deal 2d6 thunder DMG when damaged, and can locate Aberrations when attuned.
+Shield +3	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Shield	As (Metal) Shield;As (Bone/Hardwood) Shield	Grants +3 to AC (for a total of +5) when held.
+Spellguard Shield	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Shield	1x +3 (Metal) Shield, 8x Inert;1x +3 (Bone/Hardwood) Shield, 8x Inert	Grants ADV on saves against spells and magical effects, and provokes DIS on spell ATK when attuned.
+Staff of Fire	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff, 5x Fiery, 2x Theurgic;1x (Bone/Hardwood) Staff, 5x Fiery, 2x Theurgic	
+Staff of Frost	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff, 5x Cold, 2x Theurgic;1x (Bone/Hardwood) Staff, 5x Cold, 2x Theurgic	
+Staff of Power	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff of Striking, 4x Chaotic, 3x Theurgic;1x (Bone/Hardwood) Staff of Striking, 4x Chaotic, 3x Theurgic	
+Staff of Striking	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Staff	1x (Metal) Staff, 5x Forceful, 2x Theurgic;1x (Bone/Hardwood) Staff, 5x Forceful, 2x Theurgic	+3 Quarterstaff, can deal 1d6 force DMG when attuned (10 charges).
+Staff of Thunder and Lightning	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff, 3x Lightning, 4x Thundering;1x (Bone/Hardwood) Staff, 4x Lightning, 3x Thundering	
+Wand of Polymorph	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wand	1x Wand, 5x Mercurial, 2x Theurgic	
+Wand of the War Mage +3	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Wand	1x Wand, 8x Theurgic	Grants +3 to spell ATK and ignore half cover when spellcaster attuned.
+Dancing Sword (Sword)	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +3 (Sword) Weapon, 8x Zephyrous	
+Dragon's Wrath Weapon, Wakened	Very Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon	1x R (Leather) Stirring Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x R (Metal) Stirring Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x R (Mineral) Stirring Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x R (Bone/Hardwood) Stirring Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like stirring, but must be steeped on an Adult Dragon's hoard to be able to breath attack (30ft cone, DEX 16, 8d6/half) and upgrade to +2 and 2d6.
+Frost Brand (Sword)	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +3 (Sword) Weapon, 8x Cold	
+Nine Lives Stealer (9, Sword)	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +3 (Sword) Weapon, 6x Necrotic	+2 Weapon, instantly slay (CON 15) non-Undead-or-Construct creatures when scoring a crit below 100 HP when attuned (9 charges, not recharging).
+Sword of Sharpness (Sword, Slashing)	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Weapon	1x +3 (Sword, Slashing) Weapon, 6x Forceful, 2x Radiant	Deals max DMG to objects and can lop off limbs when attuned.
+Weapon +3	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Weapon	As (Leather) Weapon;As (Metal) Weapon;As (Mineral) Weapon;As (Bone/Hardwood) Weapon	Grants +3 to ATK and DMG with this weapon.
+Moon Sickle +3	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Weapon, Simple Melee	1x Mercurial +3 Sickle, 8x Vital	
+Dwarven Thrower	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +3 Warhammer, 4x Inert, 4x Zephyrous	
+Scimitar of Speed	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +3 Scimitar, 8x Mercurial	
+Oathbow	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Ranged	1x +3 Longbow, 4x Necrotic, 4x Phantasmal	
+All-Purpose Tool +3	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Hardwood, 2x Metal, 3x Chaotic, 5x Mercurial	
+Amethyst Lodestone	Very Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x Forceful (Dragon) Gem, 2x Forceful, 1x Theurgic, 3x Zephyrous	Made of amethyst, grants ADV on STR saves, and can grant flight (10 min.), push creatures (STR 18, 20ft), and cast reverse gravity (DC 18) when attuned (6 charges).
+Amulet of the Devout +3	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x (Metal) Amulet, 8x Radiant;1x (Mineral) Amulet, 8x Radiant;1x (Bone/Hardwood) Amulet, 8x Radiant	
+Amulet of the Planes	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Metal) Amulet, 8x Dimensional;1x (Mineral) Amulet, 8x Dimensional;1x (Bone/Hardwood) Amulet, 8x Dimensional	
+Arcane Grimoire +3	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Spellbook, 8x Theurgic	
+Bag of Devouring	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Bag of Holding, 6x Void	
+Battling Clothes +2	Very Rare	Crafting	TRUE	TRUE	Wondrous Item	1x Clothes, 4x Forceful, 4x Theurgic	Grants +2 AC and can grant the effects of runes normally applied on armor.
+Belt of Fire Giant Strength	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	5x Leather, 3x Metal, 4x Forceful, 4x Inert	
+Belt of Frost Giant Strength	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Leather, 3x Metal, 4x Forceful, 4x Inert	
+Belt of Stone Giant Strength	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Leather, 3x Metal, 4x Forceful, 4x Inert	
+Bloodwell Vial +3	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x (Glass) Vial, 5x Vital, 3x Theurgic;1x (Earthenware) Vial, 5x Vital, 3x Theurgic	
+Candle of Invocation, Chaotic Evil	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 1x Chaotic, 1x Fiendish	
+Candle of Invocation, Chaotic Good	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 1x Chaotic, 1x Radiant	
+Candle of Invocation, Chaotic Neutral	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 2x Chaotic	
+Candle of Invocation, Lawful Evil	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 1x Fiendish, 1x Inert	
+Candle of Invocation, Lawful Good	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 1x Inert, 1x Radiant	
+Candle of Invocation, Lawful Neutral	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 2x Inert	
+Candle of Invocation, Neutral	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 2x Mercurial	
+Candle of Invocation, Neutral Evil	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 2x Fiendish	
+Candle of Invocation, Neutral Good	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Candle, 3x Dimensional, 2x Radiant	
+Carpet of Flying	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	5-8x Textile (varies size), 8x Zephyrous	
+Cauldron of Rebirth	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	6x Metal, 1x Mercurial, 6x Vital	
+Cloak of Arachnida	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x (Bug) Fluid, 4x Mercurial, 4x Poisonous	
+Crystal Ball	Very Rare	Dungeon Master's Guide	TRUE	TRUE	Wondrous Item	1x Crystal, 8x Theurgic	Cast scrying (DC 17) at will when attuned.
+Crystalline Chronicle	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item	1x Crystal, 4x Chaotic, 4x Theurgic	
+Dragon Vessel, Wakened	Very Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x R (Glass) Stirring Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x R (Leather) Stirring Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x R (Earthenware) Stirring Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x R (Metal) Stirring Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x R (Bone) Stirring Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait)	Like stirring, but must be steeped on an Adult Dragon's hoard to also fill with a Potion of Superior Healing or a Potion of Flying.
+Dragon-Touched Focus, Wakened	Very Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x R (Gem) Stirring Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x R (Metal) Stirring Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x R (Mineral) Stirring Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x R (Bone/Hardwood) Stirring Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like stirring, but must be steeped on an Adult Dragon's hoard to cast additional spells determined by the family of Dragon.
+Dragonhide Belt +3	Very Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x (Dragon) Hide, 3x Leather, 8x Phantasmal	Made of dragonhide, grants +3 to save DC of ki features and can regain ki when monk attuned.
+Efreeti Bottle	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Bottle, 3x Dimensional, 3x Fiery, efreeti trapped inside a magic circle	
+Figurine of Wondrous Power, Obsidian Steed	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Fiendish Mineral, 2x Mercurial, 2x Vital	Made of obsidian, can become a nightmare for 24 hours when thrown (10% chance to ignore and potentially banish good-aligned creatures).
+Helm of Brilliance	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Metal, 3x Fiery Gem, 3x Radiant Gem	Containing 5 diamonds, 10 rubies, 15 fire opals and 20 opals, can cast spells and empower attacks.
+Horn of Valhalla, Bronze	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Lightning Metal, 4x Dimensional	
+Horseshoes of a Zephyr	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Cold Metal, 2x Zephyrous	
+Ioun Stone, Absorption	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 6x Inert	
+Ioun Stone, Agility	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Mercurial	
+Ioun Stone, Fortitude	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Vital	
+Ioun Stone, Insight	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Phantasmal	
+Ioun Stone, Intellect	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Theurgic	
+Ioun Stone, Leadership	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Psychic	
+Ioun Stone, Strength	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Forceful	
+Manual of Bodily Health	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Vital	
+Manual of Gainful Exercise	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Forceful	
+Manual of Golems, Clay	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Theurgic, 3x Earthenware	Create a Clay Golem (after expending 60 days reading and 50,000,000 gp buying supplies) when consumed by a spellcaster with two 5th-level spell slots.
+Manual of Golems, Flesh	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Theurgic, 3x Flesh	Create a Flesh Golem (after expending 60 days reading and 50,000,000 gp buying supplies) when consumed by a spellcaster with two 5th-level spell slots.
+Manual of Golems, Iron	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Theurgic, 3x Metal	Create a Iron Golem (after expending 60 days reading and 50,000,000 gp buying supplies) when consumed by a spellcaster with two 5th-level spell slots.
+Manual of Golems, Stone	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Theurgic, 3x Mineral	Create a Stone Golem (after expending 60 days reading and 50,000,000 gp buying supplies) when consumed by a spellcaster with two 5th-level spell slots.
+Manual of Quickness of Action	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Mercurial	
+Mirror of Life Trapping	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	4x Glass, 4x Metal, 8x Dimensional	
+Nolzur's Marvelous Pigments	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Painter's Supplies, 2x Mercurial, 2x Phantasmal	
+Robe of Scintillating Colors	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Robe, 5x (Flail Snail) Phantasmal Bone, 2x Theurgic	
+Robe of Stars	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Robe, 3x Dimensional, 3x Forceful, 1x Theurgic	
+Scaled Ornament, Wakened	Very Rare	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x R Stirring Scaled Ornament, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like stirring, but must be steeped on an Adult Dragon's hoard to absorb and heal from DMG corresponding to the kind of Dragon.
+Tome of Clear Thought	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Theurgic	
+Tome of Leadership and Influence	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Psychic	Increases your CHA by 2 after spending 48 hours reading; neither you nor the book can do this again for a century.
+Tome of Understanding	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 5x Phantasmal	
+Wraps of Unarmed Power +3	Very Rare	Crafting	TRUE	TRUE	Wondrous Item	4x Leather, 8x Forceful;4x Textile, 8x Forceful	Grants +3 to ATK and DMG with unarmed strikes and can make them deal force DMG when worn.
+Instrument of the Bards, Anstruth Harp	Very Rare	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Harp, 3x Chaotic, 4x Phantasmal	
+Rhythm-Maker's Drum +3	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Instrument	1x (Metal) Drum, 8x Phantasmal;1x (Bone/Hardwood) Drum, 8x Phantasmal	
+Absorbing Tattoo, Acid	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Acidic	
+Absorbing Tattoo, Cold	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Cold	
+Absorbing Tattoo, Fire	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Fiery	
+Absorbing Tattoo, Force	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Forceful	
+Absorbing Tattoo, Lightning	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Lightning	
+Absorbing Tattoo, Necrotic	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Necrotic	
+Absorbing Tattoo, Poison	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Poisonous	
+Absorbing Tattoo, Psychic	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Psychic	
+Absorbing Tattoo, Radiant	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Radiant	
+Absorbing Tattoo, Thunder	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Thundering	
+Barrier Tattoo, Large	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Forceful	
+Ghost Step Tattoo	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 5x Mercurial, 2x Theurgic	
+Lifewell Tattoo	Very Rare	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	7x Ink, 8x Vital	
+Arrows +4 (20)	Legendary	Crafting	TRUE	TRUE	Ammunition	As (Metal) Arrows;As (Mineral) Arrows;As (Bone) Arrows	Grants +4 to ATK and DMG with bows when consumed.
+Blowgun Needles +4 (50)	Legendary	Crafting	TRUE	TRUE	Ammunition	As (Metal) Blowgun Needles;As (Bone) Blowgun Needles	Grants +4 to ATK and DMG with blowguns when consumed.
+Crossbow Bolts +4 (20)	Legendary	Crafting	TRUE	TRUE	Ammunition	As Crossbow Bolts	Grants +4 to ATK and DMG with crossbows when consumed.
+Sling Bullets +4 (20)	Legendary	Crafting	TRUE	TRUE	Ammunition	As (Metal) Sling Bullets;As (Mineral) Sling Bullets	Grants +4 to ATK and DMG with slings when consumed.
+Armor +3	Legendary	Dungeon Master's Guide	TRUE	TRUE	Armor	As (Leather) Armor;As (Metal) Armor;As (Hide/Textile) Armor	Grants +3 to AC when worn.
+Efreeti Chain	Legendary	Dungeon Master's Guide	TRUE	FALSE	Armor	1x +3 Chain Mail, 3x Dimensional, 5x Fiery	
+Plate Armor of Etherealness	Legendary	Dungeon Master's Guide	TRUE	FALSE	Armor	1x +3 Plate Armor, 7x Dimensional	
+Plate Armor of Invulnerability	Legendary	Dungeon Master's Guide	TRUE	TRUE	Armor	1x +3 Plate Armor, 8x Inert	Grants resistance to nonmagical DMG and can grant immunity when attuned.
+Potion of Dragon's Majesty (3)	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Potion	1x (Dragon) Gem/Hide/Metal, 3x Fluid, 3x Mercurial	Made with a scale from a Dragon, transforms you into an Adult Dragon of the same kind for an hour when consumed.
+Potion of Storm Giant Strength (3)	Legendary	Dungeon Master's Guide	TRUE	FALSE	Potion	2x Fluid, 1x (Storm) Inert Bone, 2x Forceful	
+Ring of Djinni Summoning	Legendary	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 4x Dimensional, 3x Zephyrous, Friendly Djinni	
+Ring of Elemental Command, Air	Legendary	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 2x Dimensional, 2x Theurgic, 3x Zephyrous	
+Ring of Elemental Command, Earth	Legendary	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 2x Dimensional, 3x Inert, 2x Theurgic	
+Ring of Elemental Command, Fire	Legendary	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 2x Dimensional, 3x Fiery, 2x Theurgic	
+Ring of Elemental Command, Water	Legendary	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 2x Dimensional, 3x Mercurial, 2x Theurgic	
+Ring of Invisibility	Legendary	Dungeon Master's Guide	TRUE	TRUE	Ring	1x Ring, 8x Phantasmal	Can grant invisible until attack or cast a spell when attuned.
+Ring of Spell Turning	Legendary	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 8x Forceful	
+Ring of Three Wishes	Legendary	Dungeon Master's Guide	TRUE	FALSE	Ring	1x Ring, 3x Chaotic, 3x Theurgic	
+Rod of Lordly Might	Legendary	Dungeon Master's Guide	TRUE	FALSE	Rod	1x Rod, 3x Chaotic, 4x Mercurial	
+Rod of Resurrection	Legendary	Dungeon Master's Guide	TRUE	TRUE	Rod	1x Rod, 2x Theurgic, 5x Vital	Cast heal or resurrection when cleric, druid or paladin attuned (5 charges).
+Spell Scroll, 9th Level	Legendary	Dungeon Master's Guide	TRUE	TRUE	Scroll	2x Ink, 1x Paper/Parchment, 3x Chaotic, Cast the Spell with a Spell Slot	Cast a specific 9th-level spell (DC 19, ATK +11) when consumed.
+Shield +4	Legendary	Crafting	TRUE	TRUE	Shield	As (Metal) Shield;As (Bone/Hardwood) Shield	Grants +4 to AC (for a total of +6) when held.
+Staff of the Magi	Legendary	Dungeon Master's Guide	TRUE	FALSE	Staff	1x (Metal) Staff of Power, 4x Inert, 3x Theurgic;1x (Bone/Hardwood) Staff of Power, 4x Inert, 3x Theurgic	
+Defender (Sword)	Legendary	Dungeon Master's Guide	TRUE	TRUE	Weapon	1x +4 (Sword) Weapon, 8x Forceful	Grants +3 to ATK and DMG and can transfer bonus to AC when attuned.
+Dragon's Wrath Weapon, Ascendant	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon	1x VR (Leather) Wakened Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x VR (Metal) Wakened Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x VR (Mineral) Wakened Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x VR (Bone/Hardwood) Wakened Dragon's Wrath Weapon, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like wakened, but must be steeped on an Ancient Dragon's hoard to upgrade to +3, 3d6, and DEX 18, 12d6/half.
+Holy Avenger (Sword)	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +4 (Sword) Weapon, 8x Radiant	
+Luck Blade (3, Sword)	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +4 (Sword) Weapon, 5x Chaotic, 3x Theurgic	
+Vorpal Sword (Sword, Slashing)	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon	1x +4 (Sword, Slashing) Weapon, 3x Necrotic, 5x Forceful	
+Weapon +4	Legendary	Crafting	TRUE	TRUE	Weapon	As (Leather) Weapon;As (Metal) Weapon;As (Mineral) Weapon;As (Bone/Hardwood) Weapon	Grants +4 to ATK and DMG with this weapon.
+Dragonlance	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon, Martial Melee	1x +4 Lance/(Metal) Pike, 8x Forceful	+3 Lance or Pike, deals 3d6 extra force DMG to Dragons and allows a Dragon within 30ft to attack as a reaction when attuned.
+Flail of Tiamat	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon, Martial Melee	1x +4 Flail, 5x Chaotic, 2x Theurgic	+3 Flail, deals 5d4 extra acid/cold/fire/lightning/poison DMG, and can breath attack (90ft cone, DEX 18, 14d6/half) when attuned.
+Hammer of Thunderbolts	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Maul, 3x Inert, 1x Theurgic, 4x Thundering	
+Sword of Answering, Answerer	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 4x Chaotic, 4x Radiant	
+Sword of Answering, Back Talker	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 4x Chaotic, 4x Fiendish	
+Sword of Answering, Concluder	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 8x Inert	
+Sword of Answering, Last Quip	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 8x Chaotic	
+Sword of Answering, Rebutter	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 8x Radiant	
+Sword of Answering, Replier	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 8x Mercurial	
+Sword of Answering, Retorter	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 4x Inert, 4x Radiant	
+Sword of Answering, Scather	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 4x Inert, 4x Fiendish	
+Sword of Answering, Squelcher	Legendary	Dungeon Master's Guide	TRUE	FALSE	Weapon, Martial Melee	1x +4 Longsword, 8x Fiendish	
+Topaz Annihilator	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Weapon, Martial Ranged	6x Metal, 1x Necrotic (Dragon) Gem, 7x Necrotic	Made with a scale from a Topaz Dragon, its a martial ranged weapon which has two-handed, range 100/300 (no ammo), deals 2d6 necrotic DMG, can cast disintegrate (DC 18) when attuned.
+Apparatus of Kwalish	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x Metal, 3x Mercurial, 3x Theurgic, 2x Zephyrous	
+Battling Clothes +3	Legendary	Crafting	TRUE	TRUE	Wondrous Item	1x Clothes, 4x Forceful, 4x Theurgic	Grants +3 AC and can grant the effects of runes normally applied on armor.
+Belt of Cloud Giant Strength	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Leather, 3x Metal, 4x Forceful, 4x Inert	
+Belt of Storm Giant Strength	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	5x Leather, 3x Metal, 4x Forceful, 4x Inert	Set STR to 29 if it was lower when attuned.
+Cloak of Invisibility	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	7x Textile, 6x Phantasmal, 1x Theurgic	
+Crystal Ball of Mind Reading	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Crystal Ball, 4x Psychic, 4x Theurgic	
+Crystal Ball of Telepathy	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Crystal Ball, 5x Psychic, 3x Theurgic	
+Crystal Ball of True Seeing	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Crystal Ball, 8x Theurgic	
+Cubic Gate	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Metal, 6x Dimensional, 1x Theurgic	Allows travel to the Astral Plane, Ethereal Plane, Feywild, Shadowfell, Sigil, or back to the Material Plane.
+Deck of Many Things	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Parchment) Playing Card Set, 8x Chaotic	
+Dragon Vessel, Ascendant	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x VR (Glass) Wakened Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x VR (Leather) Wakened Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x VR (Earthenware) Wakened Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x VR (Metal) Wakened Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait);1x VR (Bone) Wakened Dragon Vessel, 1x (Dragon) Material, 6x [Trait] (of the same trait)	Like wakened, but must be steeped on an Ancient Dragon's hoard to also fill with a Potion of Supreme Healing or a Potion of Dragon's Majesty.
+Dragon-Touched Focus, Ascendant	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x VR (Gem) Wakened Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x VR (Metal) Wakened Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x VR (Mineral) Wakened Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait);1x VR (Bone/Hardwood) Wakened Dragon-Touched Focus, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like wakened, but must be steeped on an Ancient Dragon's hoard to upcast any spell to 9th level.
+Figurine of Wondrous Power, Gold Canary	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	3x Radiant Metal, 2x Mercurial, 2x Vital	Made of gold, can become a rideable giant canary for 8 hours (1/day), or (while you're staggered) an adult gold dragon for 1 hour (1/year), when thrown.
+Horn of Valhalla, Iron	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Cold Metal, 4x Dimensional	
+Ioun Stone, Greater Absorption	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 6x Inert	
+Ioun Stone, Mastery	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Theurgic	
+Ioun Stone, Regeneration	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 8x Vital	
+Iron Flask (empty)	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x (Metal) Flask, 4x Dimensional, 4x Inert	
+Platinum Scarf	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	5x Textile, 3x Mercurial, 2x Radiant, 2x Vital	Grows 3 scales/day, which can heal 10d4 HP, become a +1 Shield that grants immunity to radiant DMG, or a light hammer that deals 2d4 radiant DMG (2d4 extra to Chromatic Dragons) when attuned.
+Robe of the Archmagi, Black	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Robe, 6x Forceful, 2x Fiendish	
+Robe of the Archmagi, Gray	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Robe, 6x Forceful, 2x Mercurial	
+Robe of the Archmagi, White	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Robe, 6x Forceful, 2x Radiant	
+Ruby Weave Gem	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x Fiery Gem, 6x Theurgic	Can be used as spellcasting focus, can ignore up to 500 gp of material components per charge, and grants any spell of your choice when spellcaster attuned (3 charges).
+Scaled Ornament, Ascendant	Legendary	Fizban's Treasury of Dragons	TRUE	FALSE	Wondrous Item	1x VR Wakened Scaled Ornament, 1x (Dragon) Material, 7x [Trait] (of the same trait)	Like wakened, but must be steeped on an Ancient Dragon's hoard to grant a flying speed equal to your walking speed and hover.
+Scarab of Protection	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Gem, 1x Metal, 3x Inert, 3x Necrotic	
+Sovereign Glue (7 oz.)	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Oil of Slipperiness, 4x Fuid, 4x Forceful	
+Sphere of Annihilation	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	8x Void Ink	
+Talisman of Pure Good	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Hardwood, 3x Radiant, 3x Void	
+Talisman of the Sphere	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Metal, 4x Forceful, 4x Void	
+Talisman of Ultimate Evil	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	2x Hardwood, 3x Fiendish, 3x Void	
+Tome of the Stilled Tongue	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	1x Book, 4x Necrotic, 4x Theurgic	
+Universal Solvent	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	3x Fluid, 3x Void	
+Well of Many Worlds	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item	7x Textile, 3x Chaotic, 4x Dimensional	
+Instrument of the Bards, Ollamh Harp	Legendary	Dungeon Master's Guide	TRUE	FALSE	Wondrous Item, Instrument	1x Harp, 3x Chaotic, 4x Phantasmal	Can apply DIS on saves against charm and cast fly, invisibility, levitate, protection from evil and good, confusion, control weather, and fire storm when bard attuned.
+Blood Fury Tattoo	Legendary	Tasha's Cauldron of Everything	TRUE	FALSE	Wondrous Item, Tattoo	8x Ink, 3x Necrotic, 2x Theurgic, 2x Vital	
+Modern Bullets (30)	Common	Combat Module	FALSE	TRUE	Ammunition	5x Metal	Used in modern Firearms.
+Club	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	3x Bone/Hardwood	4 B - One-Handed - Reach: 1 cube - MODs: Melee, Crusher, Lucky
+Dagger	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	2x Metal	3 P - One-Handed, Light, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Impaler, Throwable
+Dart	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	2x Metal;2x Bone	3 P - One-Handed, Light, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Impaler, Throwable
+Greatclub	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	5x Hardwood	6 B - Two-Handed, Heavy - Reach: 1 cube - MODs: Melee, Crusher, Titan
+Handaxe	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	2x Metal, 2x Hardwood;1x Mineral, 2x Hardwood;1x Bone, 2x Hardwood	4 S - One-Handed, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Cleaver, Throwable
+Javelin	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	3x Metal;2x Bone/Hardwood	4 P - One-Handed, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Impaler, Throwable
+Light Hammer	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	2x Metal, 2x Hardwood;1x Mineral, 2x Hardwood;1x Bone, 2x Hardwood	4 B - One-Handed, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Crusher, Throwable
+Mace	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	3x Metal	4 B - One-Handed - Reach: 1 cube - MODs: Melee, Crusher, Lucky
+Quarterstaff	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	4x Hardwood	4 B - One-Handed - Reach: 1 cube - MODs: Melee, Crusher, Lucky
+Sickle	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	3x Metal	3 S - One-Handed, Light - Reach: 1 cube - MODs: Melee, Cleaver, Lucky
+Spear	Common	Combat Module	FALSE	TRUE	Weapon, Simple Melee	2x Metal, 2x Hardwood;1x Mineral, 2x Hardwood;1x Bone, 2x Hardwood	4 P - One-Handed, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Impaler, Throwable
+Crossbow, Light	Common	Combat Module	FALSE	TRUE	Weapon, Simple Ranged	1x Flesh/Textile, 1x Metal, 2x Hardwood	4 P - Two-Handed, Ammo, Loading - Range: 12 / 48 cubes - MODs: Ranged, Light Ammo, Mechanic
+Shortbow	Common	Combat Module	FALSE	TRUE	Weapon, Simple Ranged	1x Flesh, 2x Hardwood	4 P - Two-Handed, Ammo - Range: 12 / 48 cubes - MODs: Ranged, Light Ammo, Muscular
+Sling	Common	Combat Module	FALSE	TRUE	Weapon, Simple Ranged	3x Leather	3 P - One-Handed, Ammo - Range: 9 / 36 cubes - MODs: Ranged, Light Ammo, Muscular
+Battleaxe	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal, 2x Hardwood;2x Mineral, 2x Hardwood;2x Bone, 2x Hardwood	6 S - Two-Handed, Heavy - Reach: 1 cube - MODs: Melee, Cleaver, Titan
+Cudgel	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee		5 B - Two-Handed - Reach: 1 cube - MODs: Melee, Crusher, Lucky
+Flail	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal, 1x Hardwood	4 B - One-Handed, Reach - Reach: 2 cubes - MODs: Melee, Crusher, Long
+Giant Yoyo	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee		4 B - One-Handed, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Crusher, Throwable
+Glaive	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	2x Metal, 2x Hardwood	5 S - Two-Handed, Reach - Reach: 2 cubes - MODs: Melee, Cleaver, Long
+Greataxe	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	4x Metal, 3x Hardwood;3x Mineral, 3x Hardwood;3x Bone, 3x Hardwood	6 S - Two-handed, Heavy - Reach: 1 cube - MODs: Melee, Cleaver, Titan
+Greatsword	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	6x Metal	6 S - Two-handed, Heavy - Reach: 1 cube - MODs: Melee, Cleaver, Lucky
+Halberd	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	2x Metal, 2x Hardwood	5 S - Two-Handed, Reach - Reach: 2 cubes - MODs: Melee, Cleaver, Long
+Hooked Sword	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee		3 S - One-Handed, Light - Reach: 1 cube - MODs: Melee, Cleaver, Titan
+Lance	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	5x Metal, 1x Hardwood	5 P - Two-Handed, Reach - Reach: 2 cubes - MODs: Melee, Impaler, Long
+Longsword	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	5x Metal	5 S - Two-Handed - Reach: 1 cube - MODs: Melee, Cleaver, Lucky
+Maul	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal, 3x Hardwood	6 B - Two-handed, Heavy, Reach - Reach: 2 cubes - MODs: Melee, Crusher, Long
+Morningstar	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal, 3x Hardwood	4 P - One-Handed - Reach: 1 cube - MODs: Melee, Impaler, Lucky
+Pike	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	2x Metal, 3x Hardwood;1x Mineral, 3x Hardwood;1x Bone, 3x Hardwood	6 P - Two-handed, Heavy, Reach - Reach: 1 cube - MODs: Melee, Impaler, Long
+Rapier	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	4x Metal	4 P - One-Handed, Finesse - Reach: 1 cube - MODs: Melee, Impaler, Agile
+Scimitar	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal	3 S - One-Handed, Light, Finesse - Reach: 1 cube - MODs: Melee, Cleaver, Agile
+Shortsword	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal	3 P - One-Handed, Light, Finesse - Reach: 1 cube - MODs: Melee, Impaler, Agile
+Tonfa	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee		3 B - One-Handed, Light - Reach: 1 cube - MODs: Melee, Crusher, Agile
+Trident	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal, 2x Hardwood	4 P - One-Handed, Thrown (6 / 18 cubes) - Reach: 1 cube - MODs: Melee, Impaler, Throwable
+War Pick	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal, 3x Hardwood;2x Mineral, 3x Hardwood;2x Bone, 3x Hardwood	6 P - Two-handed, Heavy - Reach: 1 cube - MODs: Melee, Impaler, Titan
+Warhammer	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Metal, 3x Hardwood	6 B - Two-handed, Heavy, Reach - Reach: 2 cubes - MODs: Melee, Crusher, Long
+Whip	Common	Combat Module	FALSE	TRUE	Weapon, Martial Melee	3x Leather	3 S - One-Handed, Light, Reach - Reach: 2 cubes - MODs: Melee, Cleaver, Long
+Blowgun	Common	Combat Module	FALSE	TRUE	Weapon, Martial Ranged	3x Hardwood	3 P - One-Handed, Ammo - Range: 9 / 36 cubes - MODs: Ranged, Light Ammo, Muscular
+Crossbow, Hand	Common	Combat Module	FALSE	TRUE	Weapon, Martial Ranged	1x Flesh/Textile, 2x Metal, 1x Hardwood	3 P - One-Handed, Ammo, Loading - Range: 9 / 36 cubes - MODs: Ranged, Light Ammo, Mechanic
+Crossbow, Heavy	Common	Combat Module	FALSE	TRUE	Weapon, Martial Ranged	1x Flesh/Textile, 2x Metal, 2x Hardwood	5 P - Two-handed, Heavy, Ammo, Loading - Range: 18 / 72 cubes - MODs: Ranged, Heavy Ammo, Mechanic
+Longbow	Common	Combat Module	FALSE	TRUE	Weapon, Martial Ranged	1x Flesh, 4x Hardwood	5 P - Two-handed, Heavy, Ammo - Range: 18 / 72 cubes - MODs: Ranged, Heavy Ammo, Muscular
+Magnum	Common	Combat Module	FALSE	TRUE	Weapon, Firearm		3 P - One-Handed, Ammo, Reload (6 Shots) - Range: 9 / 36 cubes - MODs: Ranged, Heavy Ammo, Firearm
+Revolver	Common	Combat Module	FALSE	TRUE	Weapon, Firearm		3 P - One-Handed, Ammo, Reload (6 Shots) - Range: 9 / 36 cubes - MODs: Ranged, Light Ammo, Firearm
+Rifle	Common	Combat Module	FALSE	TRUE	Weapon, Firearm		4 P - Two-Handed, Ammo, Reload (6 Shots) - Range: 18 / 72 cubes - MODs: Ranged, Light Ammo, Firearm
+Shotgun	Common	Combat Module	FALSE	TRUE	Weapon, Firearm		5 P - Two-Handed, Heavy, Ammo, Reload (6 Shots) - Range: 18 / 72 cubes - MODs: Ranged, Heavy Ammo, Firearm

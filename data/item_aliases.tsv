@@ -1,0 +1,65 @@
+master_name	scraped_name	note
+Bottle	Glass Bottle	Scraped uses the Player's Handbook name.
+Flask or Tankard	Flask	Master combines the two PHB entries; Flask chosen.
+Jug or Pitcher	Jug	Master combines the two PHB entries; Jug chosen.
+Hammer, Sledge	Sledgehammer	Scraped spells it as one word.
+Bread, Loaf	Loaf of Bread	Word order differs.
+Cheese, Hunk	Hunk of Cheese	Word order differs.
+Meat, Chunk	Chunk of Meat	Word order differs.
+Robe	Robes	Scraped uses the plural.
+Bandore	Musical Instrument	Mundane instrument; scraped has a generic entry.
+Cittern	Musical Instrument	Mundane instrument; scraped has a generic entry.
+Concertina	Musical Instrument	Mundane instrument; scraped has a generic entry.
+Harp	Musical Instrument	Mundane instrument; scraped has a generic entry.
+Mandolin	Musical Instrument	Mundane instrument; scraped has a generic entry.
+Plate Armor of Invulnerability	Armor of Invulnerability	Scraped uses the generic armor name.
+Ring	Signet Ring	Scraped uses the Player's Handbook name.
+Scroll of Protection from Constructs	Scroll of Protection	Scraped doesn't include this variant.
+Scroll of Protection from Dragons	Scroll of Protection	Scraped doesn't include this variant.
+Scroll of Protection from Giants	Scroll of Protection	Scraped doesn't include this variant.
+Scroll of Protection from Humanoids	Scroll of Protection	Scraped doesn't include this variant.
+Scroll of Protection from Monstrosities	Scroll of Protection	Scraped doesn't include this variant.
+Scroll of Protection from Oozes	Scroll of Protection	Scraped doesn't include this variant.
+Prayer Bead, Blessing	Necklace of Prayer Beads	Scraped includes them in the description of the necklace.
+Prayer Bead, Curing	Necklace of Prayer Beads	Scraped includes them in the description of the necklace.
+Prayer Bead, Favor	Necklace of Prayer Beads	Scraped includes them in the description of the necklace.
+Prayer Bead, Smiting	Necklace of Prayer Beads	Scraped includes them in the description of the necklace.
+Prayer Bead, Summons	Necklace of Prayer Beads	Scraped includes them in the description of the necklace.
+Prayer Bead, Wind Walking	Necklace of Prayer Beads	Scraped includes them in the description of the necklace.
+Ammunition of Slaying, Aberrations (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Beasts (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Celestials (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Constructs (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Amethyst, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Black, Copper, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Blue, Bronze, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Brass, Gold, Red, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Crystal, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Emerald, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Green, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Sapphire, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Silver, White, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Dragons (Topaz, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Elementals (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Elementals (Air, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Elementals (Earth, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Elementals (Fire, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Elementals (Water, 10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Fey (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Fiends (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Giants (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Humanoids (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Monstrosities (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Oozes (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Plants (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Ammunition of Slaying, Undead (10)	Arrow of Slaying (*)	Scraped calls the generic version Arrows too.
+Manual of Golems, Clay	Manual of Clay Golems	Word order differs.
+Manual of Golems, Flesh	Manual of Flesh Golems	Word order differs.
+Manual of Golems, Iron	Manual of Iron Golems	Word order differs.
+Manual of Golems, Stone	Manual of Stone Golems	Word order differs.
+Ring of Elemental Command, Air	Ring of Air Elemental Command	Word order differs.
+Ring of Elemental Command, Earth	Ring of Earth Elemental Command	Word order differs.
+Ring of Elemental Command, Fire	Ring of Fire Elemental Command	Word order differs.
+Ring of Elemental Command, Water	Ring of Water Elemental Command	Word order differs.
+Rifle	Hunting Rifle	Scraped uses the Player's Handbook name.

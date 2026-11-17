@@ -1,4 +1,4 @@
-out
 .env
-learn-cicd-starter
+__pycache__/
 craftingo
+.zed/
