@@ -1,9 +1,0 @@
-craftingo
-*.log
-data
-.git
-.gitignore
-docker-compose.yaml
-prometheus.yml
-buildrun.sh
-*.md
