@@ -1,0 +1,18 @@
+{{template "head" .}}
+<p class="small"><a href="/admin">← dashboard</a></p>
+<h1>Users</h1>
+{{if .Error}}<div class="flash err">{{.Error}}</div>{{end}}
+<form method="post" action="/admin/users" class="panel row">
+<div><label>Username</label><input name="username" required></div>
+<div><label>Password</label><input name="password" type="password" required></div>
+<div><label>Role</label><select name="role"><option value="player">player</option><option value="dm">dm</option></select></div>
+<div><button>Create account</button></div>
+</form>
+<table class="panel">
+<tr><th>Username</th><th>Role</th><th>Created</th><th></th></tr>
+{{range .Users}}
+<tr><td>{{.Username}}</td><td>{{.Role}}</td><td class="small muted">{{.CreatedAt}}</td>
+<td>{{if eq .Role "dm"}}<span class="small muted">—</span>{{end}}<form method="post" action="/admin/users/{{.ID}}/delete"><button class="small">Delete</button></form></td></tr>
+{{end}}
+</table>
+{{template "foot" .}}

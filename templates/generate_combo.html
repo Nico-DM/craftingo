@@ -1,0 +1,43 @@
+{{template "head" .}}
+<p class="small"><a href="/generate/{{.Arch.ID}}">← choose another base</a></p>
+<h1>{{.Combo.Name}}</h1>
+<div>
+<span class="badge {{rarityClass .Combo.Rarity}}">{{.Combo.Rarity}}</span>
+<span class="badge">generated</span>
+<span class="badge">base: {{.Base.Name}}</span>
+{{if .Arch.Archetype.Tier}}<span class="badge">+{{.Arch.Archetype.Tier}}</span>{{end}}
+</div>
+
+<h2>Composed recipe</h2>
+<div class="panel">
+{{if .Combo.Recipe}}
+  {{if eq .Combo.Recipe.Kind "inherit"}}<p>Same materials as <a href="/items/{{.Base.ID}}">{{.Base.Name}}</a>.</p>
+  {{else}}
+    {{range .Combo.Recipe.Groups}}{{template "formgroup" .}}{{end}}
+    {{template "extras" .Combo.Recipe}}
+  {{end}}
+  {{range .Combo.Recipe.Notes}}<div class="small muted">note: {{.}}</div>{{end}}
+{{else}}<p class="muted">No recipe.</p>{{end}}
+</div>
+
+{{if .Checked}}
+<h2>Your inventory</h2>
+<div class="panel">
+{{if .Result.Groups}}
+{{range .Result.Groups}}
+<div class="opt"><div class="req"><strong>{{.Group.Quantity}}×</strong> {{range $i, $o := .Group.Options}}{{if $i}} or {{end}}{{template "option" $o}}{{end}}</div>
+<div class="small {{if .Missing}}have-bad{{else}}have-ok{{end}}">have {{.Have}} / {{.Required}}{{if .Missing}} · missing {{.Missing}}{{end}}{{if .VariableTrait}} · bound trait: {{.VariableTrait}}{{end}}</div></div>
+{{end}}
+<div class="small {{if .Result.CanCraft}}have-ok{{else}}have-bad{{end}}">{{if .Result.CanCraft}}Everything is available.{{else}}{{.Result.MissingAll}} unit(s) missing.{{end}}</div>
+{{else}}<p class="muted">This generated recipe has no material groups to check.</p>{{end}}
+</div>
+{{end}}
+
+<h2>Base item</h2>
+<div class="panel">
+<strong><a href="/items/{{.Base.ID}}">{{.Base.Name}}</a></strong>
+{{if .Base.Recipe}}
+  {{if eq .Base.Recipe.Kind "groups"}}{{range .Base.Recipe.Groups}}{{template "formgroup" .}}{{end}}{{else}}<div class="small muted">As {{.Base.Recipe.BaseSelector.Name}}</div>{{end}}
+{{else}}<div class="small muted">No recipe.</div>{{end}}
+</div>
+{{template "foot" .}}

@@ -1,0 +1,40 @@
+{{template "head" .}}
+<p class="small"><a href="/items/{{.Item.ID}}">← {{.Item.Name}}</a></p>
+<h1>Craft {{.Item.Name}}</h1>
+{{if .NoRecipe}}
+  <div class="panel muted">This item has no material recipe.</div>
+{{else}}
+<div class="row" style="margin-bottom:12px">
+<form method="post" action="/craft/{{.Item.ID}}"><button>Check my inventory</button></form>
+<a class="badge" href="/inventory">Edit inventory</a>
+{{if .Result.CanCraft}}<span class="badge have-ok">you have everything</span>{{else}}<span class="badge have-bad">{{.Result.MissingAll}} unit(s) missing</span>{{end}}
+</div>
+
+<div class="panel">
+{{range .Result.Groups}}
+<div class="opt">
+<div class="req">
+<strong>{{.Group.Quantity}}{{if .Group.QuantityMax}}–{{.Group.QuantityMax}}{{end}}×</strong>
+{{if .Group.MinRarity}}<span class="badge">{{.Group.MinRarity}}+</span>{{end}}
+{{range $i, $o := .Group.Options}}{{if $i}}<span class="muted"> or </span>{{end}}{{template "option" $o}}{{end}}
+</div>
+<div class="small {{if .Missing}}have-bad{{else}}have-ok{{end}}">
+have {{.Have}} / {{.Required}}{{if .Missing}} · missing {{.Missing}}{{end}}
+{{if .VariableTrait}} · bound trait: <strong>{{.VariableTrait}}</strong>{{end}}
+</div>
+</div>
+{{end}}
+{{template "extras" .Item.Recipe}}
+</div>
+
+{{if .Result.Subcrafts}}
+<h2>Craft these first</h2>
+<div class="grid">
+{{range .Result.Subcrafts}}<div class="card"><a href="/items/{{.Item.ID}}">{{.Item.Name}}</a><div class="small muted">intermediate · <a href="/craft/{{.Item.ID}}">steps</a></div></div>{{end}}
+</div>
+{{end}}
+
+<h2>How this is counted</h2>
+<p class="small muted">A unit counts toward every group it qualifies for. Missing counts never allocate one unit to two groups, so if you are short here you may still be short after crafting an intermediate. Trait quantities are balance values and are not changed by the calculator.</p>
+{{end}}
+{{template "foot" .}}

@@ -1,9 +1,10 @@
 package main
 
 import (
+	"context"
 	"database/sql"
 	"embed"
-	"io"
+	"html/template"
 	"log"
 	"log/slog"
 	"net/http"
@@ -11,91 +12,131 @@ import (
 	"time"
 
 	"github.com/go-chi/chi"
-	"github.com/go-chi/cors"
 	"github.com/joho/godotenv"
 
-	"github.com/bootdotdev/learn-cicd-starter/internal/database"
-
-	_ "github.com/tursodatabase/libsql-client-go/libsql"
+	"github.com/Nico-DM/craftingo/internal/catalog"
+	"github.com/Nico-DM/craftingo/internal/database"
 )
 
 type apiConfig struct {
-	DB *database.Queries
+	DB        *sql.DB
+	Q         *database.Queries
+	Store     *catalog.Store
+	templates *template.Template
 }
 
-//go:embed static/*
-var staticFiles embed.FS
+//go:embed templates/*.html
+var templateFiles embed.FS
 
 func main() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Printf("warning: assuming default configuration. .env unreadable: %v", err)
-	}
+	_ = godotenv.Load(".env")
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		log.Fatal("PORT environment variable is not set")
+		port = "8080"
 	}
 
-	apiCfg := apiConfig{}
-
-	// https://github.com/libsql/libsql-client-go/#open-a-connection-to-sqld
-	// libsql://[your-database].turso.io?authToken=[your-auth-token]
 	dbURL := os.Getenv("DATABASE_URL")
 	if dbURL == "" {
-		log.Println("DATABASE_URL environment variable is not set")
-		log.Println("Running without CRUD endpoints")
-	} else {
-		db, err := sql.Open("libsql", dbURL)
-		if err != nil {
-			log.Fatal(err)
-		}
-		dbQueries := database.New(db)
-		apiCfg.DB = dbQueries
-		log.Println("Connected to database!")
+		log.Fatal("DATABASE_URL environment variable is not set")
+	}
+	db, err := catalog.OpenDB(dbURL)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	store := catalog.NewStore(db)
+	if err := store.Load(context.Background()); err != nil {
+		log.Fatalf("load catalog (did you run the migrations and seed?): %v", err)
 	}
 
-	router := chi.NewRouter()
+	funcs := template.FuncMap{
+		"rarityClass": rarityClass,
+		"join":        joinNonEmpty,
+		"hasPrefix":   hasPrefix,
+		"seq":         seq,
+		"dict":        dict,
+		"add":         func(a, b int) int { return a + b },
+		"pct": func(a, b int) int {
+			if b == 0 {
+				return 0
+			}
+			return a * 100 / b
+		},
+	}
+	tmpl := template.Must(template.New("").Funcs(funcs).ParseFS(templateFiles, "templates/*.html"))
 
-	router.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"https://*", "http://*"},
-		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowedHeaders:   []string{"*"},
-		ExposedHeaders:   []string{"Link"},
-		AllowCredentials: false,
-		MaxAge:           300,
-	}))
+	cfg := &apiConfig{DB: db, Q: database.New(db), Store: store, templates: tmpl}
+	catalogResolveName = func(name string) (*catalog.Item, bool) { return store.ItemByName(name) }
 
-	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		f, err := staticFiles.Open("static/index.html")
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		defer f.Close()
-		if _, err := io.Copy(w, f); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-		}
+	r := chi.NewRouter()
+	r.Use(cfg.loadUser)
+
+	r.Get("/", cfg.handleHome)
+	r.Get("/items/{id}", cfg.handleItem)
+	r.Get("/login", cfg.handleLoginPage)
+	r.Post("/login", cfg.handleLogin)
+	r.Post("/logout", cfg.handleLogout)
+	r.Get("/healthz", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		_, _ = w.Write([]byte(`{"status":"ok"}`))
 	})
 
-	v1Router := chi.NewRouter()
+	r.Group(func(r chi.Router) {
+		r.Use(cfg.requireLogin)
+		r.Get("/inventory", cfg.handleInventory)
+		r.Get("/inventory/units/{id}", cfg.handleInventoryUnit)
+		r.Post("/inventory/units", cfg.handleInventoryAdd)
+		r.Post("/inventory/units/{id}/quantity", cfg.handleInventoryQuantity)
+		r.Post("/inventory/units/{id}/delete", cfg.handleInventoryDelete)
+		r.Get("/craft/{id}", cfg.handleCraft)
+		r.Post("/craft/{id}", cfg.handleCraft)
+	})
 
-	if apiCfg.DB != nil {
-		v1Router.Post("/users", apiCfg.handlerUsersCreate)
-		v1Router.Get("/users", apiCfg.middlewareAuth(apiCfg.handlerUsersGet))
-		v1Router.Get("/notes", apiCfg.middlewareAuth(apiCfg.handlerNotesGet))
-		v1Router.Post("/notes", apiCfg.middlewareAuth(apiCfg.handlerNotesCreate))
-	}
+	r.Group(func(r chi.Router) {
+		r.Use(cfg.requireDM)
+		r.Get("/admin", cfg.handleAdmin)
+		r.Get("/admin/items", cfg.handleAdminItems)
+		r.Get("/admin/items/{id}", cfg.handleAdminItem)
+		r.Post("/admin/items/{id}", cfg.handleAdminItemSave)
+		r.Post("/admin/items/{id}/recipe", cfg.handleAdminRecipeSave)
+		r.Get("/admin/users", cfg.handleAdminUsers)
+		r.Post("/admin/users", cfg.handleAdminUserCreate)
+		r.Post("/admin/users/{id}/delete", cfg.handleAdminUserDelete)
+		r.Post("/admin/reload", cfg.handleAdminReload)
+	})
 
-	v1Router.Get("/healthz", handlerReadiness)
+	r.Get("/generate", cfg.handleGenerateIndex)
+	r.Get("/generate/{id}", cfg.handleGenerateArchetype)
+	r.Get("/generate/{id}/{base}", cfg.handleGenerateCombo)
 
-	router.Mount("/v1", v1Router)
 	srv := &http.Server{
 		Addr:              ":" + port,
-		Handler:           router,
+		Handler:           r,
 		ReadHeaderTimeout: 5 * time.Second,
 	}
-
-	slog.Info("Serving application", "port", port)
+	slog.Info("Serving Craftingo", "port", port)
 	log.Fatal(srv.ListenAndServe())
+}
+
+func seq(n int) []int {
+	out := make([]int, n)
+	for i := range out {
+		out[i] = i
+	}
+	return out
+}
+
+func dict(values ...any) map[string]any {
+	m := map[string]any{}
+	for i := 0; i+1 < len(values); i += 2 {
+		key, ok := values[i].(string)
+		if !ok {
+			continue
+		}
+		m[key] = values[i+1]
+	}
+	return m
 }

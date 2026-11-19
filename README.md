@@ -1,21 +1,101 @@
 # Craftingo
 
-![code coverage badge](https://github.com/Nico-DM/craftingo/actions/workflows/ci.yml/badge.svg)
+A D&D 5e crafting catalog and calculator. It normalizes a homebrew crafting
+dataset into one canonical recipe per item, serves a public catalog, and adds
+accounts, inventory, a can-craft calculator, a DM editor, and a modular
+generator for tiered/modifier items.
 
-## Local Development
+Stack: Go, chi, sqlc, SQLite (local) or Turso (libsql).
 
-Make sure you're on Go version 1.27+.
-
-Create a `.env` file in the root of the project with the following contents:
-
-```bash
-PORT="8080"
-```
-
-Run the server:
+## Quick start
 
 ```bash
-go build -o craftingo && ./craftingo
+# 1. Build the normalized dataset
+python3 scripts/build_dataset.py
+
+# 2. Create the database schema
+goose -dir sql/schema sqlite3 craftingo.db up
+
+# 3. Load items and recipes
+DATABASE_URL=file:craftingo.db go run ./cmd/seed
+
+# 4. Create the first DM account (there is no public signup)
+DATABASE_URL=file:craftingo.db go run ./cmd/createuser \
+  -username dm -password secret1 -role dm
+
+# 5. Run
+PORT=8080 DATABASE_URL=file:craftingo.db go run .
 ```
 
-*This starts the server in non-database mode.* It will serve a simple webpage at `http://localhost:8080`.
+Open <http://localhost:8080>. The catalog is public; inventory and the
+calculator require a login; `/admin` requires the `dm` role.
+
+### Environment
+
+```bash
+PORT=8080
+DATABASE_URL=file:craftingo.db
+```
+
+For Turso use `DATABASE_URL=libsql://...?authToken=...`. Migrations:
+
+```bash
+goose -dir sql/schema turso "$DATABASE_URL" up
+```
+
+## Commands
+
+```bash
+go run ./cmd/seed -dataset data/build/items.jsonl   # rebuild catalog rows
+go run ./cmd/createuser -username ... -password ... -role dm|player
+go test ./...
+sqlc generate                                        # after changing sql/queries
+```
+
+`data/build/` is generated and gitignored. `data/items.tsv` is the single source
+of truth for items, recipes and stats; do not hand-edit `data/build`.
+
+## Features
+
+- **Public catalog**: search/filter by name, category, rarity, source and magic;
+  grouped item pages with recipe groups, variants, stats and reverse
+  "used to craft" links.
+- **Accounts**: DM and player roles, password + session cookie. DMs create
+  accounts; there is no signup.
+- **Inventory**: raw material stacks (form + rarity + optional trait + tags) and
+  individual crafted items (tier, trait, tags).
+- **Calculator**: can-craft result, per-group have/missing counts, bound dragon
+  traits, and recursive "craft these first" suggestions. It is a feasibility
+  check, not a purchase optimizer.
+- **DM editor**: edit item metadata, intrinsic tags, archetypes and the recipe
+  JSON, with validation and transactional replacement.
+- **Generator**: tier templates (`Weapon +1` .. `+4`, `Armor +1` .. `+3`) and
+  named modifiers composed over a chosen base. Nothing is flattened.
+
+## Recipe model
+
+Full JSON shape and matching rules: [docs/recipe-spec.md](docs/recipe-spec.md).
+Short version:
+
+- A unit is rarity + optional trait + form (nine raw forms or an item) + tags.
+- A recipe is a list of requirement groups with homogeneous options.
+- A unit counts toward every group it qualifies for.
+- Identical requirement groups collapse to the stricter quantity, not a sum.
+- Rarity is a minimum, not a fixed tier.
+- Trait quantities are balance values (3–8) and are never rewritten by the
+  normalizer; only form choices were size-adjusted.
+
+## Layout
+
+```
+cmd/seed            dataset -> database
+cmd/createuser      account bootstrap
+internal/catalog    item/recipe model, DB loading, recipe persistence
+internal/crafting   matching + calculator
+internal/auth       PBKDF2 password hashing
+internal/database   sqlc output
+sql/schema          goose migrations
+sql/queries         sqlc queries
+scripts/            dataset build script
+templates/          server-rendered pages
+```

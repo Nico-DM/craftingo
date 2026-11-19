@@ -1,0 +1,59 @@
+{{template "head" .}}
+<h1>Inventory</h1>
+<p class="muted">{{len .Materials}} material stacks, {{len .Crafted}} crafted items, {{.TotalQty}} units total.</p>
+{{if .Error}}<div class="flash err">{{.Error}}</div>{{end}}
+
+<h2>Add a unit</h2>
+<form method="post" action="/inventory/units" class="panel">
+<div class="row">
+  <div><label for="kind">Kind</label><select id="kind" name="kind"><option value="material">Raw material</option><option value="crafted">Crafted item</option></select></div>
+  <div><label for="form_name">Raw form</label><select id="form_name" name="form_name">{{range .Forms}}<option>{{.}}</option>{{end}}</select></div>
+  <div style="min-width:220px"><label for="name">Crafted item name</label><input id="name" name="name" list="itemnames" placeholder="e.g. Staff"><datalist id="itemnames">{{range .Items}}<option value="{{.Name}}">{{end}}</datalist></div>
+  <div><label for="rarity">Rarity</label><select id="rarity" name="rarity">{{range .Rarities}}<option>{{.}}</option>{{end}}</select></div>
+  <div><label for="trait">Trait</label><select id="trait" name="trait"><option value="">(none / Basic)</option>{{range .Traits}}<option>{{.}}</option>{{end}}</select></div>
+  <div><label for="trait_qty">Trait qty</label><input id="trait_qty" name="trait_qty" type="number" min="0" value="0" style="width:90px"></div>
+  <div><label for="tier">Tier</label><input id="tier" name="tier" type="number" min="0" max="4" value="0" style="width:80px"></div>
+  <div><label for="tags">Tags</label><input id="tags" name="tags" placeholder="comma,separated"></div>
+  <div><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="number" min="1" value="1" style="width:90px"></div>
+  <div><label for="note">Note</label><input id="note" name="note"></div>
+  <div><button>Add</button></div>
+</div>
+<p class="small muted">Materials stack by form + rarity + trait + tags. Crafted items are always individual. A unit's tags matter for recipes like <em>Material (Dragon)</em> or <em>Fluid (Bug)</em>.</p>
+</form>
+
+<h2>Materials</h2>
+<table class="panel">
+<tr><th>Name</th><th>Form</th><th>Rarity</th><th>Trait</th><th>Tags</th><th>Qty</th><th></th></tr>
+{{range .Materials}}
+<tr>
+<td><a href="/inventory/units/{{.ID}}">{{.Name}}</a></td><td>{{.FormName}}</td>
+<td class="{{rarityClass .Rarity}}">{{.Rarity}}</td>
+<td>{{if .Trait}}{{.Trait}} ({{.TraitQty}}){{else}}<span class="muted">Basic</span>{{end}}</td>
+<td>{{range .Tags}}<span class="badge">{{.}}</span>{{end}}</td>
+<td><form method="post" action="/inventory/units/{{.ID}}/quantity" class="row"><input type="number" name="quantity" min="0" value="{{.Quantity}}" style="width:80px"><button class="small">Set</button></form></td>
+<td><form method="post" action="/inventory/units/{{.ID}}/delete"><button class="small">Delete</button></form></td>
+</tr>
+{{else}}<tr><td colspan="7" class="muted">Nothing yet. Add the raw materials you own.</td></tr>{{end}}
+</table>
+
+<h2>Crafted items</h2>
+<table class="panel">
+<tr><th>Name</th><th>Rarity</th><th>Tier</th><th>Trait</th><th>Tags</th><th></th></tr>
+{{range .Crafted}}
+<tr>
+<td><a href="/inventory/units/{{.ID}}">{{.Name}}</a>{{if .ItemID}} <span class="small muted">· <a href="/items/{{.ItemID}}">catalog</a></span>{{end}}</td>
+<td class="{{rarityClass .Rarity}}">{{.Rarity}}</td>
+<td>{{if .Tier}}+{{.Tier}}{{else}}—{{end}}</td>
+<td>{{if .Trait}}{{.Trait}} ({{.TraitQty}}){{else}}<span class="muted">Basic</span>{{end}}</td>
+<td>{{range .Tags}}<span class="badge">{{.}}</span>{{end}}</td>
+<td><form method="post" action="/inventory/units/{{.ID}}/delete"><button class="small">Delete</button></form></td>
+</tr>
+{{else}}<tr><td colspan="6" class="muted">No crafted items.</td></tr>{{end}}
+</table>
+
+<h2>You can craft right now</h2>
+<div class="grid">
+{{range .Craftable}}<div class="card"><a href="/items/{{.Item.ID}}">{{.Item.Name}}</a><div class="small muted"><span class="{{rarityClass .Item.Rarity}}">{{.Item.Rarity}}</span> · <a href="/craft/{{.Item.ID}}">steps</a></div></div>
+{{else}}<div class="panel muted">Nothing yet — gather some materials.</div>{{end}}
+</div>
+{{template "foot" .}}

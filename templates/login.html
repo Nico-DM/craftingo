@@ -1,0 +1,11 @@
+{{template "head" .}}
+<h1>Sign in</h1>
+{{if .Error}}<div class="flash err">{{.Error}}</div>{{end}}
+<form method="post" action="/login" class="panel" style="max-width:420px">
+<input type="hidden" name="next" value="{{.Next}}">
+<label for="username">Username</label><input id="username" name="username" autocomplete="username" required>
+<label for="password">Password</label><input id="password" type="password" name="password" autocomplete="current-password" required>
+<div style="margin-top:14px"><button>Sign in</button></div>
+<p class="small muted">Accounts are created by the dungeon master. There is no public signup.</p>
+</form>
+{{template "foot" .}}

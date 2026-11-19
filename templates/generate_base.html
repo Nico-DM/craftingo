@@ -1,0 +1,12 @@
+{{template "head" .}}
+<p class="small"><a href="/generate">← generator</a></p>
+<h1>{{.Arch.Name}}</h1>
+<p class="muted">Pick the base {{.Arch.Archetype.Base.Name}} this recipe should be built on.</p>
+{{if .Arch.Recipe}}{{if eq .Arch.Recipe.Kind "inherit"}}<p class="small muted">The tier keeps the base recipe unchanged.</p>{{else}}<div class="panel">{{range .Arch.Recipe.Groups}}{{template "formgroup" .}}{{end}}{{template "extras" .Arch.Recipe}}</div>{{end}}{{end}}
+
+<h2>Bases ({{len .Bases}})</h2>
+<div class="grid">
+{{range .Bases}}<div class="card"><a href="/generate/{{$.Arch.ID}}/{{.ID}}">{{.Name}}</a><div class="small muted">{{join .Category .Subtype}} · <span class="{{rarityClass .Rarity}}">{{.Rarity}}</span></div></div>
+{{else}}<div class="panel muted">No base items found for this archetype.</div>{{end}}
+</div>
+{{template "foot" .}}
