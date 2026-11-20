@@ -80,15 +80,31 @@ func readDataset(path string) ([]catalog.Item, error) {
 
 func seed(db *sql.DB, items []catalog.Item) error {
 	ctx := context.Background()
+	now := time.Now().UTC().Format(time.RFC3339)
+	// Turso/libsql over HTTP chokes on one giant transaction; commit in batches.
+	const batchSize = 25
+
+	for start := 0; start < len(items); start += batchSize {
+		end := start + batchSize
+		if end > len(items) {
+			end = len(items)
+		}
+		if err := seedBatch(ctx, db, items[start:end], now); err != nil {
+			return err
+		}
+		fmt.Printf("seeded %d/%d\n", end, len(items))
+	}
+	return nil
+}
+
+func seedBatch(ctx context.Context, db *sql.DB, items []catalog.Item, now string) error {
 	tx, err := db.BeginTx(ctx, nil)
 	if err != nil {
 		return err
 	}
 	defer tx.Rollback()
 
-	q := database.New(db).WithTx(tx)
-	now := time.Now().UTC().Format(time.RFC3339)
-
+	q := database.For(tx)
 	for _, it := range items {
 		if err := q.UpsertItem(ctx, toUpsertParams(it, now)); err != nil {
 			return fmt.Errorf("item %s: %w", it.Name, err)

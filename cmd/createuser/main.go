@@ -46,7 +46,7 @@ func main() {
 		log.Fatal(err)
 	}
 	now := time.Now().UTC().Format(time.RFC3339)
-	u, err := database.New(db).CreateUser(context.Background(), database.CreateUserParams{
+	u, err := database.For(db).CreateUser(context.Background(), database.CreateUserParams{
 		ID: uuid.NewString(), Username: *username, PasswordHash: hash, Role: *role,
 		CreatedAt: now, UpdatedAt: now,
 	})

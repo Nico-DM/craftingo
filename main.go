@@ -60,7 +60,7 @@ func main() {
 	}
 	tmpl := template.Must(template.New("").Funcs(funcs).ParseFS(templateFiles, "templates/*.html"))
 
-	cfg := &apiConfig{DB: db, Q: database.New(db), Store: store, templates: tmpl}
+	cfg := &apiConfig{DB: db, Q: database.For(db), Store: store, templates: tmpl}
 	catalogResolveName = func(name string) (*catalog.Item, bool) { return store.ItemByName(name) }
 
 	r := chi.NewRouter()

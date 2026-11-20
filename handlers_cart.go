@@ -271,7 +271,7 @@ func (cfg *apiConfig) handleCartFinalize(w http.ResponseWriter, r *http.Request)
 		return
 	}
 	defer func() { _ = tx.Rollback() }()
-	q := cfg.Q.WithTx(tx)
+	q := database.For(tx)
 
 	for _, unit := range units {
 		left, ok := remaining[unit.ID]

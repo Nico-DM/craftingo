@@ -181,7 +181,7 @@ func (cfg *apiConfig) handleAdminRecipeSave(w http.ResponseWriter, r *http.Reque
 		return
 	}
 	defer tx.Rollback()
-	q := cfg.Q.WithTx(tx)
+	q := database.For(tx)
 	if err := catalog.SaveRecipe(r.Context(), q, id, &recipe, it.Rarity); err != nil {
 		redirectErr(w, r, "/admin/items/"+id+"?error="+urlMsg(err.Error()))
 		return
