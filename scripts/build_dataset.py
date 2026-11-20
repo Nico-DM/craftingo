@@ -852,6 +852,45 @@ def dedupe_options(groups: list[dict], item_name: str, log: list[str]) -> None:
         g["options"] = list(seen.values())
 
 
+def collapse_generic_material_options(groups: list[dict], log: list[str]) -> None:
+    """Collapse 'any Armor (Hide) / any Armor (Metal)' to 'any Armor'.
+
+    The options are only separated by raw-material tags, so they describe one
+    fully generic base rather than distinct choices. Non-material tags (Sword,
+    Dragon, ...) still narrow the base and are kept.
+    """
+    for g in groups:
+        options = g["options"]
+        if len(options) < 2:
+            continue
+        first = options[0]
+        if len(first["forms"]) != 1 or first["forms"][0]["kind"] != "generic":
+            continue
+        name = first["forms"][0]["name"]
+        tier = first["tier"]
+        traits = sorted(first["traits"])
+        collapse = True
+        for o in options:
+            if len(o["forms"]) != 1 or o["forms"][0]["kind"] != "generic":
+                collapse = False
+                break
+            if o["forms"][0]["name"] != name or o["tier"] != tier or sorted(o["traits"]) != traits:
+                collapse = False
+                break
+            for tag in o["tags_all"] + o["tags_any"]:
+                if canon_tag(tag) not in RAW_SET:
+                    collapse = False
+                    break
+            if not collapse:
+                break
+        if not collapse:
+            continue
+        base = copy.deepcopy(first)
+        base["tags_all"], base["tags_any"] = [], []
+        g["options"] = [base]
+        log.append(f"collapsed material options of {g['quantity']}x any {name} to one generic base")
+
+
 def detect_modifier(recipe: dict | None) -> dict | None:
     """A recipe that consumes a generic base is a generated modifier combo."""
     if not recipe or recipe["kind"] != "groups":
@@ -1004,6 +1043,41 @@ def load_items() -> list[dict]:
     return rows
 
 
+def add_synthetic_tier_templates(items: list[dict]) -> None:
+    """Add Ammunition +1..+4 next to the Weapon/Armor tier templates."""
+    existing = {r["name"] for r in items}
+    for tier, rarity in ((1, "Uncommon"), (2, "Rare"), (3, "Very Rare"), (4, "Legendary")):
+        name = f"Ammunition +{tier}"
+        if name in existing:
+            continue
+        items.append({
+            "id": f"ammunition-plus-{tier}",
+            "name": name,
+            "rarity": rarity,
+            "source": "Crafting",
+            "magic": "TRUE",
+            "oota": "FALSE",
+            "type": "Ammunition",
+            "recipes": "As Ammunition",
+            "short_description": f"Tier {tier} template for any mundane ammunition.",
+            "scraped_name": name,
+            "match_status": "needs_review",
+            "match_method": "generated",
+            "match_detail": "synthetic_tier",
+            "match_confidence": "1.0",
+            "scraped_source_code": "",
+            "scraped_source": "Crafting",
+            "scraped_rarity": rarity,
+            "scraped_type": "Ammunition",
+            "attunement": "",
+            "damage": "",
+            "properties": "",
+            "weight": "",
+            "value": "",
+            "scraped_text": "",
+        })
+
+
 def split_type(type_raw: str):
     head, _, tail = type_raw.partition(",")
     return head.strip(), (tail.strip() or None)
@@ -1011,6 +1085,7 @@ def split_type(type_raw: str):
 
 def build() -> int:
     items = load_items()
+    add_synthetic_tier_templates(items)
     index = ItemIndex(items)
     for r in items:
         r["_extra"] = r.get("id", "").startswith(("paper", "parchment"))
@@ -1127,7 +1202,7 @@ def build() -> int:
     # post-process
     for r in items:
         r["_template"] = bool(
-            re.fullmatch(r"(Weapon|Armor) \+\d", r["name"])
+            re.fullmatch(r"(Weapon|Armor|Ammunition) \+\d", r["name"])
             or r["name"] == "Vicious Weapon"
         )
         if not r["_recipe"] or r["_recipe"]["kind"] != "groups":
@@ -1135,6 +1210,7 @@ def build() -> int:
         groups = r["_recipe"]["groups"]
         simplify_material_tags(groups, r["_notes"])
         dedupe_options(groups, r["name"], r["_notes"])
+        collapse_generic_material_options(groups, r["_notes"])
         for i, g in enumerate(groups, 1):
             g["position"] = i
         link_trait_variables(groups, r["name"], r["_warnings"])

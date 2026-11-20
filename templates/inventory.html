@@ -2,58 +2,143 @@
 <h1>Inventory</h1>
 <p class="muted">{{len .Materials}} material stacks, {{len .Crafted}} crafted items, {{.TotalQty}} units total.</p>
 {{if .Error}}<div class="flash err">{{.Error}}</div>{{end}}
+{{if .CraftedOK}}<div class="flash">Crafting complete. The new items are in your inventory.</div>{{end}}
 
 <h2>Add a unit</h2>
+<div class="grid">
 <form method="post" action="/inventory/units" class="panel">
-<div class="row">
-  <div><label for="kind">Kind</label><select id="kind" name="kind"><option value="material">Raw material</option><option value="crafted">Crafted item</option></select></div>
-  <div><label for="form_name">Raw form</label><select id="form_name" name="form_name">{{range .Forms}}<option>{{.}}</option>{{end}}</select></div>
-  <div style="min-width:220px"><label for="name">Crafted item name</label><input id="name" name="name" list="itemnames" placeholder="e.g. Staff"><datalist id="itemnames">{{range .Items}}<option value="{{.Name}}">{{end}}</datalist></div>
-  <div><label for="rarity">Rarity</label><select id="rarity" name="rarity">{{range .Rarities}}<option>{{.}}</option>{{end}}</select></div>
-  <div><label for="trait">Trait</label><select id="trait" name="trait"><option value="">(none / Basic)</option>{{range .Traits}}<option>{{.}}</option>{{end}}</select></div>
-  <div><label for="trait_qty">Trait qty</label><input id="trait_qty" name="trait_qty" type="number" min="0" value="0" style="width:90px"></div>
-  <div><label for="tier">Tier</label><input id="tier" name="tier" type="number" min="0" max="4" value="0" style="width:80px"></div>
-  <div><label for="tags">Tags</label><input id="tags" name="tags" placeholder="comma,separated"></div>
-  <div><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="number" min="1" value="1" style="width:90px"></div>
-  <div><label for="note">Note</label><input id="note" name="note"></div>
-  <div><button>Add</button></div>
-</div>
-<p class="small muted">Materials stack by form + rarity + trait + tags. Crafted items are always individual. A unit's tags matter for recipes like <em>Material (Dragon)</em> or <em>Fluid (Bug)</em>.</p>
+  <h3>Raw material</h3>
+  <input type="hidden" name="kind" value="material">
+  <div class="row">
+    <div><label for="form_name">Form</label><select id="form_name" name="form_name">{{range .Forms}}<option>{{.}}</option>{{end}}</select></div>
+    <div><label for="m_rarity">Rarity</label><select id="m_rarity" name="rarity">{{range .Rarities}}<option>{{.}}</option>{{end}}</select></div>
+    <div><label for="m_trait">Trait</label><select id="m_trait" name="trait"><option value="">(none / Basic)</option>{{range .Traits}}<option>{{.}}</option>{{end}}</select></div>
+    <div><label for="m_trait_qty">Trait qty</label><input id="m_trait_qty" name="trait_qty" type="number" min="0" value="0" style="width:90px"></div>
+    <div><label for="m_tags">Tags</label><input id="m_tags" name="tags" placeholder="comma,separated"></div>
+    <div><label for="m_quantity">Quantity</label><input id="m_quantity" name="quantity" type="number" min="1" value="1" style="width:90px"></div>
+    <div><label for="m_note">Note</label><input id="m_note" name="note"></div>
+    <div><button>Add material</button></div>
+  </div>
 </form>
 
+<form method="post" action="/inventory/units" class="panel">
+  <h3>Crafted item</h3>
+  <input type="hidden" name="kind" value="crafted">
+  <div class="row">
+    <div style="min-width:240px"><label for="name">Catalog item</label><input id="name" name="name" list="itemnames" placeholder="e.g. Staff"><datalist id="itemnames">{{range .Items}}<option value="{{.Name}}">{{end}}</datalist></div>
+    <div><label for="c_rarity">Rarity</label><select id="c_rarity" name="rarity"><option value="">(item default)</option>{{range .Rarities}}<option>{{.}}</option>{{end}}</select></div>
+    <div><label for="c_trait">Trait</label><select id="c_trait" name="trait"><option value="">(none / Basic)</option>{{range .Traits}}<option>{{.}}</option>{{end}}</select></div>
+    <div><label for="c_trait_qty">Trait qty</label><input id="c_trait_qty" name="trait_qty" type="number" min="0" value="0" style="width:90px"></div>
+    <div><label for="c_tier">Tier</label><input id="c_tier" name="tier" type="number" min="0" max="4" value="0" style="width:80px"></div>
+    <div><label for="c_tags">Tags</label><input id="c_tags" name="tags" placeholder="comma,separated"></div>
+    <div><label for="c_note">Note</label><input id="c_note" name="note"></div>
+    <div><button>Add item</button></div>
+  </div>
+</form>
+</div>
+<p class="small muted">Materials stack by form + rarity + trait + tags; the stack note is merged, not lost. Crafted items are always individual. Tags matter for recipes like <em>Material (Dragon)</em> or <em>Fluid (Bug)</em>.</p>
+
+<h2 id="cart">Crafting cart {{if .CartCount}}<span class="badge">{{.CartCount}}</span>{{end}}</h2>
+<p class="small muted">Crafts reserve their materials here. Reserved units are not counted for other cart lines, and a line's output can feed later lines. Nothing leaves the inventory until you finalize the cart; removing a line returns its materials.</p>
+{{if .Cart}}
+<div class="panel">
+{{range .Cart}}
+<div class="opt">
+  <div class="row" style="justify-content:space-between">
+    <div>
+      <strong>{{if .Item}}{{.Item.Name}}{{else}}Unknown item{{end}}</strong>
+      {{if .Plan.Valid}}
+        <span class="small muted">→ <span class="{{rarityClass .Plan.Output.Rarity}}">{{.Plan.Output.Rarity}}</span>{{if .Plan.Output.Tier}} · +{{.Plan.Output.Tier}}{{end}}{{if .Plan.Output.Trait}} · {{.Plan.Output.Trait}} ({{.Plan.Output.TraitQty}}){{else}} · Basic{{end}}</span>
+      {{end}}
+    </div>
+    <form method="post" action="/cart/{{.ID}}/delete"><button class="small">Remove</button></form>
+  </div>
+  {{if not .Plan.Valid}}
+    <div class="small have-bad">{{.Plan.Error}}</div>
+  {{else}}
+  <details>
+    <summary class="small muted">reserved materials</summary>
+    {{range .Plan.Groups}}
+      <div class="small" style="margin-top:6px"><strong>{{.Required}}×</strong> {{template "option" .Option}}{{if .Trait}} · {{.Trait}}{{end}}</div>
+      <ul class="small muted">
+      {{range .Consumed}}<li>{{.Name}} ×{{.Quantity}}{{if .Trait}} · {{.Trait}}{{end}}</li>{{else}}<li>nothing left to list</li>{{end}}
+      </ul>
+    {{end}}
+    {{if .Plan.Output.Tags}}<div class="small">tags: {{range .Plan.Output.Tags}}<span class="badge">{{.}}</span>{{end}}</div>{{end}}
+  </details>
+  {{if .TiedTraits}}
+  {{$line := .}}
+  <form method="post" action="/cart/{{.ID}}/trait" class="row" style="margin-top:8px">
+    <div><label for="trait-{{.ID}}">Tied trait</label><select id="trait-{{.ID}}" name="trait">{{range .TiedTraits}}<option value="{{.}}" {{if eq . $line.PreferredTrait}}selected{{end}}>{{.}}</option>{{end}}</select></div>
+    <div><button class="small">Keep trait</button></div>
+    <div class="small muted" style="align-self:flex-end">Several traits have the same total; choose the one the item keeps.</div>
+  </form>
+  {{end}}
+  {{end}}
+</div>
+{{end}}
+<div class="row" style="margin-top:12px">
+  <form method="post" action="/cart/finalize"><button {{if not .CartValid}}disabled{{end}}>Finalize cart</button></form>
+  <form method="post" action="/cart/clear"><button class="small">Clear cart</button></form>
+  {{if not .CartValid}}<span class="small have-bad">Fix the invalid line(s) before finalizing.</span>{{end}}
+</div>
+</div>
+{{else}}
+<div class="panel muted">The cart is empty. Add a craftable item below, or check a recipe first.</div>
+{{end}}
+
 <h2>Materials</h2>
+<form class="panel row" method="get" action="/inventory#materials" data-live>
+  <input type="hidden" name="mdir" value="{{.Filter.MDir}}">
+  <div><label for="mform">Form</label><select id="mform" name="mform"><option value="">All</option>{{range .Forms}}<option value="{{.}}" {{if eq . $.Filter.MForm}}selected{{end}}>{{.}}</option>{{end}}</select></div>
+  <div><label for="mtrait">Trait</label><select id="mtrait" name="mtrait"><option value="">All</option><option value="Basic" {{if eq "Basic" .Filter.MTrait}}selected{{end}}>Basic</option>{{range .Traits}}<option value="{{.}}" {{if eq . $.Filter.MTrait}}selected{{end}}>{{.}}</option>{{end}}</select></div>
+  <div><label for="mrarity">Rarity</label><select id="mrarity" name="mrarity"><option value="">All</option>{{range .Rarities}}<option value="{{.}}" {{if eq . $.Filter.MRarity}}selected{{end}}>{{.}}</option>{{end}}</select></div>
+  <div><label for="msort">Sort</label><select id="msort" name="msort"><option value="">Default</option><option value="form" {{if eq "form" .Filter.MSort}}selected{{end}}>Form</option><option value="rarity" {{if eq "rarity" .Filter.MSort}}selected{{end}}>Rarity</option><option value="trait" {{if eq "trait" .Filter.MSort}}selected{{end}}>Trait</option><option value="qty" {{if eq "qty" .Filter.MSort}}selected{{end}}>Quantity</option><option value="name" {{if eq "name" .Filter.MSort}}selected{{end}}>Name</option></select></div>
+  <div><label>Order</label><button type="button" class="small" data-reverse data-dir="{{if eq .Filter.MDir "desc"}}asc{{else}}desc{{end}}">Reverse</button> <a class="small" href="/inventory">reset</a></div>
+</form>
+
+<h3 id="materials">Material stacks</h3>
 <table class="panel">
-<tr><th>Name</th><th>Form</th><th>Rarity</th><th>Trait</th><th>Tags</th><th>Qty</th><th></th></tr>
+<tr><th>Material</th><th>Rarity</th><th>Trait</th><th>Tags</th><th>Qty</th><th></th></tr>
 {{range .Materials}}
 <tr>
-<td><a href="/inventory/units/{{.ID}}">{{.Name}}</a></td><td>{{.FormName}}</td>
+<td><a href="/inventory/units/{{.ID}}">{{.FormName}}</a>{{if and .Name (ne .Name .FormName)}} <span class="small muted">· {{.Name}}</span>{{end}}</td>
 <td class="{{rarityClass .Rarity}}">{{.Rarity}}</td>
 <td>{{if .Trait}}{{.Trait}} ({{.TraitQty}}){{else}}<span class="muted">Basic</span>{{end}}</td>
 <td>{{range .Tags}}<span class="badge">{{.}}</span>{{end}}</td>
 <td><form method="post" action="/inventory/units/{{.ID}}/quantity" class="row"><input type="number" name="quantity" min="0" value="{{.Quantity}}" style="width:80px"><button class="small">Set</button></form></td>
 <td><form method="post" action="/inventory/units/{{.ID}}/delete"><button class="small">Delete</button></form></td>
 </tr>
-{{else}}<tr><td colspan="7" class="muted">Nothing yet. Add the raw materials you own.</td></tr>{{end}}
+{{else}}<tr><td colspan="6" class="muted">Nothing yet. Add the raw materials you own.</td></tr>{{end}}
 </table>
 
 <h2>Crafted items</h2>
-<table class="panel">
-<tr><th>Name</th><th>Rarity</th><th>Tier</th><th>Trait</th><th>Tags</th><th></th></tr>
+{{if .Crafted}}<form class="row" method="get" action="/inventory#crafted" data-live><input type="hidden" name="cdir" value="{{.Filter.CDir}}"><label for="csort" style="margin:0">Sort</label><select id="csort" name="csort"><option value="" {{if eq "" .Filter.CSort}}selected{{end}}>Default</option><option value="name" {{if eq "name" .Filter.CSort}}selected{{end}}>Name</option><option value="category" {{if eq "category" .Filter.CSort}}selected{{end}}>Category</option><option value="rarity" {{if eq "rarity" .Filter.CSort}}selected{{end}}>Rarity</option><option value="tier" {{if eq "tier" .Filter.CSort}}selected{{end}}>Tier</option><option value="trait" {{if eq "trait" .Filter.CSort}}selected{{end}}>Trait</option></select><button type="button" class="small" data-reverse data-dir="{{if eq .Filter.CDir "desc"}}asc{{else}}desc{{end}}">Reverse</button></form>{{end}}
+<table class="panel" id="crafted">
+<tr><th>Name</th><th>Category</th><th>Rarity</th><th>Tier</th><th>Trait</th><th>Tags</th><th></th></tr>
 {{range .Crafted}}
 <tr>
 <td><a href="/inventory/units/{{.ID}}">{{.Name}}</a>{{if .ItemID}} <span class="small muted">· <a href="/items/{{.ItemID}}">catalog</a></span>{{end}}</td>
+<td>{{.Category}}</td>
 <td class="{{rarityClass .Rarity}}">{{.Rarity}}</td>
 <td>{{if .Tier}}+{{.Tier}}{{else}}—{{end}}</td>
 <td>{{if .Trait}}{{.Trait}} ({{.TraitQty}}){{else}}<span class="muted">Basic</span>{{end}}</td>
 <td>{{range .Tags}}<span class="badge">{{.}}</span>{{end}}</td>
 <td><form method="post" action="/inventory/units/{{.ID}}/delete"><button class="small">Delete</button></form></td>
 </tr>
-{{else}}<tr><td colspan="6" class="muted">No crafted items.</td></tr>{{end}}
+{{else}}<tr><td colspan="7" class="muted">No crafted items.</td></tr>{{end}}
 </table>
 
 <h2>You can craft right now</h2>
 <div class="grid">
-{{range .Craftable}}<div class="card"><a href="/items/{{.Item.ID}}">{{.Item.Name}}</a><div class="small muted"><span class="{{rarityClass .Item.Rarity}}">{{.Item.Rarity}}</span> · <a href="/craft/{{.Item.ID}}">steps</a></div></div>
-{{else}}<div class="panel muted">Nothing yet — gather some materials.</div>{{end}}
+{{range .Craftable}}
+<div class="card">
+  <a href="/items/{{.Item.ID}}">{{.Item.Name}}</a>
+  <div class="small muted"><span class="{{rarityClass .Item.Rarity}}">{{.Item.Rarity}}</span> · <a href="/craft/{{.Item.ID}}">steps</a></div>
+  <form method="post" action="/cart" style="margin-top:8px"><input type="hidden" name="item_id" value="{{.Item.ID}}"><button class="small">Add to cart</button></form>
+</div>
+{{else}}
+<div class="panel muted">Nothing yet — gather some materials, or add crafts one at a time from an item page.</div>
+{{end}}
 </div>
 {{template "foot" .}}

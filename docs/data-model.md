@@ -115,7 +115,11 @@ counting.
   recipe tree. Forms/traits/tags are JSON arrays because they are read and written
   as a unit.
 - `users`, `sessions`: DM/player accounts and cookie sessions.
-- `inventory_units`: stacks of raw materials and individual crafted items.
+- `inventory_units`: stacks of raw materials and individual crafted items,
+  including the snapshot `magic` flag, tier, trait and tags.
+- `craft_cart_lines`: ordered cart lines per user, with an optional
+  `preferred_trait` tie-break. Plans are recomputed from the inventory on every
+  request; nothing is consumed until the cart is finalized.
 
 ## Build pipeline
 

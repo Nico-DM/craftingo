@@ -7,6 +7,9 @@ type Form struct {
 	Kind string `json:"kind"`
 	Name string `json:"name"`
 	ID   string `json:"id,omitempty"`
+	// Mundane marks a specific item requirement that only accepts a mundane
+	// instance, not an already-enchanted variant made from the same base.
+	Mundane bool `json:"mundane,omitempty"`
 }
 
 // Option is one homogeneous choice for a requirement group.

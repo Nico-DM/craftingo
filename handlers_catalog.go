@@ -15,6 +15,8 @@ type listFilter struct {
 	Rarity   string
 	Source   string
 	Magic    string
+	Sort     string
+	Dir      string
 	Page     int
 	PerPage  int
 	Total    int
@@ -55,6 +57,8 @@ func (cfg *apiConfig) handleHome(w http.ResponseWriter, r *http.Request) {
 		Rarity:   q.Get("rarity"),
 		Source:   q.Get("source"),
 		Magic:    q.Get("magic"),
+		Sort:     q.Get("sort"),
+		Dir:      q.Get("dir"),
 		Page:     1,
 		PerPage:  60,
 	}
@@ -65,6 +69,7 @@ func (cfg *apiConfig) handleHome(w http.ResponseWriter, r *http.Request) {
 			filtered = append(filtered, it)
 		}
 	}
+	sortItems(filtered, f.Sort, f.Dir)
 	f.Total = len(filtered)
 	if p := q.Get("page"); p != "" {
 		if n, err := parsePositiveInt(p); err == nil {

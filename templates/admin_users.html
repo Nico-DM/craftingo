@@ -8,6 +8,11 @@
 <div><label>Role</label><select name="role"><option value="player">player</option><option value="dm">dm</option></select></div>
 <div><button>Create account</button></div>
 </form>
+<form method="get" action="/admin/users" class="panel row" data-live>
+<input type="hidden" name="dir" value="{{.Dir}}">
+<div><label for="sort">Sort</label><select id="sort" name="sort"><option value="">Username</option><option value="role" {{if eq .Sort "role"}}selected{{end}}>Role</option><option value="created" {{if eq .Sort "created"}}selected{{end}}>Created</option></select></div>
+<div><label>Order</label><button type="button" class="small" data-reverse data-dir="{{if eq .Dir "desc"}}asc{{else}}desc{{end}}">Reverse</button></div>
+</form>
 <table class="panel">
 <tr><th>Username</th><th>Role</th><th>Created</th><th></th></tr>
 {{range .Users}}

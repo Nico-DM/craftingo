@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -39,6 +40,8 @@ func (cfg *apiConfig) handleAdmin(w http.ResponseWriter, r *http.Request) {
 
 func (cfg *apiConfig) handleAdminItems(w http.ResponseWriter, r *http.Request) {
 	q := strings.TrimSpace(r.URL.Query().Get("q"))
+	sortKey := r.URL.Query().Get("sort")
+	dir := r.URL.Query().Get("dir")
 	items := cfg.Store.Items()
 	var out []catalog.Item
 	for _, it := range items {
@@ -46,9 +49,12 @@ func (cfg *apiConfig) handleAdminItems(w http.ResponseWriter, r *http.Request) {
 			out = append(out, it)
 		}
 	}
+	sortItems(out, sortKey, dir)
 	cfg.render(w, r, "admin_items.html", map[string]any{
 		"Title": "Edit items",
 		"Q":     q,
+		"Sort":  sortKey,
+		"Dir":   dir,
 		"Items": out,
 	})
 }
@@ -268,9 +274,34 @@ func (cfg *apiConfig) handleAdminUsers(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	sortKey := r.URL.Query().Get("sort")
+	dir := r.URL.Query().Get("dir")
+	sort.SliceStable(users, func(i, j int) bool {
+		a, b := users[i], users[j]
+		var c int
+		switch strings.ToLower(sortKey) {
+		case "role":
+			c = strings.Compare(strings.ToLower(a.Role), strings.ToLower(b.Role))
+		case "created":
+			c = strings.Compare(a.CreatedAt, b.CreatedAt)
+		default:
+			c = strings.Compare(strings.ToLower(a.Username), strings.ToLower(b.Username))
+		}
+		if c == 0 {
+			c = strings.Compare(strings.ToLower(a.Username), strings.ToLower(b.Username))
+		}
+		return c < 0
+	})
+	if isReverse(dir) {
+		for i, j := 0, len(users)-1; i < j; i, j = i+1, j-1 {
+			users[i], users[j] = users[j], users[i]
+		}
+	}
 	cfg.render(w, r, "admin_users.html", map[string]any{
 		"Title": "Users",
 		"Users": users,
+		"Sort":  sortKey,
+		"Dir":   dir,
 		"Error": r.URL.Query().Get("error"),
 	})
 }

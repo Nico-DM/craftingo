@@ -145,19 +145,25 @@ Extras are displayed but do not participate in material counting.
 - Overflow units still contribute their full `trait_qty`.
 - A raw unit is matched by form + trait + tags + rarity. A crafted unit is
   matched by catalog item id (or generic category), tier, tags and trait.
+- Generic bases (`any Weapon`, `any Armor`, ...) only accept **mundane** items.
+  A specific item requirement can also be marked mundane, so an enchanted
+  variant of the same base does not substitute for the plain item.
 
 ## Generated combos
 
 Tier and modifier rows are not flattened. The generator composes a page from a
 base item:
 
-- `Weapon +1` uses the base recipe unchanged and adds the tier label.
-- `Vicious Weapon` replaces its `+2 Weapon` requirement with the chosen base
-  (for example `+2 Greataxe`), so the base is itself a sub-craft.
+- `Weapon +1` is crafted from one mundane `Weapon` base (for example a plain
+  Greataxe), then labelled with the tier. `Ammunition +1` .. `+4` are built the
+  same way. Tier recipes are not flattened into the base's raw materials.
+- `Vicious Weapon` is a named modifier, not a tier template. It replaces its
+  `+2 Weapon` requirement with the chosen base (for example `+2 Greataxe`), so
+  the base is itself a sub-craft.
 
 Each generated combo is ephemeral: it is not stored as a new catalog row.
 Crafted inventory instances refer to the base catalog item and store their own
-tier, trait, trait quantity and tags.
+tier, magic flag, trait, trait quantity and tags.
 
 ## Admin editing
 

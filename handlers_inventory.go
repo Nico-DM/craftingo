@@ -44,12 +44,20 @@ func (cfg *apiConfig) loadUnits(r *http.Request) ([]crafting.Unit, error) {
 			Trait:    row.Trait.String,
 			TraitQty: int(row.TraitQty),
 			Tier:     int(row.Tier),
+			Magic:    row.Magic == 1,
 			Quantity: int(row.Quantity),
 		}
 		_ = json.Unmarshal([]byte(row.Tags), &unit.Tags)
 		if unit.ItemID != "" {
 			if it, ok := cfg.Store.Item(unit.ItemID); ok {
 				unit.Category = it.Category
+				if it.Subtype != nil {
+					unit.Subtype = *it.Subtype
+				}
+				unit.Magic = unit.Magic || it.Magic
+				if unit.Tier == 0 && it.Archetype != nil && it.Archetype.Tier != nil {
+					unit.Tier = *it.Archetype.Tier
+				}
 			}
 		}
 		out = append(out, unit)
@@ -58,23 +66,56 @@ func (cfg *apiConfig) loadUnits(r *http.Request) ([]crafting.Unit, error) {
 }
 
 func (cfg *apiConfig) handleInventory(w http.ResponseWriter, r *http.Request) {
-	units, err := cfg.loadUnits(r)
+	units, cart, err := cfg.cartState(r)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	q := r.URL.Query()
+	mform, mtrait, mrarity := q.Get("mform"), q.Get("mtrait"), q.Get("mrarity")
 	var materials, crafted []crafting.Unit
 	totalQty := 0
 	for _, u := range units {
-		if u.Kind == "material" {
-			materials = append(materials, u)
-		} else {
-			crafted = append(crafted, u)
-		}
 		totalQty += u.Quantity
+		if u.Kind == "material" {
+			if mform != "" && !strings.EqualFold(u.FormName, mform) {
+				continue
+			}
+			if mtrait != "" {
+				trait := u.Trait
+				if trait == "" {
+					trait = "Basic"
+				}
+				if !strings.EqualFold(trait, mtrait) {
+					continue
+				}
+			}
+			if mrarity != "" && !strings.EqualFold(u.Rarity, mrarity) {
+				continue
+			}
+			materials = append(materials, u)
+			continue
+		}
+		crafted = append(crafted, u)
 	}
+
+	msort := q.Get("msort")
+	mdir := q.Get("mdir")
+	csort := q.Get("csort")
+	cdir := q.Get("cdir")
+	sortUnits(materials, msort, mdir)
+	sortUnits(crafted, csort, cdir)
+
 	calc := &crafting.Calculator{Store: cfg.Store}
-	craftable := calc.Craftable(units, 30)
+	working := applyCartLines(units, cart)
+	craftable := calc.Craftable(working, 40)
+	cartValid := true
+	for _, line := range cart {
+		if !line.Plan.Valid {
+			cartValid = false
+			break
+		}
+	}
 	cfg.render(w, r, "inventory.html", map[string]any{
 		"Title":     "Inventory",
 		"Materials": materials,
@@ -85,7 +126,12 @@ func (cfg *apiConfig) handleInventory(w http.ResponseWriter, r *http.Request) {
 		"Rarities":  rarities,
 		"Items":     cfg.Store.Items(),
 		"Craftable": craftable,
+		"Cart":      cart,
+		"CartValid": cartValid,
+		"CartCount": len(cart),
+		"Filter":    map[string]string{"MForm": mform, "MTrait": mtrait, "MRarity": mrarity, "MSort": msort, "MDir": mdir, "CSort": csort, "CDir": cdir},
 		"Error":     r.URL.Query().Get("error"),
+		"CraftedOK": r.URL.Query().Get("crafted") != "",
 	})
 }
 
@@ -131,11 +177,16 @@ func (cfg *apiConfig) handleInventoryAdd(w http.ResponseWriter, r *http.Request)
 	}
 	var itemID *string
 	var category string
+	magic := false
 	if it, ok := cfg.Store.ItemByName(name); ok && kind == "crafted" {
 		itemID = &it.ID
 		category = it.Category
+		magic = it.Magic
 		if rarity == "" {
 			rarity = it.Rarity
+		}
+		if tier == 0 && it.Archetype != nil && it.Archetype.Tier != nil {
+			tier = *it.Archetype.Tier
 		}
 		// A crafted item inherits its name/type tags (Sword, Axe, ...), which
 		// recipes use to narrow a generic Weapon/Armor base.
@@ -147,6 +198,9 @@ func (cfg *apiConfig) handleInventoryAdd(w http.ResponseWriter, r *http.Request)
 	}
 	if rarity == "" {
 		rarity = "Common"
+	}
+	if kind == "crafted" && tier > 0 {
+		magic = true
 	}
 	if trait != "" && traitQty == 0 {
 		traitQty = 1
@@ -163,6 +217,22 @@ func (cfg *apiConfig) handleInventoryAdd(w http.ResponseWriter, r *http.Request)
 					Quantity: row.Quantity + int64(quantity), UpdatedAt: now(),
 					ID: row.ID, OwnerID: u.ID,
 				})
+				if note != "" {
+					merged := note
+					if row.Note.Valid && row.Note.String != "" && row.Note.String != note {
+						if strings.Contains(row.Note.String, note) {
+							merged = row.Note.String
+						} else {
+							merged = row.Note.String + "; " + note
+						}
+					}
+					if merged != row.Note.String {
+						_ = cfg.Q.UpdateInventoryNote(r.Context(), database.UpdateInventoryNoteParams{
+							Note: nullString(strPtrOrNil(merged)), UpdatedAt: now(),
+							ID: row.ID, OwnerID: u.ID,
+						})
+					}
+				}
 				http.Redirect(w, r, "/inventory", http.StatusSeeOther)
 				return
 			}
@@ -180,6 +250,7 @@ func (cfg *apiConfig) handleInventoryAdd(w http.ResponseWriter, r *http.Request)
 		Trait:     nullString(strPtrOrNil(trait)),
 		TraitQty:  int64(traitQty),
 		Tier:      int64(tier),
+		Magic:     boolInt(magic),
 		Tags:      string(tagJSON),
 		Quantity:  int64(quantity),
 		Note:      nullString(strPtrOrNil(note)),
@@ -276,6 +347,10 @@ func (cfg *apiConfig) handleInventoryUnit(w http.ResponseWriter, r *http.Request
 		if found, ok := cfg.Store.Item(unit.ItemID); ok {
 			item = found
 			unit.Category = found.Category
+			unit.Magic = found.Magic
+			if unit.Tier == 0 && found.Archetype != nil && found.Archetype.Tier != nil {
+				unit.Tier = *found.Archetype.Tier
+			}
 		}
 	}
 	var res crafting.Result

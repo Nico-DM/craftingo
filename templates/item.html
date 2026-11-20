@@ -36,7 +36,7 @@
 {{end}}
 </div>
 
-{{if .Item.Description}}<h2>Description</h2><div class="panel" style="white-space:pre-wrap">{{.Item.Description}}</div>{{end}}
+{{if .Item.Description}}<h2>Description</h2><div class="panel" style="white-space:pre-wrap">{{desc .Item.Description}}</div>{{end}}
 
 {{if or .Item.Damage .Item.Properties .Item.Weight .Item.Value .Item.StatSource}}
 <h2>Stats</h2>

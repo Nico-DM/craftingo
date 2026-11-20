@@ -6,7 +6,10 @@
 {{else}}
 <div class="row" style="margin-bottom:12px">
 <form method="post" action="/craft/{{.Item.ID}}"><button>Check my inventory</button></form>
+{{if .Plan.Valid}}<form method="post" action="/cart"><input type="hidden" name="item_id" value="{{.Item.ID}}"><button>Add to cart</button></form>
+{{else}}<span class="small have-bad">{{.Plan.Error}}</span>{{end}}
 <a class="badge" href="/inventory">Edit inventory</a>
+<a class="badge" href="/inventory#cart">Cart</a>
 {{if .Result.CanCraft}}<span class="badge have-ok">you have everything</span>{{else}}<span class="badge have-bad">{{.Result.MissingAll}} unit(s) missing</span>{{end}}
 </div>
 
@@ -26,6 +29,19 @@ have {{.Have}} / {{.Required}}{{if .Missing}} · missing {{.Missing}}{{end}}
 {{end}}
 {{template "extras" .Item.Recipe}}
 </div>
+
+{{if .Plan.Valid}}
+<h2>This craft would reserve</h2>
+<div class="panel">
+{{range .Plan.Groups}}
+<div class="opt">
+<div><strong>{{.Required}}×</strong> {{template "option" .Option}}{{if .Trait}} · {{.Trait}}{{end}}</div>
+<div class="small muted">{{range .Consumed}}{{.Name}} ×{{.Quantity}}{{if .Trait}} ({{.Trait}}){{end}} · {{end}}</div>
+</div>
+{{end}}
+<p class="small muted">Output: <span class="{{rarityClass .Plan.Output.Rarity}}">{{.Plan.Output.Rarity}}</span>{{if .Plan.Output.Tier}} · +{{.Plan.Output.Tier}}{{end}}{{if .Plan.Output.Trait}} · {{.Plan.Output.Trait}} ({{.Plan.Output.TraitQty}}){{else}} · Basic{{end}}{{range .Plan.Output.Tags}} · <span class="badge">{{.}}</span>{{end}}</p>
+</div>
+{{end}}
 
 {{if .Result.Subcrafts}}
 <h2>Craft these first</h2>

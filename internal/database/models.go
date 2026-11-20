@@ -8,6 +8,15 @@ import (
 	"database/sql"
 )
 
+type CraftCartLine struct {
+	ID             string
+	OwnerID        string
+	ItemID         string
+	Position       int64
+	CreatedAt      string
+	PreferredTrait string
+}
+
 type InventoryUnit struct {
 	ID        string
 	OwnerID   string
@@ -25,6 +34,7 @@ type InventoryUnit struct {
 	Note      sql.NullString
 	CreatedAt string
 	UpdatedAt string
+	Magic     int64
 }
 
 type Item struct {

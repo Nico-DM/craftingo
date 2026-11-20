@@ -35,6 +35,9 @@ label{display:block;font-size:.82rem;color:var(--muted);margin:8px 0 3px;font-fa
 pre{background:#12100c;border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:.85rem}
 .flash{border:1px solid #6a5639;background:#2f2718;padding:8px 12px;border-radius:8px;margin:10px 0}
 .flash.err{border-color:#8a4a3a;background:#33201b}
+.bar{display:inline-block;vertical-align:middle;width:46px;height:7px;background:#15120e;border:1px solid var(--line);border-radius:4px;margin-right:5px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--gold)}
+.bar.uc span{background:#7ec97e}.bar.r span{background:#6fa8ff}.bar.vr span{background:#c58bff}.bar.l span{background:#f0b04a}
 footer{color:var(--muted);font-size:.8rem;padding:30px 0}
 </style>
 </head>
@@ -46,6 +49,31 @@ footer{color:var(--muted);font-size:.8rem;padding:30px 0}
 {{define "foot"}}
 <footer>Craftingo · homebrew D&amp;D 5e crafting catalog</footer>
 </main>
+<script>
+(() => {
+  document.querySelectorAll('form[data-live]').forEach((form) => {
+    let timer;
+    const submit = () => form.requestSubmit();
+    form.querySelectorAll('select').forEach((el) => {
+      el.addEventListener('change', submit);
+    });
+    form.querySelectorAll('input[type="search"], input[type="text"]').forEach((el) => {
+      el.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(submit, 350);
+      });
+    });
+    const reverse = form.querySelector('[data-reverse]');
+    if (reverse) {
+      reverse.addEventListener('click', () => {
+        const dir = form.querySelector('input[name="dir"], input[name="mdir"], input[name="cdir"]');
+        if (dir) dir.value = reverse.dataset.dir;
+        submit();
+      });
+    }
+  });
+})();
+</script>
 </body></html>
 {{end}}
 

@@ -2,13 +2,15 @@
 <h1>Catalog</h1>
 <p class="muted">{{.Filter.Total}} items · {{if .User}}<a href="/inventory">your inventory</a>{{else}}<a href="/login">sign in</a> to see what you can craft{{end}}</p>
 
-<form class="panel row" method="get" action="/">
-  <div><label for="q">Search</label><input id="q" name="q" value="{{.Filter.Q}}" placeholder="name or type"></div>
+<form class="panel row" method="get" action="/" data-live>
+  <input type="hidden" name="dir" value="{{.Filter.Dir}}">
+  <div><label for="q">Search</label><input id="q" name="q" type="search" value="{{.Filter.Q}}" placeholder="name or type"></div>
   <div><label for="category">Category</label><select id="category" name="category"><option value="">All</option>{{range .Categories}}<option {{if eq . $.Filter.Category}}selected{{end}}>{{.}}</option>{{end}}</select></div>
   <div><label for="rarity">Rarity</label><select id="rarity" name="rarity"><option value="">All</option>{{range .Rarities}}<option {{if eq . $.Filter.Rarity}}selected{{end}}>{{.}}</option>{{end}}</select></div>
   <div><label for="source">Source</label><select id="source" name="source"><option value="">All</option>{{range .Sources}}<option {{if eq . $.Filter.Source}}selected{{end}}>{{.}}</option>{{end}}</select></div>
   <div><label for="magic">Magic</label><select id="magic" name="magic"><option value="">All</option><option value="yes" {{if eq .Filter.Magic "yes"}}selected{{end}}>Magic only</option><option value="no" {{if eq .Filter.Magic "no"}}selected{{end}}>Mundane only</option></select></div>
-  <div><button>Filter</button> <a class="small" href="/">reset</a></div>
+  <div><label for="sort">Sort</label><select id="sort" name="sort"><option value="">Default</option><option value="name" {{if eq .Filter.Sort "name"}}selected{{end}}>Name</option><option value="category" {{if eq .Filter.Sort "category"}}selected{{end}}>Category</option><option value="rarity" {{if eq .Filter.Sort "rarity"}}selected{{end}}>Rarity</option><option value="source" {{if eq .Filter.Sort "source"}}selected{{end}}>Source</option><option value="magic" {{if eq .Filter.Sort "magic"}}selected{{end}}>Magic</option></select></div>
+  <div><label>Order</label><button type="button" class="small" data-reverse data-dir="{{if eq .Filter.Dir "desc"}}asc{{else}}desc{{end}}">Reverse</button> <a class="small" href="/">reset</a></div>
 </form>
 
 <div class="grid">
@@ -26,9 +28,9 @@
 
 {{if or .HasPrev .HasNext}}
 <div class="row" style="margin-top:18px">
-{{if .HasPrev}}<a href="/?page={{.PrevPage}}&q={{.Filter.Q}}&category={{.Filter.Category}}&rarity={{.Filter.Rarity}}&source={{.Filter.Source}}&magic={{.Filter.Magic}}">← previous</a>{{end}}
+{{if .HasPrev}}<a href="/?page={{.PrevPage}}&q={{.Filter.Q}}&category={{.Filter.Category}}&rarity={{.Filter.Rarity}}&source={{.Filter.Source}}&magic={{.Filter.Magic}}&sort={{.Filter.Sort}}&dir={{.Filter.Dir}}">← previous</a>{{end}}
 <span class="muted small">page {{.Filter.Page}}</span>
-{{if .HasNext}}<a href="/?page={{.NextPage}}&q={{.Filter.Q}}&category={{.Filter.Category}}&rarity={{.Filter.Rarity}}&source={{.Filter.Source}}&magic={{.Filter.Magic}}">next →</a>{{end}}
+{{if .HasNext}}<a href="/?page={{.NextPage}}&q={{.Filter.Q}}&category={{.Filter.Category}}&rarity={{.Filter.Rarity}}&source={{.Filter.Source}}&magic={{.Filter.Magic}}&sort={{.Filter.Sort}}&dir={{.Filter.Dir}}">next →</a>{{end}}
 </div>
 {{end}}
 {{template "foot" .}}

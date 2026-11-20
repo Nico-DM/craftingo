@@ -95,6 +95,13 @@ func joinNonEmpty(parts ...any) string {
 
 func hasPrefix(s, prefix string) bool { return strings.HasPrefix(s, prefix) }
 
+// descriptionText turns the dataset's double spaces into paragraph breaks with
+// a blank line between them. The surrounding template uses white-space:pre-wrap,
+// so the newlines are visible.
+func descriptionText(s string) string {
+	return strings.ReplaceAll(s, "  ", "\n\n")
+}
+
 func urlMsg(s string) string {
 	return strings.ReplaceAll(strings.ReplaceAll(s, " ", "+"), "&", "%26")
 }

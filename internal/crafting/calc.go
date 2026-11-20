@@ -17,6 +17,7 @@ type Unit struct {
 	FormName string
 	ItemID   string
 	Category string
+	Subtype  string
 	Name     string
 	Rarity   string
 	Trait    string
@@ -24,6 +25,7 @@ type Unit struct {
 	Tier     int
 	Tags     []string
 	Quantity int
+	Magic    bool
 }
 
 // GroupProgress is the per-group result of a feasibility check.
@@ -107,12 +109,21 @@ func matchForm(unit Unit, f catalog.Form, optionTier *int) bool {
 		if unit.Kind != "crafted" || unit.ItemID != f.ID {
 			return false
 		}
+		if f.Mundane && unit.Magic {
+			return false
+		}
 		if optionTier != nil && unit.Tier < *optionTier {
 			return false
 		}
 		return true
 	case "generic":
 		if unit.Kind != "crafted" {
+			return false
+		}
+		// Generic "any Weapon/Armor" bases mean mundane items. A recipe that
+		// explicitly asks for a tiered base (e.g. Vicious Weapon's +2 Weapon)
+		// may use a magic item once it reaches that tier.
+		if unit.Magic && (optionTier == nil || unit.Tier < *optionTier) {
 			return false
 		}
 		if !strings.EqualFold(unit.Category, f.Name) {
@@ -144,6 +155,37 @@ func containsFold(list []string, value string) bool {
 	return false
 }
 
+// groupUsesTraits reports whether a group is counted in trait units. A crafted
+// item carrying Fiery (5) contributes five units to an "8x Fiery" requirement,
+// but still counts as one unit for form-only requirements.
+func groupUsesTraits(g catalog.Group) bool {
+	if g.TraitMode == "variable" {
+		return true
+	}
+	for _, o := range g.Options {
+		if len(o.Traits) > 0 {
+			return true
+		}
+	}
+	return false
+}
+
+// unitTraitAmount is how many trait units one unit contributes when the group
+// is trait-based. Raw stacks contribute one per item; crafted items contribute
+// the full trait quantity they carry.
+func unitTraitAmount(u Unit) int {
+	if u.Kind == "crafted" {
+		if u.TraitQty > 0 {
+			return u.TraitQty
+		}
+		return 1
+	}
+	if u.Quantity > 0 {
+		return u.Quantity
+	}
+	return 0
+}
+
 // Evaluate checks one item against the units. depth controls recursive sub-craft
 // hints; pass 0 for a flat check.
 func (c *Calculator) Evaluate(item *catalog.Item, units []Unit, depth int) Result {
@@ -161,20 +203,7 @@ func (c *Calculator) evaluate(item *catalog.Item, units []Unit, depth int, seen 
 	seen[item.ID] = true
 	defer delete(seen, item.ID)
 
-	// Fill derived fields for callers that only supplied raw columns.
-	for i := range units {
-		if units[i].ItemID == "" {
-			continue
-		}
-		if it, ok := c.Store.Item(units[i].ItemID); ok {
-			if units[i].Category == "" {
-				units[i].Category = it.Category
-			}
-			if units[i].Tier == 0 && units[i].Kind == "crafted" && it.Archetype != nil && it.Archetype.Tier != nil {
-				units[i].Tier = *it.Archetype.Tier
-			}
-		}
-	}
+	c.derive(units)
 
 	groups := item.Recipe.Groups
 	// Count matches per group and option. A unit can count toward every group.
@@ -183,6 +212,7 @@ func (c *Calculator) evaluate(item *catalog.Item, units []Unit, depth int, seen 
 		if gp.Required == 0 {
 			gp.Required = g.Quantity
 		}
+		traitBased := groupUsesTraits(g)
 		gp.OptionHave = make([]int, len(g.Options))
 		for ui := range units {
 			u := units[ui]
@@ -192,15 +222,19 @@ func (c *Calculator) evaluate(item *catalog.Item, units []Unit, depth int, seen 
 			if g.MinRarity != "" && catalog.RarityRank(u.Rarity) < catalog.RarityRank(g.MinRarity) {
 				continue
 			}
+			amount := u.Quantity
+			if traitBased {
+				amount = unitTraitAmount(u)
+			}
 			matchedGroup := false
 			for oi, opt := range g.Options {
 				if MatchOption(u, opt) {
-					gp.OptionHave[oi] += u.Quantity
+					gp.OptionHave[oi] += amount
 					matchedGroup = true
 				}
 			}
 			if matchedGroup {
-				gp.Have += u.Quantity
+				gp.Have += amount
 			}
 		}
 		if g.TraitMode == "variable" {
@@ -231,7 +265,7 @@ func (c *Calculator) evaluate(item *catalog.Item, units []Unit, depth int, seen 
 				for _, u := range units {
 					if strings.EqualFold(u.Trait, candidate) && u.Quantity > 0 {
 						if len(g.Options) == 0 || matchesAny(u, g.Options) {
-							count += u.Quantity
+							count += unitTraitAmount(u)
 						}
 					}
 				}
@@ -259,6 +293,33 @@ func (c *Calculator) evaluate(item *catalog.Item, units []Unit, depth int, seen 
 		res.Subcrafts = c.subcrafts(item, units, res, depth, seen)
 	}
 	return res
+}
+
+// derive fills fields that callers may only have supplied as raw columns.
+func (c *Calculator) derive(units []Unit) {
+	if c.Store == nil {
+		return
+	}
+	for i := range units {
+		if units[i].ItemID == "" {
+			continue
+		}
+		if it, ok := c.Store.Item(units[i].ItemID); ok {
+			if units[i].Category == "" {
+				units[i].Category = it.Category
+			}
+			if units[i].Subtype == "" && it.Subtype != nil {
+				units[i].Subtype = *it.Subtype
+			}
+			if units[i].Name == "" {
+				units[i].Name = it.Name
+			}
+			units[i].Magic = units[i].Magic || it.Magic
+			if units[i].Tier == 0 && units[i].Kind == "crafted" && it.Archetype != nil && it.Archetype.Tier != nil {
+				units[i].Tier = *it.Archetype.Tier
+			}
+		}
+	}
 }
 
 func (c *Calculator) subcrafts(item *catalog.Item, units []Unit, res Result, depth int, seen map[string]bool) []Subcraft {

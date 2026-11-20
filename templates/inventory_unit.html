@@ -31,4 +31,5 @@
 </div>
 {{end}}
 {{end}}
+{{if and .Item .Item.Description}}<h2>Description</h2><div class="panel" style="white-space:pre-wrap">{{desc .Item.Description}}</div>{{end}}
 {{template "foot" .}}

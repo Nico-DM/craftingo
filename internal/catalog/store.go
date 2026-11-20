@@ -141,11 +141,12 @@ func (s *Store) distinct(f func(Item) string) []string {
 	return out
 }
 
-// Templates returns generated archetype rows (tier templates and modifiers).
+// Templates returns generated tier rows (for example Weapon +1 and Ammunition
+// +4). Named modifiers are listed separately by Modifiers.
 func (s *Store) Templates() []Item {
 	var out []Item
 	for _, it := range s.Items() {
-		if it.Template || (it.Archetype != nil && it.Archetype.Kind == "tier") {
+		if it.Archetype != nil && it.Archetype.Kind == "tier" {
 			out = append(out, it)
 		}
 	}
@@ -172,7 +173,7 @@ func (s *Store) BaseCandidates(kind, name string) []Item {
 		}
 		switch kind {
 		case "category":
-			if strings.EqualFold(it.Category, name) {
+			if strings.EqualFold(it.Category, name) && !it.Magic {
 				out = append(out, it)
 			}
 		case "item":

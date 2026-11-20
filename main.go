@@ -55,15 +55,8 @@ func main() {
 		"rarityClass": rarityClass,
 		"join":        joinNonEmpty,
 		"hasPrefix":   hasPrefix,
-		"seq":         seq,
-		"dict":        dict,
+		"desc":        descriptionText,
 		"add":         func(a, b int) int { return a + b },
-		"pct": func(a, b int) int {
-			if b == 0 {
-				return 0
-			}
-			return a * 100 / b
-		},
 	}
 	tmpl := template.Must(template.New("").Funcs(funcs).ParseFS(templateFiles, "templates/*.html"))
 
@@ -93,6 +86,11 @@ func main() {
 		r.Post("/inventory/units/{id}/delete", cfg.handleInventoryDelete)
 		r.Get("/craft/{id}", cfg.handleCraft)
 		r.Post("/craft/{id}", cfg.handleCraft)
+		r.Post("/cart", cfg.handleCartAdd)
+		r.Post("/cart/{id}/trait", cfg.handleCartTrait)
+		r.Post("/cart/{id}/delete", cfg.handleCartDelete)
+		r.Post("/cart/clear", cfg.handleCartClear)
+		r.Post("/cart/finalize", cfg.handleCartFinalize)
 	})
 
 	r.Group(func(r chi.Router) {
@@ -119,24 +117,4 @@ func main() {
 	}
 	slog.Info("Serving Craftingo", "port", port)
 	log.Fatal(srv.ListenAndServe())
-}
-
-func seq(n int) []int {
-	out := make([]int, n)
-	for i := range out {
-		out[i] = i
-	}
-	return out
-}
-
-func dict(values ...any) map[string]any {
-	m := map[string]any{}
-	for i := 0; i+1 < len(values); i += 2 {
-		key, ok := values[i].(string)
-		if !ok {
-			continue
-		}
-		m[key] = values[i+1]
-	}
-	return m
 }

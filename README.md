@@ -63,14 +63,25 @@ of truth for items, recipes and stats; do not hand-edit `data/build`.
 - **Accounts**: DM and player roles, password + session cookie. DMs create
   accounts; there is no signup.
 - **Inventory**: raw material stacks (form + rarity + optional trait + tags) and
-  individual crafted items (tier, trait, tags).
+  individual crafted items (tier, magic, trait, tags). Materials and crafted
+  items have separate add forms, filters and sorting.
+- **List ordering**: filters and sorting apply immediately. The combined
+  **Default** order is mundane before magic, Common to Legendary, category with
+  alphabetical subtype, then name. Every sort option has a **Reverse** toggle
+  that flips the whole resulting list.
+- **Crafting cart**: add craftable items as cart lines. Reserved materials are
+  excluded from later lines, a line's output can feed later lines, removing a
+  line returns its materials, and only **Finalize** consumes the inventory.
+  When several traits tie for the output, the crafter picks the one it keeps.
 - **Calculator**: can-craft result, per-group have/missing counts, bound dragon
   traits, and recursive "craft these first" suggestions. It is a feasibility
   check, not a purchase optimizer.
 - **DM editor**: edit item metadata, intrinsic tags, archetypes and the recipe
   JSON, with validation and transactional replacement.
-- **Generator**: tier templates (`Weapon +1` .. `+4`, `Armor +1` .. `+3`) and
-  named modifiers composed over a chosen base. Nothing is flattened.
+- **Generator**: tier templates (`Weapon +1` .. `+4`, `Armor +1` .. `+3`,
+  `Ammunition +1` .. `+4`) and named modifiers composed over a chosen base.
+  Nothing is flattened. `Vicious Weapon` is a named modifier, not a tier
+  template.
 
 ## Recipe model
 

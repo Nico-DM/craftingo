@@ -13,14 +13,14 @@ import (
 const createInventoryUnit = `-- name: CreateInventoryUnit :one
 INSERT INTO inventory_units (
     id, owner_id, kind, form_kind, form_name, item_id, name, rarity, trait,
-    trait_qty, tier, tags, quantity, note, created_at, updated_at
+    trait_qty, tier, magic, tags, quantity, note, created_at, updated_at
 ) VALUES (
     ?1, ?2, ?3, ?4,
     ?5, ?6, ?7, ?8,
     ?9, ?10, ?11, ?12, ?13,
-    ?14, ?15, ?16
+    ?14, ?15, ?16, ?17
 )
-RETURNING id, owner_id, kind, form_kind, form_name, item_id, name, rarity, trait, trait_qty, tier, tags, quantity, note, created_at, updated_at
+RETURNING id, owner_id, kind, form_kind, form_name, item_id, name, rarity, trait, trait_qty, tier, tags, quantity, note, created_at, updated_at, magic
 `
 
 type CreateInventoryUnitParams struct {
@@ -35,6 +35,7 @@ type CreateInventoryUnitParams struct {
 	Trait     sql.NullString
 	TraitQty  int64
 	Tier      int64
+	Magic     int64
 	Tags      string
 	Quantity  int64
 	Note      sql.NullString
@@ -55,6 +56,7 @@ func (q *Queries) CreateInventoryUnit(ctx context.Context, arg CreateInventoryUn
 		arg.Trait,
 		arg.TraitQty,
 		arg.Tier,
+		arg.Magic,
 		arg.Tags,
 		arg.Quantity,
 		arg.Note,
@@ -79,6 +81,7 @@ func (q *Queries) CreateInventoryUnit(ctx context.Context, arg CreateInventoryUn
 		&i.Note,
 		&i.CreatedAt,
 		&i.UpdatedAt,
+		&i.Magic,
 	)
 	return i, err
 }
@@ -99,7 +102,7 @@ func (q *Queries) DeleteInventoryUnit(ctx context.Context, arg DeleteInventoryUn
 }
 
 const getInventoryUnit = `-- name: GetInventoryUnit :one
-SELECT id, owner_id, kind, form_kind, form_name, item_id, name, rarity, trait, trait_qty, tier, tags, quantity, note, created_at, updated_at
+SELECT id, owner_id, kind, form_kind, form_name, item_id, name, rarity, trait, trait_qty, tier, tags, quantity, note, created_at, updated_at, magic
 FROM inventory_units
 WHERE id = ?1 AND owner_id = ?2
 `
@@ -129,12 +132,13 @@ func (q *Queries) GetInventoryUnit(ctx context.Context, arg GetInventoryUnitPara
 		&i.Note,
 		&i.CreatedAt,
 		&i.UpdatedAt,
+		&i.Magic,
 	)
 	return i, err
 }
 
 const listInventory = `-- name: ListInventory :many
-SELECT id, owner_id, kind, form_kind, form_name, item_id, name, rarity, trait, trait_qty, tier, tags, quantity, note, created_at, updated_at
+SELECT id, owner_id, kind, form_kind, form_name, item_id, name, rarity, trait, trait_qty, tier, tags, quantity, note, created_at, updated_at, magic
 FROM inventory_units
 WHERE owner_id = ?1
 ORDER BY kind, name, created_at
@@ -166,6 +170,7 @@ func (q *Queries) ListInventory(ctx context.Context, ownerID string) ([]Inventor
 			&i.Note,
 			&i.CreatedAt,
 			&i.UpdatedAt,
+			&i.Magic,
 		); err != nil {
 			return nil, err
 		}
@@ -178,6 +183,29 @@ func (q *Queries) ListInventory(ctx context.Context, ownerID string) ([]Inventor
 		return nil, err
 	}
 	return items, nil
+}
+
+const updateInventoryNote = `-- name: UpdateInventoryNote :exec
+UPDATE inventory_units
+SET note = ?1, updated_at = ?2
+WHERE id = ?3 AND owner_id = ?4
+`
+
+type UpdateInventoryNoteParams struct {
+	Note      sql.NullString
+	UpdatedAt string
+	ID        string
+	OwnerID   string
+}
+
+func (q *Queries) UpdateInventoryNote(ctx context.Context, arg UpdateInventoryNoteParams) error {
+	_, err := q.db.ExecContext(ctx, updateInventoryNote,
+		arg.Note,
+		arg.UpdatedAt,
+		arg.ID,
+		arg.OwnerID,
+	)
+	return err
 }
 
 const updateInventoryQuantity = `-- name: UpdateInventoryQuantity :exec
@@ -210,11 +238,12 @@ SET name = ?1,
     trait = ?3,
     trait_qty = ?4,
     tier = ?5,
-    tags = ?6,
-    quantity = ?7,
-    note = ?8,
-    updated_at = ?9
-WHERE id = ?10 AND owner_id = ?11
+    magic = ?6,
+    tags = ?7,
+    quantity = ?8,
+    note = ?9,
+    updated_at = ?10
+WHERE id = ?11 AND owner_id = ?12
 `
 
 type UpdateInventoryUnitParams struct {
@@ -223,6 +252,7 @@ type UpdateInventoryUnitParams struct {
 	Trait     sql.NullString
 	TraitQty  int64
 	Tier      int64
+	Magic     int64
 	Tags      string
 	Quantity  int64
 	Note      sql.NullString
@@ -238,6 +268,7 @@ func (q *Queries) UpdateInventoryUnit(ctx context.Context, arg UpdateInventoryUn
 		arg.Trait,
 		arg.TraitQty,
 		arg.Tier,
+		arg.Magic,
 		arg.Tags,
 		arg.Quantity,
 		arg.Note,

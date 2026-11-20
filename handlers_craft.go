@@ -34,20 +34,30 @@ func (cfg *apiConfig) handleCraft(w http.ResponseWriter, r *http.Request) {
 	}
 	calc := &crafting.Calculator{Store: cfg.Store}
 	res := calc.Evaluate(it, units, 3)
+	plan := calc.Plan(it, units)
 	cfg.render(w, r, "craft.html", map[string]any{
 		"Title":   "Craft " + it.Name,
 		"Item":    it,
 		"Result":  res,
+		"Plan":    plan,
 		"Units":   units,
 		"Checked": r.Method == http.MethodPost || r.URL.Query().Get("check") != "",
 	})
 }
 
 func (cfg *apiConfig) handleGenerateIndex(w http.ResponseWriter, r *http.Request) {
+	sortKey := r.URL.Query().Get("sort")
+	dir := r.URL.Query().Get("dir")
+	templates := cfg.Store.Templates()
+	modifiers := cfg.Store.Modifiers()
+	sortItems(templates, sortKey, dir)
+	sortItems(modifiers, sortKey, dir)
 	cfg.render(w, r, "generate.html", map[string]any{
 		"Title":     "Generator",
-		"Templates": cfg.Store.Templates(),
-		"Modifiers": cfg.Store.Modifiers(),
+		"Templates": templates,
+		"Modifiers": modifiers,
+		"Sort":      sortKey,
+		"Dir":       dir,
 	})
 }
 
@@ -57,11 +67,16 @@ func (cfg *apiConfig) handleGenerateArchetype(w http.ResponseWriter, r *http.Req
 		http.NotFound(w, r)
 		return
 	}
+	sortKey := r.URL.Query().Get("sort")
+	dir := r.URL.Query().Get("dir")
 	bases := cfg.Store.BaseCandidates(arch.Archetype.Base.Kind, arch.Archetype.Base.Name)
+	sortItems(bases, sortKey, dir)
 	cfg.render(w, r, "generate_base.html", map[string]any{
 		"Title": "Generate " + arch.Name,
 		"Arch":  arch,
 		"Bases": bases,
+		"Sort":  sortKey,
+		"Dir":   dir,
 	})
 }
 
@@ -79,6 +94,7 @@ func (cfg *apiConfig) handleGenerateCombo(w http.ResponseWriter, r *http.Request
 	combo := composeCombo(arch, base)
 
 	var res crafting.Result
+	var plan crafting.Plan
 	checked := false
 	if _, ok := currentUser(r); ok {
 		if units, err := cfg.loadUnits(r); err == nil {
@@ -86,30 +102,37 @@ func (cfg *apiConfig) handleGenerateCombo(w http.ResponseWriter, r *http.Request
 			if combo.Recipe != nil && combo.Recipe.Kind == "groups" {
 				calc := &crafting.Calculator{Store: cfg.Store}
 				res = calc.Evaluate(combo, units, 3)
+				plan = calc.Plan(combo, units)
 			}
 		}
 	}
 	cfg.render(w, r, "generate_combo.html", map[string]any{
-		"Title":   arch.Name + " " + base.Name,
-		"Arch":    arch,
-		"Base":    base,
-		"Combo":   combo,
-		"Result":  res,
-		"Checked": checked,
+		"Title":      arch.Name + " " + base.Name,
+		"Arch":       arch,
+		"Base":       base,
+		"Combo":      combo,
+		"Result":     res,
+		"Plan":       plan,
+		"CartItemID": arch.ID + ":" + base.ID,
+		"Checked":    checked,
 	})
 }
 
 // composeCombo builds the generated item page for a base + archetype pair.
 //
-// Tier archetypes ("Weapon +1") keep the base recipe and add the tier label.
+// Tier archetypes ("Weapon +1") compose over the base item: a +2 Greataxe is
+// crafted from one mundane Greataxe, not flattened into its raw recipe.
 // Modifier archetypes ("Vicious Weapon") replace their generic "+2 Weapon"
 // requirement with the concrete base, so a Vicious Greataxe is crafted from a
 // +2 Greataxe rather than being flattened into generic materials.
 func composeCombo(arch, base *catalog.Item) *catalog.Item {
 	combo := *base
-	combo.ID = arch.ID + ":" + base.ID
+	// The composed item keeps the base's catalog identity for recipe matching
+	// and inventory references; only its displayed name and recipe change.
+	combo.ID = base.ID
 	combo.Name = arch.Name + " " + base.Name
 	combo.Rarity = arch.Rarity
+	combo.Magic = arch.Magic || base.Magic
 	combo.Archetype = arch.Archetype
 	combo.Template = false
 	combo.ShortDescription = base.ShortDescription
@@ -121,9 +144,18 @@ func composeCombo(arch, base *catalog.Item) *catalog.Item {
 		return &combo
 	}
 	if arch.Recipe.Kind == "inherit" {
-		combo.Recipe = cloneRecipe(base.Recipe)
-		if combo.Recipe != nil {
-			combo.Recipe.AddNotes("Tier " + arch.Name + " applied to " + base.Name)
+		// Tier templates are base-over compositions too: a +2 Greataxe is
+		// crafted from a Greataxe, not from the Greataxe's raw materials.
+		combo.Recipe = &catalog.Recipe{
+			Kind:   "groups",
+			Rarity: arch.Rarity,
+			Groups: []catalog.Group{{
+				Quantity: 1, TraitMode: "fixed", Position: 1,
+				Options: []catalog.Option{{
+					Forms: []catalog.Form{{Kind: "item", Name: base.Name, ID: base.ID, Mundane: true}},
+				}},
+			}},
+			Notes: []string{"Tier " + arch.Name + " applied over " + base.Name},
 		}
 		return &combo
 	}
