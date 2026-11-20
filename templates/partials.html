@@ -1,0 +1,109 @@
+{{define "head"}}<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{.Title}} · Craftingo</title>
+<style>
+:root{--bg:#1b1712;--panel:#262019;--panel2:#31291f;--ink:#efe6d6;--muted:#b7a992;--line:#4a3d2c;--gold:#d9b06a;--accent:#8bbf8b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 ui-serif,Georgia,"Times New Roman",serif}
+a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:1100px;margin:0 auto;padding:24px}
+nav.top{background:#12100c;border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:18px;align-items:center;padding:12px 24px}
+nav.top .brand{font-weight:700;font-size:1.25rem;letter-spacing:.04em;color:var(--gold)}
+nav.top a{color:var(--ink)} nav.top .spacer{flex:1}
+h1,h2,h3{font-family:ui-sans-serif,system-ui,sans-serif;line-height:1.2}
+h1{font-size:1.9rem;margin:0 0 6px} h2{font-size:1.2rem;margin:28px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.muted{color:var(--muted)} .small{font-size:.85rem}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin:14px 0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card a{font-weight:600}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 9px;font-size:.78rem;margin:0 4px 4px 0;background:var(--panel2);font-family:ui-sans-serif,system-ui,sans-serif}
+.r-common{color:#cfcfcf}.r-uncommon{color:#7ec97e}.r-rare{color:#6fa8ff}.r-veryrare{color:#c58bff}.r-legendary{color:#f0b04a}.r-varies{color:#e8d28a}.r-none{color:#aaa}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.04em}
+input,select,textarea,button{font:inherit;color:var(--ink);background:#15120e;border:1px solid var(--line);border-radius:6px;padding:6px 8px}
+button{cursor:pointer;background:var(--panel2);border-color:#6a5639} button:hover{border-color:var(--gold)}
+label{display:block;font-size:.82rem;color:var(--muted);margin:8px 0 3px;font-family:ui-sans-serif,system-ui,sans-serif}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.opt{padding:6px 0;border-bottom:1px dashed var(--line)} .opt:last-child{border-bottom:0}
+.req{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.95rem}
+.have-ok{color:var(--accent)} .have-bad{color:#e28a7a}
+pre{background:#12100c;border:1px solid var(--line);border-radius:8px;padding:12px;overflow:auto;font-size:.85rem}
+.flash{border:1px solid #6a5639;background:#2f2718;padding:8px 12px;border-radius:8px;margin:10px 0}
+.flash.err{border-color:#8a4a3a;background:#33201b}
+.bar{display:inline-block;vertical-align:middle;width:46px;height:7px;background:#15120e;border:1px solid var(--line);border-radius:4px;margin-right:5px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--gold)}
+.bar.uc span{background:#7ec97e}.bar.r span{background:#6fa8ff}.bar.vr span{background:#c58bff}.bar.l span{background:#f0b04a}
+footer{color:var(--muted);font-size:.8rem;padding:30px 0}
+</style>
+</head>
+<body>
+{{template "nav" .}}
+<main class="wrap">
+{{end}}
+
+{{define "foot"}}
+<footer>Craftingo · homebrew D&amp;D 5e crafting catalog</footer>
+</main>
+<script>
+(() => {
+  document.querySelectorAll('form[data-live]').forEach((form) => {
+    let timer;
+    const submit = () => form.requestSubmit();
+    form.querySelectorAll('select').forEach((el) => {
+      el.addEventListener('change', submit);
+    });
+    form.querySelectorAll('input[type="search"], input[type="text"]').forEach((el) => {
+      el.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(submit, 350);
+      });
+    });
+    const reverse = form.querySelector('[data-reverse]');
+    if (reverse) {
+      reverse.addEventListener('click', () => {
+        const dir = form.querySelector('input[name="dir"], input[name="mdir"], input[name="cdir"]');
+        if (dir) dir.value = reverse.dataset.dir;
+        submit();
+      });
+    }
+  });
+})();
+</script>
+</body></html>
+{{end}}
+
+{{define "nav"}}
+<nav class="top"><div class="wrap">
+<a class="brand" href="/">Craftingo</a>
+<a href="/">Catalog</a>
+<a href="/generate">Generator</a>
+{{if .User}}
+<a href="/inventory">Inventory</a>
+{{if eq .User.Role "dm"}}<a href="/admin">DM</a>{{end}}
+<span class="spacer"></span>
+<span class="small muted">{{.User.Username}} ({{.User.Role}})</span>
+<form method="post" action="/logout" style="display:inline"><button class="small">Sign out</button></form>
+{{else}}
+<span class="spacer"></span>
+<a href="/login">Sign in</a>
+{{end}}
+</div></nav>
+{{end}}
+
+{{define "option"}}<span class="req">{{if .Tier}}+{{.Tier}} {{end}}{{if .AnyRaw}}Material{{end}}{{range $i, $f := .Forms}}{{if $i}} / {{end}}{{if eq $f.Kind "generic"}}any {{end}}{{$f.Name}}{{end}}{{range .Traits}}{{if $.Forms}} · {{end}}{{.}}{{end}}{{if .TagsAll}} <span class="muted">({{range $i, $t := .TagsAll}}{{if $i}}, {{end}}{{$t}}{{end}})</span>{{end}}{{if .TagsAny}} <span class="muted">({{range $i, $t := .TagsAny}}{{if $i}}/{{end}}{{$t}}{{end}})</span>{{end}}</span>{{end}}
+
+{{define "formgroup"}}
+<div class="opt">
+<strong>{{.Quantity}}{{if .QuantityMax}}–{{.QuantityMax}}{{end}}×</strong>
+{{if .MinRarity}}<span class="badge">{{.MinRarity}}+</span>{{end}}
+{{if eq .TraitMode "variable"}}<span class="badge">same trait as material</span>{{end}}
+{{range $i, $o := .Options}}{{if $i}}<span class="muted"> or </span>{{end}}{{template "option" $o}}{{end}}
+</div>
+{{end}}
+
+{{define "extras"}}{{range .Extras}}<div class="opt"><span class="badge">{{.Kind}}</span> {{.Raw}}</div>{{end}}{{end}}

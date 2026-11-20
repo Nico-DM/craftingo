@@ -1,0 +1,35 @@
+{{template "head" .}}
+<p class="small"><a href="/inventory">← inventory</a></p>
+<h1>{{.Unit.Name}}</h1>
+<div>
+<span class="badge {{rarityClass .Unit.Rarity}}">{{.Unit.Rarity}}</span>
+<span class="badge">{{if eq .Unit.Kind "material"}}material{{else}}crafted{{end}}</span>
+{{if .Unit.Tier}}<span class="badge">+{{.Unit.Tier}}</span>{{end}}
+{{if .Unit.Trait}}<span class="badge">{{.Unit.Trait}} ({{.Unit.TraitQty}})</span>{{else}}<span class="badge">Basic</span>{{end}}
+</div>
+
+<h2>Instance</h2>
+<table class="panel">
+<tr><th>Form</th><td>{{.Unit.FormName}} ({{.Unit.FormKind}})</td></tr>
+<tr><th>Quantity</th><td>{{.Unit.Quantity}}</td></tr>
+<tr><th>Tags</th><td>{{range .Unit.Tags}}<span class="badge">{{.}}</span>{{else}}<span class="muted">none</span>{{end}}</td></tr>
+{{if .Note}}<tr><th>Note</th><td>{{.Note}}</td></tr>{{end}}
+<tr><th>Acquired</th><td class="small muted">{{.Created}}</td></tr>
+</table>
+
+{{if .Item}}
+<h2>Catalog item</h2>
+<div class="panel">
+<strong><a href="/items/{{.Item.ID}}">{{.Item.Name}}</a></strong>
+<span class="small muted">{{join .Item.Category .Item.Subtype}} · <span class="{{rarityClass .Item.Rarity}}">{{.Item.Rarity}}</span></span>
+{{if .Item.Recipe}}{{if eq .Item.Recipe.Kind "groups"}}{{range .Item.Recipe.Groups}}{{template "formgroup" .}}{{end}}{{else}}<div class="small muted">As {{.Item.Recipe.BaseSelector.Name}}</div>{{end}}{{else}}<div class="small muted">No recipe.</div>{{end}}
+</div>
+{{if .Checked}}
+<div class="panel small {{if .Result.CanCraft}}have-ok{{else}}have-bad{{end}}">
+{{if .Result.CanCraft}}You have enough in your inventory to craft another one.{{else}}{{.Result.MissingAll}} unit(s) missing for another one.{{end}}
+<a href="/craft/{{.Item.ID}}">open the calculator</a>
+</div>
+{{end}}
+{{end}}
+{{if and .Item .Item.Description}}<h2>Description</h2><div class="panel" style="white-space:pre-wrap">{{desc .Item.Description}}</div>{{end}}
+{{template "foot" .}}

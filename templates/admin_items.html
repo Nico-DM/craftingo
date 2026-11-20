@@ -1,0 +1,18 @@
+{{template "head" .}}
+<h1>Edit items</h1>
+<form method="get" action="/admin/items" class="panel row" data-live><input type="hidden" name="dir" value="{{.Dir}}"><div><label for="q">Search</label><input id="q" name="q" type="search" value="{{.Q}}"></div>
+<div><label for="sort">Sort</label><select id="sort" name="sort"><option value="">Default</option><option value="name" {{if eq .Sort "name"}}selected{{end}}>Name</option><option value="category" {{if eq .Sort "category"}}selected{{end}}>Category</option><option value="rarity" {{if eq .Sort "rarity"}}selected{{end}}>Rarity</option><option value="source" {{if eq .Sort "source"}}selected{{end}}>Source</option></select></div>
+<div><label>Order</label><button type="button" class="small" data-reverse data-dir="{{if eq .Dir "desc"}}asc{{else}}desc{{end}}">Reverse</button></div></form>
+<table class="panel">
+<tr><th>Name</th><th>Category</th><th>Rarity</th><th>Recipe</th><th>Status</th></tr>
+{{range .Items}}
+<tr>
+<td><a href="/admin/items/{{.ID}}">{{.Name}}</a></td>
+<td>{{join .Category .Subtype}}</td>
+<td class="{{rarityClass .Rarity}}">{{.Rarity}}</td>
+<td class="small">{{if .Recipe}}{{.Recipe.Kind}}{{if eq .Recipe.Kind "groups"}} · {{len .Recipe.Groups}} groups{{end}}{{else}}<span class="muted">none</span>{{end}}</td>
+<td class="small">{{.MatchStatus}}</td>
+</tr>
+{{end}}
+</table>
+{{template "foot" .}}

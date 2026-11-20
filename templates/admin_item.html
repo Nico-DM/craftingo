@@ -1,0 +1,50 @@
+{{template "head" .}}
+<p class="small"><a href="/admin/items">← items</a></p>
+<h1>Edit {{.Item.Name}}</h1>
+{{if .Saved}}<div class="flash">Saved.</div>{{end}}
+{{if .Error}}<div class="flash err">{{.Error}}</div>{{end}}
+<div class="row"><a class="badge" href="/items/{{.Item.ID}}">view page</a>{{if .Item.Archetype}}<a class="badge" href="/generate/{{.Item.ID}}">generator</a>{{end}}</div>
+
+<h2>Metadata</h2>
+<form method="post" action="/admin/items/{{.Item.ID}}" class="panel">
+<div class="row">
+<div style="min-width:260px"><label>Name</label><input name="name" value="{{.Item.Name}}" required></div>
+<div><label>Category</label><input name="category" value="{{.Item.Category}}" required></div>
+<div><label>Subtype</label><input name="subtype" value="{{if .Item.Subtype}}{{.Item.Subtype}}{{end}}"></div>
+<div><label>Type (raw)</label><input name="type_raw" value="{{.Item.TypeRaw}}"></div>
+<div><label>Rarity</label><select name="rarity">{{range .Rarities}}<option {{if eq . $.Item.Rarity}}selected{{end}}>{{.}}</option>{{end}}</select></div>
+<div><label>Source</label><input name="source" value="{{.Item.Source}}"></div>
+<div><label>Magic</label><input type="checkbox" name="magic" value="1" {{if .Item.Magic}}checked{{end}}></div>
+<div><label>OotA</label><input type="checkbox" name="oota" value="1" {{if .Item.Oota}}checked{{end}}></div>
+</div>
+<div class="row">
+<div><label>Attunement</label><input name="attunement" value="{{if .Item.Attunement}}{{.Item.Attunement}}{{end}}"></div>
+<div><label>Damage</label><input name="damage" value="{{if .Item.Damage}}{{.Item.Damage}}{{end}}"></div>
+<div><label>Weight</label><input name="weight" value="{{if .Item.Weight}}{{.Item.Weight}}{{end}}"></div>
+<div><label>Value</label><input name="value" value="{{if .Item.Value}}{{.Item.Value}}{{end}}"></div>
+<div><label>Variant of (base name)</label><input name="variant_of" value="{{if .Item.VariantOf}}{{.Item.VariantOf}}{{end}}"></div>
+<div><label>Variant label</label><input name="variant_label" value="{{if .Item.VariantLabel}}{{.Item.VariantLabel}}{{end}}"></div>
+<div><label>Archetype kind</label><input name="archetype_kind" value="{{if .Item.Archetype}}{{.Item.Archetype.Kind}}{{end}}" placeholder="tier or modifier"></div>
+<div><label>Archetype base kind</label><input name="archetype_base_kind" value="{{if .Item.Archetype}}{{.Item.Archetype.Base.Kind}}{{end}}" placeholder="category or item"></div>
+<div><label>Archetype base</label><input name="archetype_base_name" value="{{if .Item.Archetype}}{{.Item.Archetype.Base.Name}}{{end}}"></div>
+<div><label>Archetype tier</label><input name="archetype_tier" type="number" min="0" max="4" value="{{if .Item.Archetype}}{{if .Item.Archetype.Tier}}{{.Item.Archetype.Tier}}{{end}}{{end}}"></div>
+</div>
+<label>Properties</label><input name="properties" value="{{if .Item.Properties}}{{.Item.Properties}}{{end}}" style="width:100%">
+<label>Short description</label><input name="short_description" value="{{if .Item.ShortDescription}}{{.Item.ShortDescription}}{{end}}" style="width:100%">
+<label>Intrinsic tags (comma separated)</label><input name="intrinsic_tags" value="{{.Tags}}" style="width:100%">
+<label>Description</label><textarea name="description" rows="8" style="width:100%">{{if .Item.Description}}{{.Item.Description}}{{end}}</textarea>
+<div style="margin-top:12px"><button>Save metadata</button></div>
+</form>
+
+<h2>Recipe JSON</h2>
+<form method="post" action="/admin/items/{{.Item.ID}}/recipe" class="panel">
+<p class="small muted">Canonical recipe tree. Use <code>null</code> to remove the recipe. Item forms may omit <code>id</code> if <code>name</code> matches a catalog item. Save is validated.</p>
+<textarea name="recipe" rows="28" style="width:100%;font-family:ui-monospace,monospace">{{.RecipeJSON}}</textarea>
+<div style="margin-top:12px"><button>Save recipe</button></div>
+</form>
+
+{{if .UsedBy}}
+<h2>Used by</h2>
+<div class="row">{{range .UsedBy}}<a class="badge" href="/admin/items/{{.ID}}">{{.Name}}</a>{{end}}</div>
+{{end}}
+{{template "foot" .}}

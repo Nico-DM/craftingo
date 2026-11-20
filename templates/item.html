@@ -1,0 +1,57 @@
+{{template "head" .}}
+<p class="small"><a href="/">← catalog</a></p>
+<h1>{{.Item.Name}}</h1>
+<div>
+<span class="badge {{rarityClass .Item.Rarity}}">{{.Item.Rarity}}</span>
+<span class="badge">{{.Item.Category}}</span>
+{{if .Item.Subtype}}<span class="badge">{{.Item.Subtype}}</span>{{end}}
+{{if .Item.Magic}}<span class="badge">magic</span>{{end}}
+{{if .Item.Attunement}}<span class="badge">attunement: {{.Item.Attunement}}</span>{{end}}
+{{if .Item.Template}}<span class="badge">template over a base</span>{{end}}
+</div>
+{{if .Item.ShortDescription}}<p>{{.Item.ShortDescription}}</p>{{end}}
+
+{{if .Item.VariantOf}}<p class="small muted">Variant of <strong>{{.Item.VariantOf}}</strong>{{if .Item.VariantLabel}} · {{.Item.VariantLabel}}{{end}}</p>{{end}}
+
+{{if .Variants}}
+<h2>Variants</h2>
+<div class="row">{{range .Variants}}<a class="badge" href="/items/{{.ID}}">{{.Name}}</a>{{end}}</div>
+{{end}}
+
+<div class="row" style="margin:14px 0">
+{{if .User}}<a class="badge" href="/craft/{{.Item.ID}}">Check if I can craft this</a>{{end}}
+{{if .Item.Archetype}}<a class="badge" href="/generate/{{.Item.ID}}">Generate a combo</a>{{end}}
+{{if and .User (eq .User.Role "dm")}}<a class="badge" href="/admin/items/{{.Item.ID}}">Edit</a>{{end}}
+</div>
+
+<h2>Recipe</h2>
+<div class="panel">
+{{if not .Item.Recipe}}<p class="muted">No recipe recorded.</p>
+{{else if eq .Item.Recipe.Kind "inherit"}}
+  <p>Same materials as the base <strong>{{.Item.Recipe.BaseSelector.Name}}</strong>.</p>
+{{else}}
+  {{range .Item.Recipe.Groups}}{{template "formgroup" .}}{{else}}<p class="muted">No material groups.</p>{{end}}
+  {{template "extras" .Item.Recipe}}
+  <p class="small muted">Recipe rarity: <span class="{{rarityClass .Item.Recipe.Rarity}}">{{.Item.Recipe.Rarity}}</span>. A unit counts toward every group it qualifies for.</p>
+{{end}}
+</div>
+
+{{if .Item.Description}}<h2>Description</h2><div class="panel" style="white-space:pre-wrap">{{desc .Item.Description}}</div>{{end}}
+
+{{if or .Item.Damage .Item.Properties .Item.Weight .Item.Value .Item.StatSource}}
+<h2>Stats</h2>
+<table class="panel">
+{{if .Item.Damage}}<tr><th>Damage</th><td>{{.Item.Damage}}</td></tr>{{end}}
+{{if .Item.Properties}}<tr><th>Properties</th><td>{{.Item.Properties}}</td></tr>{{end}}
+{{if .Item.Weight}}<tr><th>Weight</th><td>{{.Item.Weight}}</td></tr>{{end}}
+{{if .Item.Value}}<tr><th>Value</th><td>{{.Item.Value}}</td></tr>{{end}}
+{{if .Item.StatSource}}<tr><th>Source</th><td>{{.Item.StatSource}}{{if .Item.StatSourceCode}} ({{.Item.StatSourceCode}}){{end}}</td></tr>{{end}}
+<tr><th>Tags</th><td>{{range .Item.IntrinsicTags}}<span class="badge">{{.}}</span>{{else}}<span class="muted">none</span>{{end}}</td></tr>
+</table>
+{{end}}
+
+{{if .UsedBy}}
+<h2>Used to craft</h2>
+<div class="row">{{range .UsedBy}}<a class="badge" href="/items/{{.ID}}">{{.Name}}</a>{{end}}</div>
+{{end}}
+{{template "foot" .}}

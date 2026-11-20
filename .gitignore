@@ -1,4 +1,23 @@
-out
+# Local config and runtime artifacts
 .env
-learn-cicd-starter
-craftingo
+/craftingo
+/*.db
+/*.db-shm
+/*.db-wal
+
+# Generated dataset output (see scripts/build_dataset.py)
+data/build/
+
+# Scratch/review data that is not part of the build
+data/*.draft.tsv
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Editors and OS junk
+.zed/
+.DS_Store
+*.swp
+*~
+

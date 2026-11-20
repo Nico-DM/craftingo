@@ -1,0 +1,22 @@
+{{template "head" .}}
+<h1>Generator</h1>
+<p class="muted">Modular recipes are composed from a base item plus a tier or a named modifier. Nothing is flattened: a Vicious Greataxe is made from a +2 Greataxe.</p>
+
+<form class="panel row" method="get" action="/generate" data-live>
+<input type="hidden" name="dir" value="{{.Dir}}">
+<div><label for="sort">Sort</label><select id="sort" name="sort"><option value="">Default</option><option value="name" {{if eq .Sort "name"}}selected{{end}}>Name</option><option value="category" {{if eq .Sort "category"}}selected{{end}}>Category</option><option value="rarity" {{if eq .Sort "rarity"}}selected{{end}}>Rarity</option><option value="source" {{if eq .Sort "source"}}selected{{end}}>Source</option></select></div>
+<div><label>Order</label><button type="button" class="small" data-reverse data-dir="{{if eq .Dir "desc"}}asc{{else}}desc{{end}}">Reverse</button></div>
+</form>
+
+<h2>Tier templates</h2>
+<div class="grid">
+{{range .Templates}}<div class="card"><a href="/generate/{{.ID}}">{{.Name}}</a><div class="small muted">over any {{.Archetype.Base.Name}} · {{.Rarity}}</div></div>
+{{else}}<div class="panel muted">No tier templates.</div>{{end}}
+</div>
+
+<h2>Named modifiers</h2>
+<div class="grid">
+{{range .Modifiers}}<div class="card"><a href="/generate/{{.ID}}">{{.Name}}</a><div class="small muted">base: {{.Archetype.Base.Name}}{{if .Archetype.Tier}} +{{.Archetype.Tier}}{{end}} · {{.Rarity}}</div></div>
+{{else}}<div class="panel muted">No modifier recipes.</div>{{end}}
+</div>
+{{template "foot" .}}

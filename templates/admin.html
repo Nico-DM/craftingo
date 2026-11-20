@@ -1,0 +1,11 @@
+{{template "head" .}}
+<h1>DM dashboard</h1>
+<div class="grid">
+<div class="card"><div class="muted small">catalog rows</div><div style="font-size:2rem">{{.Items}}</div><a href="/admin/items">edit items</a></div>
+<div class="card"><div class="muted small">recipes</div><div style="font-size:2rem">{{.Recipes}}</div></div>
+<div class="card"><div class="muted small">users</div><div style="font-size:2rem">{{.Users}}</div><a href="/admin/users">manage users</a></div>
+<div class="card"><div class="muted small">unmatched stats</div><div style="font-size:2rem">{{.Unmatched}}</div><div class="small muted">items without a confident 5e.tools match</div></div>
+<div class="card"><div class="muted small">loaded in memory</div><div style="font-size:2rem">{{.Loaded}}</div></div>
+</div>
+<form method="post" action="/admin/reload" class="panel"><button>Reload catalog from database</button> <span class="small muted">Use after editing the dataset externally.</span></form>
+{{template "foot" .}}
