@@ -43,6 +43,35 @@ For Turso use `DATABASE_URL=libsql://...?authToken=...`. Migrations:
 goose -dir sql/schema turso "$DATABASE_URL" up
 ```
 
+### Turso + Cloud Run
+
+Cloud Run only receives the Go binary; `data/build/` is generated and gitignored.
+The deploy workflow runs migrations, but it does **not** seed the catalog. After
+pulling dataset or schema changes, run this from a checkout with a generated
+`data/build/`:
+
+```bash
+# 1. Rebuild the normalized dataset (and review the report)
+python3 scripts/build_dataset.py
+
+# 2. Migrate Turso. Set DATABASE_URL explicitly; an explicit value now wins
+#    over .env in scripts/migrateup.sh.
+DATABASE_URL='libsql://...?authToken=...' scripts/migrateup.sh
+
+# 3. Seed items and recipes. Safe to rerun: rows are upserted, and DM
+#    visibility edits are preserved.
+DATABASE_URL='libsql://...?authToken=...' go run ./cmd/seed
+
+# 4. Create the first DM if the database has no accounts
+DATABASE_URL='libsql://...?authToken=...' go run ./cmd/createuser \
+  -username dm -password '...' -role dm
+```
+
+Then deploy by pushing to `main`. The Cloud Run service must use the same
+`DATABASE_URL` secret. Migration `007_visible.sql` renames the old `oota` column
+to `visible`; if the remote database has never been migrated, the app will fail
+at startup with `no such table: items` until steps 2 and 3 are done.
+
 ## Commands
 
 ```bash
@@ -59,7 +88,11 @@ of truth for items, recipes and stats; do not hand-edit `data/build`.
 
 - **Public catalog**: search/filter by name, category, rarity, source and magic;
   grouped item pages with recipe groups, variants, stats and reverse
-  "used to craft" links.
+  "used to craft" links. Players only see items marked **visible**; DMs see the
+  full catalog.
+- **Visibility**: DMs check or uncheck **Visible** directly in the edit-items
+  list, or from an item's metadata form. Hidden items disappear from player
+  catalog, generator, craft and inventory pickers.
 - **Accounts**: DM and player roles, password + session cookie. DMs create
   accounts; there is no signup.
 - **Inventory**: raw material stacks (form + rarity + optional trait + tags) and

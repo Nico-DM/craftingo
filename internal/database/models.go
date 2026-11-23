@@ -45,7 +45,7 @@ type Item struct {
 	TypeRaw           string
 	Rarity            string
 	Magic             int64
-	Oota              int64
+	Visible           int64
 	Source            string
 	ShortDescription  sql.NullString
 	VariantOf         sql.NullString

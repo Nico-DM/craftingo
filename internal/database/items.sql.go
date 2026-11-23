@@ -74,7 +74,7 @@ func (q *Queries) DeleteRecipeForItem(ctx context.Context, itemID string) error 
 }
 
 const getItem = `-- name: GetItem :one
-SELECT id, name, category, subtype, type_raw, rarity, magic, oota, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
+SELECT id, name, category, subtype, type_raw, rarity, magic, visible, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
 FROM items
 WHERE id = ?1
 `
@@ -90,7 +90,7 @@ func (q *Queries) GetItem(ctx context.Context, id string) (Item, error) {
 		&i.TypeRaw,
 		&i.Rarity,
 		&i.Magic,
-		&i.Oota,
+		&i.Visible,
 		&i.Source,
 		&i.ShortDescription,
 		&i.VariantOf,
@@ -121,7 +121,7 @@ func (q *Queries) GetItem(ctx context.Context, id string) (Item, error) {
 }
 
 const getItemByName = `-- name: GetItemByName :one
-SELECT id, name, category, subtype, type_raw, rarity, magic, oota, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
+SELECT id, name, category, subtype, type_raw, rarity, magic, visible, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
 FROM items
 WHERE name = ?1
 `
@@ -137,7 +137,7 @@ func (q *Queries) GetItemByName(ctx context.Context, name string) (Item, error) 
 		&i.TypeRaw,
 		&i.Rarity,
 		&i.Magic,
-		&i.Oota,
+		&i.Visible,
 		&i.Source,
 		&i.ShortDescription,
 		&i.VariantOf,
@@ -327,7 +327,7 @@ func (q *Queries) InsertRecipeOption(ctx context.Context, arg InsertRecipeOption
 }
 
 const listBaseCandidates = `-- name: ListBaseCandidates :many
-SELECT id, name, category, subtype, type_raw, rarity, magic, oota, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
+SELECT id, name, category, subtype, type_raw, rarity, magic, visible, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
 FROM items
 WHERE category = ?1
   AND is_template = 0
@@ -351,7 +351,7 @@ func (q *Queries) ListBaseCandidates(ctx context.Context, category string) ([]It
 			&i.TypeRaw,
 			&i.Rarity,
 			&i.Magic,
-			&i.Oota,
+			&i.Visible,
 			&i.Source,
 			&i.ShortDescription,
 			&i.VariantOf,
@@ -421,7 +421,7 @@ func (q *Queries) ListCategories(ctx context.Context) ([]string, error) {
 }
 
 const listItems = `-- name: ListItems :many
-SELECT id, name, category, subtype, type_raw, rarity, magic, oota, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
+SELECT id, name, category, subtype, type_raw, rarity, magic, visible, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
 FROM items
 WHERE (?1 IS NULL OR name LIKE '%' || ?1 || '%')
   AND (?2 IS NULL OR category = ?2)
@@ -467,7 +467,7 @@ func (q *Queries) ListItems(ctx context.Context, arg ListItemsParams) ([]Item, e
 			&i.TypeRaw,
 			&i.Rarity,
 			&i.Magic,
-			&i.Oota,
+			&i.Visible,
 			&i.Source,
 			&i.ShortDescription,
 			&i.VariantOf,
@@ -684,7 +684,7 @@ func (q *Queries) ListSources(ctx context.Context) ([]string, error) {
 }
 
 const listVariants = `-- name: ListVariants :many
-SELECT id, name, category, subtype, type_raw, rarity, magic, oota, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
+SELECT id, name, category, subtype, type_raw, rarity, magic, visible, source, short_description, variant_of, variant_label, attunement, damage, properties, weight, value, description, scraped_name, stat_source_code, stat_source, match_status, match_method, match_detail, match_confidence, intrinsic_tags, archetype_kind, archetype_base_kind, archetype_base_name, archetype_tier, is_template, created_at, updated_at
 FROM items
 WHERE variant_of = ?1
 ORDER BY name
@@ -707,7 +707,7 @@ func (q *Queries) ListVariants(ctx context.Context, variantOf sql.NullString) ([
 			&i.TypeRaw,
 			&i.Rarity,
 			&i.Magic,
-			&i.Oota,
+			&i.Visible,
 			&i.Source,
 			&i.ShortDescription,
 			&i.VariantOf,
@@ -755,7 +755,7 @@ SET name = ?1,
     type_raw = ?4,
     rarity = ?5,
     magic = ?6,
-    oota = ?7,
+    visible = ?7,
     source = ?8,
     short_description = ?9,
     variant_of = ?10,
@@ -783,7 +783,7 @@ type UpdateItemMetaParams struct {
 	TypeRaw           string
 	Rarity            string
 	Magic             int64
-	Oota              int64
+	Visible           int64
 	Source            string
 	ShortDescription  sql.NullString
 	VariantOf         sql.NullString
@@ -812,7 +812,7 @@ func (q *Queries) UpdateItemMeta(ctx context.Context, arg UpdateItemMetaParams) 
 		arg.TypeRaw,
 		arg.Rarity,
 		arg.Magic,
-		arg.Oota,
+		arg.Visible,
 		arg.Source,
 		arg.ShortDescription,
 		arg.VariantOf,
@@ -835,9 +835,27 @@ func (q *Queries) UpdateItemMeta(ctx context.Context, arg UpdateItemMetaParams) 
 	return err
 }
 
+const updateItemVisible = `-- name: UpdateItemVisible :exec
+UPDATE items
+SET visible = ?1,
+    updated_at = ?2
+WHERE id = ?3
+`
+
+type UpdateItemVisibleParams struct {
+	Visible   int64
+	UpdatedAt string
+	ID        string
+}
+
+func (q *Queries) UpdateItemVisible(ctx context.Context, arg UpdateItemVisibleParams) error {
+	_, err := q.db.ExecContext(ctx, updateItemVisible, arg.Visible, arg.UpdatedAt, arg.ID)
+	return err
+}
+
 const upsertItem = `-- name: UpsertItem :exec
 INSERT INTO items (
-    id, name, category, subtype, type_raw, rarity, magic, oota, source,
+    id, name, category, subtype, type_raw, rarity, magic, visible, source,
     short_description, variant_of, variant_label, attunement, damage, properties,
     weight, value, description, scraped_name, stat_source_code, stat_source,
     match_status, match_method, match_detail, match_confidence, intrinsic_tags,
@@ -863,7 +881,8 @@ ON CONFLICT (id) DO UPDATE SET
     type_raw             = excluded.type_raw,
     rarity               = excluded.rarity,
     magic                = excluded.magic,
-    oota                 = excluded.oota,
+    -- visible is intentionally not updated: DM visibility edits survive a
+    -- reseed. New rows still take the dataset value above.
     source               = excluded.source,
     short_description    = excluded.short_description,
     variant_of           = excluded.variant_of,
@@ -898,7 +917,7 @@ type UpsertItemParams struct {
 	TypeRaw           string
 	Rarity            string
 	Magic             int64
-	Oota              int64
+	Visible           int64
 	Source            string
 	ShortDescription  sql.NullString
 	VariantOf         sql.NullString
@@ -935,7 +954,7 @@ func (q *Queries) UpsertItem(ctx context.Context, arg UpsertItemParams) error {
 		arg.TypeRaw,
 		arg.Rarity,
 		arg.Magic,
-		arg.Oota,
+		arg.Visible,
 		arg.Source,
 		arg.ShortDescription,
 		arg.VariantOf,

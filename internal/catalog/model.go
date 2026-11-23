@@ -75,7 +75,7 @@ type Item struct {
 	TypeRaw          string     `json:"type_raw"`
 	Rarity           string     `json:"rarity"`
 	Magic            bool       `json:"magic"`
-	Oota             bool       `json:"oota"`
+	Visible          bool       `json:"visible"`
 	Source           string     `json:"source"`
 	ShortDescription *string    `json:"short_description"`
 	VariantOf        *string    `json:"variant_of"`
