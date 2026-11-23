@@ -83,7 +83,7 @@ ORDER BY position;
 
 -- name: UpsertItem :exec
 INSERT INTO items (
-    id, name, category, subtype, type_raw, rarity, magic, oota, source,
+    id, name, category, subtype, type_raw, rarity, magic, visible, source,
     short_description, variant_of, variant_label, attunement, damage, properties,
     weight, value, description, scraped_name, stat_source_code, stat_source,
     match_status, match_method, match_detail, match_confidence, intrinsic_tags,
@@ -91,7 +91,7 @@ INSERT INTO items (
     is_template, created_at, updated_at
 ) VALUES (
     sqlc.arg(id), sqlc.arg(name), sqlc.arg(category), sqlc.narg(subtype),
-    sqlc.arg(type_raw), sqlc.arg(rarity), sqlc.arg(magic), sqlc.arg(oota),
+    sqlc.arg(type_raw), sqlc.arg(rarity), sqlc.arg(magic), sqlc.arg(visible),
     sqlc.arg(source), sqlc.narg(short_description), sqlc.narg(variant_of),
     sqlc.narg(variant_label), sqlc.narg(attunement), sqlc.narg(damage),
     sqlc.narg(properties), sqlc.narg(weight), sqlc.narg(value),
@@ -109,7 +109,8 @@ ON CONFLICT (id) DO UPDATE SET
     type_raw             = excluded.type_raw,
     rarity               = excluded.rarity,
     magic                = excluded.magic,
-    oota                 = excluded.oota,
+    -- visible is intentionally not updated: DM visibility edits survive a
+    -- reseed. New rows still take the dataset value above.
     source               = excluded.source,
     short_description    = excluded.short_description,
     variant_of           = excluded.variant_of,
@@ -143,7 +144,7 @@ SET name = sqlc.arg(name),
     type_raw = sqlc.arg(type_raw),
     rarity = sqlc.arg(rarity),
     magic = sqlc.arg(magic),
-    oota = sqlc.arg(oota),
+    visible = sqlc.arg(visible),
     source = sqlc.arg(source),
     short_description = sqlc.narg(short_description),
     variant_of = sqlc.narg(variant_of),
@@ -205,3 +206,9 @@ SELECT COUNT(*) FROM items;
 
 -- name: CountRecipes :one
 SELECT COUNT(*) FROM recipes;
+
+-- name: UpdateItemVisible :exec
+UPDATE items
+SET visible = sqlc.arg(visible),
+    updated_at = sqlc.arg(updated_at)
+WHERE id = sqlc.arg(id);

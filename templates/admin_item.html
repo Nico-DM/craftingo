@@ -15,7 +15,7 @@
 <div><label>Rarity</label><select name="rarity">{{range .Rarities}}<option {{if eq . $.Item.Rarity}}selected{{end}}>{{.}}</option>{{end}}</select></div>
 <div><label>Source</label><input name="source" value="{{.Item.Source}}"></div>
 <div><label>Magic</label><input type="checkbox" name="magic" value="1" {{if .Item.Magic}}checked{{end}}></div>
-<div><label>OotA</label><input type="checkbox" name="oota" value="1" {{if .Item.Oota}}checked{{end}}></div>
+<div><label>Visible to players</label><input type="checkbox" name="visible" value="1" {{if .Item.Visible}}checked{{end}}></div>
 </div>
 <div class="row">
 <div><label>Attunement</label><input name="attunement" value="{{if .Item.Attunement}}{{.Item.Attunement}}{{end}}"></div>

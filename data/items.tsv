@@ -1,4 +1,4 @@
-id	name	rarity	source	magic	oota	type	recipes	short_description	scraped_name	match_status	match_method	match_detail	match_confidence	scraped_source_code	scraped_source	scraped_rarity	scraped_type	attunement	damage	properties	weight	value	scraped_text
+id	name	rarity	source	magic	visible	type	recipes	short_description	scraped_name	match_status	match_method	match_detail	match_confidence	scraped_source_code	scraped_source	scraped_rarity	scraped_type	attunement	damage	properties	weight	value	scraped_text
 arrows	Arrows (20)	Common	Player's Handbook	FALSE	TRUE	Ammunition	3x Metal, 2x Hardwood;2x Mineral, 2x Hardwood;2x Bone, 2x Hardwood	-	Arrows (20)	matched	exact	exact_name	1.00	PHB'14	Player's Handbook	none	Ammunition				1 lb.	1 gp	
 blowgun-needles	Blowgun Needles (50)	Common	Player's Handbook	FALSE	TRUE	Ammunition	5x Metal;4x Bone	-	Blowgun Needles (50)	matched	exact	exact_name	1.00	PHB'14	Player's Handbook	none	Ammunition				1 lb.	1 gp	
 crossbow-bolts	Crossbow Bolts (20)	Common	Player's Handbook	FALSE	TRUE	Ammunition	2x Metal, 2x Hardwood	-	Crossbow Bolts (20)	matched	exact	exact_name	1.00	PHB'14	Player's Handbook	none	Ammunition				1½ lb.	1 gp	

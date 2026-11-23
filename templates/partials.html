@@ -72,6 +72,11 @@ footer{color:var(--muted);font-size:.8rem;padding:30px 0}
       });
     }
   });
+  document.querySelectorAll('form[data-checkbox-submit]').forEach((form) => {
+    form.querySelectorAll('input[type="checkbox"]').forEach((el) => {
+      el.addEventListener('change', () => form.requestSubmit());
+    });
+  });
 })();
 </script>
 </body></html>

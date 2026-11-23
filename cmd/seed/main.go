@@ -146,7 +146,7 @@ func toUpsertParams(it catalog.Item, now string) database.UpsertItemParams {
 		TypeRaw:          it.TypeRaw,
 		Rarity:           it.Rarity,
 		Magic:            boolInt(it.Magic),
-		Oota:             boolInt(it.Oota),
+		Visible:          boolInt(it.Visible),
 		Source:           it.Source,
 		ShortDescription: narg(it.ShortDescription),
 		VariantOf:        narg(it.VariantOf),

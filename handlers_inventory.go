@@ -106,7 +106,8 @@ func (cfg *apiConfig) handleInventory(w http.ResponseWriter, r *http.Request) {
 	sortUnits(materials, msort, mdir)
 	sortUnits(crafted, csort, cdir)
 
-	calc := &crafting.Calculator{Store: cfg.Store}
+	includeHidden := isDM(r)
+	calc := &crafting.Calculator{Store: cfg.Store, VisibleOnly: !includeHidden}
 	working := applyCartLines(units, cart)
 	craftable := calc.Craftable(working, 40)
 	cartValid := true
@@ -124,7 +125,7 @@ func (cfg *apiConfig) handleInventory(w http.ResponseWriter, r *http.Request) {
 		"Forms":     rawForms,
 		"Traits":    traits,
 		"Rarities":  rarities,
-		"Items":     cfg.Store.Items(),
+		"Items":     filterVisibleItems(cfg.Store.Items(), includeHidden),
 		"Craftable": craftable,
 		"Cart":      cart,
 		"CartValid": cartValid,
@@ -179,6 +180,10 @@ func (cfg *apiConfig) handleInventoryAdd(w http.ResponseWriter, r *http.Request)
 	var category string
 	magic := false
 	if it, ok := cfg.Store.ItemByName(name); ok && kind == "crafted" {
+		if !isDM(r) && !it.Visible {
+			redirectErr(w, r, "/inventory?error=That+item+is+hidden")
+			return
+		}
 		itemID = &it.ID
 		category = it.Category
 		magic = it.Magic
@@ -353,12 +358,16 @@ func (cfg *apiConfig) handleInventoryUnit(w http.ResponseWriter, r *http.Request
 			}
 		}
 	}
+	includeHidden := isDM(r)
+	if item != nil && !includeHidden && !item.Visible {
+		item = nil
+	}
 	var res crafting.Result
 	checked := false
 	if item != nil && item.Recipe != nil && item.Recipe.Kind == "groups" {
 		if units, err := cfg.loadUnits(r); err == nil {
 			checked = true
-			res = (&crafting.Calculator{Store: cfg.Store}).Evaluate(item, units, 0)
+			res = (&crafting.Calculator{Store: cfg.Store, VisibleOnly: !includeHidden}).Evaluate(item, units, 0)
 		}
 	}
 	cfg.render(w, r, "inventory_unit.html", map[string]any{

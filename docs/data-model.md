@@ -110,7 +110,8 @@ counting.
 
 ## Database shape
 
-- `items`: denormalized item + 5e.tools stat block, intrinsic tags, archetype.
+- `items`: denormalized item + 5e.tools stat block, intrinsic tags, archetype,
+  and `visible` (DM-controlled; players only see visible rows).
 - `recipes`, `recipe_groups`, `recipe_options`, `recipe_extras`: the canonical
   recipe tree. Forms/traits/tags are JSON arrays because they are read and written
   as a unit.
@@ -131,3 +132,7 @@ DATABASE_URL=file:craftingo.db go run ./cmd/seed
 
 The build emits `data/build/items.jsonl`, `data/build/recipes.txt` (review aid) and
 `data/build/report.md` (conflicts/warnings).
+
+Visibility is DM-owned at runtime. `cmd/seed` writes `visible` for new rows but
+does not overwrite it on existing rows, so reseeding the dataset does not undo
+visibility changes made in the admin UI.

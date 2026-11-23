@@ -187,7 +187,7 @@ func (s *Store) BaseCandidates(kind, name string) []Item {
 
 func (s *Store) queryItems(ctx context.Context) ([]Item, error) {
 	rows, err := s.db.QueryContext(ctx, `
-		SELECT id, name, category, subtype, type_raw, rarity, magic, oota, source,
+		SELECT id, name, category, subtype, type_raw, rarity, magic, visible, source,
 		       short_description, variant_of, variant_label, attunement, damage,
 		       properties, weight, value, description, scraped_name, stat_source_code,
 		       stat_source, match_status, match_method, match_detail, match_confidence,
@@ -212,11 +212,11 @@ func (s *Store) queryItems(ctx context.Context) ([]Item, error) {
 			intrinsicTags                                     string
 			archetypeKind, archetypeBaseKind, archetypeBaseNm sql.NullString
 			archetypeTier                                     sql.NullInt64
-			magic, oota, isTemplate                           int64
+			magic, visible, isTemplate                        int64
 		)
 		err := rows.Scan(
 			&it.ID, &it.Name, &it.Category, &subtype, &it.TypeRaw, &it.Rarity,
-			&magic, &oota, &it.Source, &it.ShortDescription, &variantOf, &variantLabel,
+			&magic, &visible, &it.Source, &it.ShortDescription, &variantOf, &variantLabel,
 			&attunement, &damage, &properties, &weight, &value, &description,
 			&scrapedName, &statSourceCode, &statSource, &it.MatchStatus,
 			&matchMethod, &matchDetail, &matchConfidence, &intrinsicTags,
@@ -245,7 +245,7 @@ func (s *Store) queryItems(ctx context.Context) ([]Item, error) {
 			it.MatchConfidence = &v
 		}
 		it.Magic = magic == 1
-		it.Oota = oota == 1
+		it.Visible = visible == 1
 		it.Template = isTemplate == 1
 		_ = json.Unmarshal([]byte(intrinsicTags), &it.IntrinsicTags)
 		if archetypeKind.Valid {

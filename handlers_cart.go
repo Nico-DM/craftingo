@@ -133,6 +133,18 @@ func (cfg *apiConfig) handleCartAdd(w http.ResponseWriter, r *http.Request) {
 		redirectErr(w, r, "/inventory?error=That+item+cannot+be+crafted")
 		return
 	}
+	if !isDM(r) {
+		hidden := !it.Visible
+		if parts := strings.SplitN(itemID, ":", 2); len(parts) == 2 {
+			if arch, ok := cfg.Store.Item(parts[0]); !ok || !arch.Visible {
+				hidden = true
+			}
+		}
+		if hidden {
+			redirectErr(w, r, "/inventory?error=That+item+is+hidden")
+			return
+		}
+	}
 	_, lines, err := cfg.cartState(r)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

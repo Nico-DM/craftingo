@@ -103,7 +103,7 @@ func (cfg *apiConfig) handleAdminItemSave(w http.ResponseWriter, r *http.Request
 		TypeRaw:          r.FormValue("type_raw"),
 		Rarity:           r.FormValue("rarity"),
 		Magic:            boolInt(r.FormValue("magic") != ""),
-		Oota:             boolInt(r.FormValue("oota") != ""),
+		Visible:          boolInt(r.FormValue("visible") != ""),
 		Source:           r.FormValue("source"),
 		ShortDescription: nullString(strPtrOrNil(strings.TrimSpace(r.FormValue("short_description")))),
 		VariantOf:        nullString(strPtrOrNil(strings.TrimSpace(r.FormValue("variant_of")))),
@@ -141,6 +141,45 @@ func (cfg *apiConfig) handleAdminItemSave(w http.ResponseWriter, r *http.Request
 		return
 	}
 	http.Redirect(w, r, "/admin/items/"+url.PathEscape(id)+"?saved=1", http.StatusSeeOther) // #nosec G710 -- catalog id
+}
+
+// handleAdminItemVisible toggles one item from the admin list without opening
+// its edit page.
+func (cfg *apiConfig) handleAdminItemVisible(w http.ResponseWriter, r *http.Request) {
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, "bad form", http.StatusBadRequest)
+		return
+	}
+	id := chi.URLParam(r, "id")
+	if _, ok := cfg.Store.Item(id); !ok {
+		http.NotFound(w, r)
+		return
+	}
+	visible := int64(0)
+	if r.FormValue("visible") != "" {
+		visible = 1
+	}
+	if err := cfg.Q.UpdateItemVisible(r.Context(), database.UpdateItemVisibleParams{
+		Visible: visible, UpdatedAt: now(), ID: id,
+	}); err != nil {
+		redirectErr(w, r, "/admin/items?error="+urlMsg(err.Error()))
+		return
+	}
+	if err := cfg.Store.Load(r.Context()); err != nil {
+		redirectErr(w, r, "/admin/items?error="+urlMsg(err.Error()))
+		return
+	}
+	target := "/admin/items"
+	keep := url.Values{}
+	for _, key := range []string{"q", "sort", "dir"} {
+		if v := strings.TrimSpace(r.FormValue(key)); v != "" {
+			keep.Set(key, v)
+		}
+	}
+	if encoded := keep.Encode(); encoded != "" {
+		target += "?" + encoded
+	}
+	http.Redirect(w, r, target, http.StatusSeeOther)
 }
 
 func (cfg *apiConfig) handleAdminRecipeSave(w http.ResponseWriter, r *http.Request) {

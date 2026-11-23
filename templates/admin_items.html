@@ -4,9 +4,10 @@
 <div><label for="sort">Sort</label><select id="sort" name="sort"><option value="">Default</option><option value="name" {{if eq .Sort "name"}}selected{{end}}>Name</option><option value="category" {{if eq .Sort "category"}}selected{{end}}>Category</option><option value="rarity" {{if eq .Sort "rarity"}}selected{{end}}>Rarity</option><option value="source" {{if eq .Sort "source"}}selected{{end}}>Source</option></select></div>
 <div><label>Order</label><button type="button" class="small" data-reverse data-dir="{{if eq .Dir "desc"}}asc{{else}}desc{{end}}">Reverse</button></div></form>
 <table class="panel">
-<tr><th>Name</th><th>Category</th><th>Rarity</th><th>Recipe</th><th>Status</th></tr>
+<tr><th>Visible</th><th>Name</th><th>Category</th><th>Rarity</th><th>Recipe</th><th>Status</th></tr>
 {{range .Items}}
 <tr>
+<td><form method="post" action="/admin/items/{{.ID}}/visible" data-checkbox-submit><input type="hidden" name="q" value="{{$.Q}}"><input type="hidden" name="sort" value="{{$.Sort}}"><input type="hidden" name="dir" value="{{$.Dir}}"><input type="checkbox" name="visible" value="1" aria-label="Visible to players" {{if .Visible}}checked{{end}}></form></td>
 <td><a href="/admin/items/{{.ID}}">{{.Name}}</a></td>
 <td>{{join .Category .Subtype}}</td>
 <td class="{{rarityClass .Rarity}}">{{.Rarity}}</td>

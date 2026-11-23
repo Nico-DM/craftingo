@@ -62,7 +62,8 @@ func (cfg *apiConfig) handleHome(w http.ResponseWriter, r *http.Request) {
 		Page:     1,
 		PerPage:  60,
 	}
-	items := cfg.Store.Items()
+	includeHidden := isDM(r)
+	items := filterVisibleItems(cfg.Store.Items(), includeHidden)
 	var filtered []catalog.Item
 	for _, it := range items {
 		if matchesFilter(it, f) {
@@ -88,9 +89,9 @@ func (cfg *apiConfig) handleHome(w http.ResponseWriter, r *http.Request) {
 		"Title":      "Catalog",
 		"Filter":     f,
 		"Items":      filtered[start:end],
-		"Categories": cfg.Store.Categories(),
-		"Rarities":   cfg.Store.Rarities(),
-		"Sources":    cfg.Store.Sources(),
+		"Categories": distinctItemValues(items, func(it catalog.Item) string { return it.Category }),
+		"Rarities":   catalogRarities(items),
+		"Sources":    distinctItemValues(items, func(it catalog.Item) string { return it.Source }),
 		"PrevPage":   f.Page - 1,
 		"NextPage":   f.Page + 1,
 		"HasPrev":    start > 0,
@@ -99,20 +100,25 @@ func (cfg *apiConfig) handleHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func (cfg *apiConfig) handleItem(w http.ResponseWriter, r *http.Request) {
+	includeHidden := isDM(r)
 	it, ok := cfg.Store.Item(chi.URLParam(r, "id"))
-	if !ok {
+	if !ok || (!includeHidden && !it.Visible) {
 		http.NotFound(w, r)
 		return
 	}
-	usedBy := cfg.Store.UsedBy(it.ID)
+	usedBy := filterVisibleItemPtrs(cfg.Store.UsedBy(it.ID), includeHidden)
 	var variants []*catalog.Item
 	if it.VariantOf != nil {
 		all := cfg.Store.Items()
 		for i := range all {
 			cand := &all[i]
-			if cand.ID != it.ID && cand.VariantOf != nil && *cand.VariantOf == *it.VariantOf {
-				variants = append(variants, cand)
+			if cand.ID == it.ID || cand.VariantOf == nil || *cand.VariantOf != *it.VariantOf {
+				continue
 			}
+			if !includeHidden && !cand.Visible {
+				continue
+			}
+			variants = append(variants, cand)
 		}
 	}
 	cfg.render(w, r, "item.html", map[string]any{

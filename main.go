@@ -99,6 +99,7 @@ func main() {
 		r.Get("/admin/items", cfg.handleAdminItems)
 		r.Get("/admin/items/{id}", cfg.handleAdminItem)
 		r.Post("/admin/items/{id}", cfg.handleAdminItemSave)
+		r.Post("/admin/items/{id}/visible", cfg.handleAdminItemVisible)
 		r.Post("/admin/items/{id}/recipe", cfg.handleAdminRecipeSave)
 		r.Get("/admin/users", cfg.handleAdminUsers)
 		r.Post("/admin/users", cfg.handleAdminUserCreate)

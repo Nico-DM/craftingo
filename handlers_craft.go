@@ -14,8 +14,9 @@ import (
 
 func (cfg *apiConfig) handleCraft(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
+	includeHidden := isDM(r)
 	it, ok := cfg.Store.Item(id)
-	if !ok {
+	if !ok || (!includeHidden && !it.Visible) {
 		http.NotFound(w, r)
 		return
 	}
@@ -32,7 +33,7 @@ func (cfg *apiConfig) handleCraft(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	calc := &crafting.Calculator{Store: cfg.Store}
+	calc := &crafting.Calculator{Store: cfg.Store, VisibleOnly: !includeHidden}
 	res := calc.Evaluate(it, units, 3)
 	plan := calc.Plan(it, units)
 	cfg.render(w, r, "craft.html", map[string]any{
@@ -48,8 +49,9 @@ func (cfg *apiConfig) handleCraft(w http.ResponseWriter, r *http.Request) {
 func (cfg *apiConfig) handleGenerateIndex(w http.ResponseWriter, r *http.Request) {
 	sortKey := r.URL.Query().Get("sort")
 	dir := r.URL.Query().Get("dir")
-	templates := cfg.Store.Templates()
-	modifiers := cfg.Store.Modifiers()
+	includeHidden := isDM(r)
+	templates := filterVisibleItems(cfg.Store.Templates(), includeHidden)
+	modifiers := filterVisibleItems(cfg.Store.Modifiers(), includeHidden)
 	sortItems(templates, sortKey, dir)
 	sortItems(modifiers, sortKey, dir)
 	cfg.render(w, r, "generate.html", map[string]any{
@@ -62,14 +64,15 @@ func (cfg *apiConfig) handleGenerateIndex(w http.ResponseWriter, r *http.Request
 }
 
 func (cfg *apiConfig) handleGenerateArchetype(w http.ResponseWriter, r *http.Request) {
+	includeHidden := isDM(r)
 	arch, ok := cfg.Store.Item(chi.URLParam(r, "id"))
-	if !ok || arch.Archetype == nil {
+	if !ok || arch.Archetype == nil || (!includeHidden && !arch.Visible) {
 		http.NotFound(w, r)
 		return
 	}
 	sortKey := r.URL.Query().Get("sort")
 	dir := r.URL.Query().Get("dir")
-	bases := cfg.Store.BaseCandidates(arch.Archetype.Base.Kind, arch.Archetype.Base.Name)
+	bases := filterVisibleItems(cfg.Store.BaseCandidates(arch.Archetype.Base.Kind, arch.Archetype.Base.Name), includeHidden)
 	sortItems(bases, sortKey, dir)
 	cfg.render(w, r, "generate_base.html", map[string]any{
 		"Title": "Generate " + arch.Name,
@@ -81,13 +84,14 @@ func (cfg *apiConfig) handleGenerateArchetype(w http.ResponseWriter, r *http.Req
 }
 
 func (cfg *apiConfig) handleGenerateCombo(w http.ResponseWriter, r *http.Request) {
+	includeHidden := isDM(r)
 	arch, ok := cfg.Store.Item(chi.URLParam(r, "id"))
-	if !ok || arch.Archetype == nil {
+	if !ok || arch.Archetype == nil || (!includeHidden && !arch.Visible) {
 		http.NotFound(w, r)
 		return
 	}
 	base, ok := cfg.Store.Item(chi.URLParam(r, "base"))
-	if !ok {
+	if !ok || (!includeHidden && !base.Visible) {
 		http.NotFound(w, r)
 		return
 	}
@@ -100,7 +104,7 @@ func (cfg *apiConfig) handleGenerateCombo(w http.ResponseWriter, r *http.Request
 		if units, err := cfg.loadUnits(r); err == nil {
 			checked = true
 			if combo.Recipe != nil && combo.Recipe.Kind == "groups" {
-				calc := &crafting.Calculator{Store: cfg.Store}
+				calc := &crafting.Calculator{Store: cfg.Store, VisibleOnly: !includeHidden}
 				res = calc.Evaluate(combo, units, 3)
 				plan = calc.Plan(combo, units)
 			}

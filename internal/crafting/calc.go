@@ -58,6 +58,8 @@ type Result struct {
 // Calculator evaluates recipes against a snapshot of inventory units.
 type Calculator struct {
 	Store *catalog.Store
+	// VisibleOnly hides catalog items the DM has not made visible to players.
+	VisibleOnly bool
 }
 
 // MatchOption reports whether one unit satisfies one recipe option, ignoring the
@@ -337,6 +339,9 @@ func (c *Calculator) subcrafts(item *catalog.Item, units []Unit, res Result, dep
 				if !ok || cand.Recipe == nil || cand.Recipe.Kind != "groups" || seen[cand.ID] {
 					continue
 				}
+				if c.VisibleOnly && !cand.Visible {
+					continue
+				}
 				sub := c.evaluate(cand, units, depth-1, seen)
 				if sub.CanCraft {
 					out = append(out, Subcraft{Item: cand, Depth: depth})
@@ -366,6 +371,9 @@ func (c *Calculator) Craftable(units []Unit, limit int) []Result {
 	var out []Result
 	for _, it := range c.Store.Items() {
 		if it.Recipe == nil || it.Recipe.Kind != "groups" || it.Template {
+			continue
+		}
+		if c.VisibleOnly && !it.Visible {
 			continue
 		}
 		res := c.Evaluate(&it, units, 0)
