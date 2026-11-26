@@ -32,7 +32,7 @@
 {{else}}
   {{range .Item.Recipe.Groups}}{{template "formgroup" .}}{{else}}<p class="muted">No material groups.</p>{{end}}
   {{template "extras" .Item.Recipe}}
-  <p class="small muted">Recipe rarity: <span class="{{rarityClass .Item.Recipe.Rarity}}">{{.Item.Recipe.Rarity}}</span>. A unit counts toward every group it qualifies for.</p>
+  <p class="small muted">One craft produces {{.Item.Recipe.OutputQty}}× {{.Item.UnitName}}. Recipe rarity: <span class="{{rarityClass .Item.Recipe.Rarity}}">{{.Item.Recipe.Rarity}}</span>. A unit counts toward every group it qualifies for.</p>
 {{end}}
 </div>
 

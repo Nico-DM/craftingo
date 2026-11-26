@@ -31,13 +31,14 @@ func SaveRecipe(ctx context.Context, q *database.Queries, itemID string, r *Reci
 		rarity = itemRarity
 	}
 	recipeID, err := q.InsertRecipe(ctx, database.InsertRecipeParams{
-		ItemID:   itemID,
-		Position: 1,
-		Kind:     kind,
-		Rarity:   rarity,
-		BaseKind: baseKind,
-		BaseName: baseName,
-		Notes:    string(notes),
+		ItemID:         itemID,
+		Position:       1,
+		Kind:           kind,
+		Rarity:         rarity,
+		OutputQuantity: int64(r.OutputQty()),
+		BaseKind:       baseKind,
+		BaseName:       baseName,
+		Notes:          string(notes),
 	})
 	if err != nil {
 		return err

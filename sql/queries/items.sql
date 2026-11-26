@@ -170,10 +170,10 @@ WHERE item_id = sqlc.arg(item_id);
 
 -- name: InsertRecipe :one
 INSERT INTO recipes (
-    item_id, position, kind, rarity, base_kind, base_name, notes
+    item_id, position, kind, rarity, output_quantity, base_kind, base_name, notes
 ) VALUES (
     sqlc.arg(item_id), sqlc.arg(position), sqlc.arg(kind), sqlc.arg(rarity),
-    sqlc.narg(base_kind), sqlc.narg(base_name), sqlc.arg(notes)
+    sqlc.arg(output_quantity), sqlc.narg(base_kind), sqlc.narg(base_name), sqlc.arg(notes)
 )
 RETURNING id;
 

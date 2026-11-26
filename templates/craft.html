@@ -4,6 +4,7 @@
 {{if .NoRecipe}}
   <div class="panel muted">This item has no material recipe.</div>
 {{else}}
+  {{if gt .Item.Recipe.OutputQty 1}}<p class="small muted">One craft produces {{.Item.Recipe.OutputQty}}× {{.Item.UnitName}}.</p>{{end}}
 <div class="row" style="margin-bottom:12px">
 <form method="post" action="/craft/{{.Item.ID}}"><button>Check my inventory</button></form>
 {{if .Plan.Valid}}<form method="post" action="/cart"><input type="hidden" name="item_id" value="{{.Item.ID}}"><button>Add to cart</button></form>
@@ -39,7 +40,7 @@ have {{.Have}} / {{.Required}}{{if .Missing}} · missing {{.Missing}}{{end}}
 <div class="small muted">{{range .Consumed}}{{.Name}} ×{{.Quantity}}{{if .Trait}} ({{.Trait}}){{end}} · {{end}}</div>
 </div>
 {{end}}
-<p class="small muted">Output: <span class="{{rarityClass .Plan.Output.Rarity}}">{{.Plan.Output.Rarity}}</span>{{if .Plan.Output.Tier}} · +{{.Plan.Output.Tier}}{{end}}{{if .Plan.Output.Trait}} · {{.Plan.Output.Trait}} ({{.Plan.Output.TraitQty}}){{else}} · Basic{{end}}{{range .Plan.Output.Tags}} · <span class="badge">{{.}}</span>{{end}}</p>
+<p class="small muted">Output: {{.Plan.Output.Quantity}}× {{.Plan.Output.Name}} · <span class="{{rarityClass .Plan.Output.Rarity}}">{{.Plan.Output.Rarity}}</span>{{if .Plan.Output.Tier}} · +{{.Plan.Output.Tier}}{{end}}{{if .Plan.Output.Trait}} · {{.Plan.Output.Trait}} ({{.Plan.Output.TraitQty}}){{else}} · Basic{{end}}{{range .Plan.Output.Tags}} · <span class="badge">{{.}}</span>{{end}}</p>
 </div>
 {{end}}
 

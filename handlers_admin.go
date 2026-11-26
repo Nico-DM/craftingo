@@ -240,6 +240,12 @@ func normalizeRecipe(r *catalog.Recipe) error {
 	if r.Kind == "" {
 		r.Kind = "groups"
 	}
+	if r.OutputQuantity == 0 {
+		r.OutputQuantity = 1
+	}
+	if r.OutputQuantity < 1 {
+		return fmt.Errorf("output_quantity must be positive")
+	}
 	switch r.Kind {
 	case "groups":
 		if len(r.Groups) == 0 {

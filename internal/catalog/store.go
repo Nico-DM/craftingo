@@ -58,28 +58,42 @@ func (s *Store) Load(ctx context.Context) error {
 	}
 	byID := make(map[string]*Item, len(items))
 	byName := make(map[string]*Item, len(items))
-	usedBy := map[string][]*Item{}
+	usedBy := buildUsedBy(items)
 	for i := range items {
 		it := &items[i]
 		byID[it.ID] = it
 		byName[strings.ToLower(it.Name)] = it
-		if it.Recipe == nil {
-			continue
-		}
-		for _, g := range it.Recipe.Groups {
-			for _, o := range g.Options {
-				for _, f := range o.Forms {
-					if f.Kind == "item" && f.ID != "" {
-						usedBy[f.ID] = append(usedBy[f.ID], it)
-					}
-				}
-			}
-		}
 	}
 	s.mu.Lock()
 	s.items, s.byID, s.byName, s.usedBy, s.loaded, s.loadErr = items, byID, byName, usedBy, true, nil
 	s.mu.Unlock()
 	return nil
+}
+
+// buildUsedBy maps a consumed item id to the items whose recipes require it.
+// A recipe may name the same item in several options (for example one option
+// per material tag), so each consumer is recorded once per consumed item.
+func buildUsedBy(items []Item) map[string][]*Item {
+	usedBy := map[string][]*Item{}
+	for i := range items {
+		it := &items[i]
+		if it.Recipe == nil {
+			continue
+		}
+		seen := map[string]bool{}
+		for _, g := range it.Recipe.Groups {
+			for _, o := range g.Options {
+				for _, f := range o.Forms {
+					if f.Kind != "item" || f.ID == "" || seen[f.ID] {
+						continue
+					}
+					seen[f.ID] = true
+					usedBy[f.ID] = append(usedBy[f.ID], it)
+				}
+			}
+		}
+	}
+	return usedBy
 }
 
 func (s *Store) Items() []Item {
@@ -269,7 +283,7 @@ func (s *Store) queryItems(ctx context.Context) ([]Item, error) {
 
 func (s *Store) queryAllRecipes(ctx context.Context) (map[string]*Recipe, map[int64]string, error) {
 	rows, err := s.db.QueryContext(ctx, `
-		SELECT id, item_id, kind, rarity, base_kind, base_name, notes
+		SELECT id, item_id, kind, rarity, output_quantity, base_kind, base_name, notes
 		FROM recipes ORDER BY item_id, position`)
 	if err != nil {
 		return nil, nil, err
@@ -280,18 +294,19 @@ func (s *Store) queryAllRecipes(ctx context.Context) (map[string]*Recipe, map[in
 	ids := map[int64]string{}
 	for rows.Next() {
 		var (
-			id       int64
-			itemID   string
-			kind     string
-			rarity   string
-			baseKind sql.NullString
-			baseName sql.NullString
-			notesRaw string
+			id        int64
+			itemID    string
+			kind      string
+			rarity    string
+			outputQty int
+			baseKind  sql.NullString
+			baseName  sql.NullString
+			notesRaw  string
 		)
-		if err := rows.Scan(&id, &itemID, &kind, &rarity, &baseKind, &baseName, &notesRaw); err != nil {
+		if err := rows.Scan(&id, &itemID, &kind, &rarity, &outputQty, &baseKind, &baseName, &notesRaw); err != nil {
 			return nil, nil, err
 		}
-		r := &Recipe{Kind: kind, Rarity: rarity}
+		r := &Recipe{Kind: kind, Rarity: rarity, OutputQuantity: outputQty}
 		_ = json.Unmarshal([]byte(notesRaw), &r.Notes)
 		if baseKind.Valid {
 			r.BaseSelector = &BaseSelector{Kind: baseKind.String, Name: baseName.String}

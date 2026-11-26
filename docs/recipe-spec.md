@@ -39,6 +39,7 @@ editor accepts on `/admin/items/{id}`.
 {
   "kind": "groups",
   "rarity": "Common",
+  "output_quantity": 1,
   "extras": [],
   "groups": [
     {
@@ -71,6 +72,13 @@ editor accepts on `/admin/items/{id}`.
 
 `kind` is `groups` or `inherit`. `inherit` recipes have a `base_selector`
 instead of groups and mean "same materials as this base category/item".
+
+`output_quantity` is the batch size of one craft and defaults to 1. A trailing
+bare `(N)` in an item name sets it during the build, so `Arrows +3 (20)` yields
+20 arrows per craft and `Ammunition of Slaying, Aberrations (10)` consumes 10
+individual `+3 Arrow` units. Only parentheses containing a single number count:
+`(3, Sword)` is part of the name, not a batch size. Recipe outputs are stored as
+one inventory stack with that quantity.
 
 Every group asks for `quantity` units (or a range via `quantity_max`). Options
 are homogeneous alternatives: **every** unit in a group must satisfy the same
@@ -145,6 +153,10 @@ Extras are displayed but do not participate in material counting.
 - Overflow units still contribute their full `trait_qty`.
 - A raw unit is matched by form + trait + tags + rarity. A crafted unit is
   matched by catalog item id (or generic category), tier, tags and trait.
+- Form-only groups consume one crafted item per required unit, so a stack of 20
+  arrows can satisfy 10 units and leave 10 behind. Trait groups count each
+  crafted item as its `trait_qty` and consume only enough items to cover the
+  requirement.
 - Generic bases (`any Weapon`, `any Armor`, ...) only accept **mundane** items.
   A specific item requirement can also be marked mundane, so an enchanted
   variant of the same base does not substitute for the plain item.

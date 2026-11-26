@@ -40,6 +40,8 @@ one of `tags_any` is required when that list is non-empty.
 An item has one recipe. A recipe is a list of **requirement groups**. Each group:
 
 - asks for `quantity` units (optionally a minimum..maximum range)
+- the recipe itself has an `output_quantity` batch size (default 1), derived
+  from a trailing bare `(N)` in the item name such as `Arrows +3 (20)`
 - has one or more **options**; every unit in the group must satisfy the same option
   (homogeneous options)
 - can require a minimum input rarity (`C`, `UC`, `R`, `VR`, `L`)
@@ -59,6 +61,11 @@ An option can specify:
 A unit counts toward **every** group it qualifies for. Feasibility is therefore a
 per-group count, not an allocation problem. Identical groups collapse to the
 stricter quantity instead of summing.
+
+One craft emits `output_quantity` units. Crafted inventory stacks therefore hold
+a quantity: a form-only requirement consumes one item per unit and can leave part
+of a batch behind, while a trait requirement counts each item's `trait_qty` and
+consumes only enough items to cover it.
 
 Alternatives written with `;` in the source are merged into one recipe: ingredients
 shared by every alternative stay as groups, and the differing ingredient becomes
@@ -116,8 +123,8 @@ counting.
   recipe tree. Forms/traits/tags are JSON arrays because they are read and written
   as a unit.
 - `users`, `sessions`: DM/player accounts and cookie sessions.
-- `inventory_units`: stacks of raw materials and individual crafted items,
-  including the snapshot `magic` flag, tier, trait and tags.
+- `inventory_units`: stacks of raw materials and crafted items, including the
+  snapshot `magic` flag, tier, trait, tags and stack quantity.
 - `craft_cart_lines`: ordered cart lines per user, with an optional
   `preferred_trait` tie-break. Plans are recomputed from the inventory on every
   request; nothing is consumed until the cart is finalized.
