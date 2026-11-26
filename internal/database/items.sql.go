@@ -168,7 +168,7 @@ func (q *Queries) GetItemByName(ctx context.Context, name string) (Item, error) 
 }
 
 const getRecipeForItem = `-- name: GetRecipeForItem :one
-SELECT id, item_id, position, kind, rarity, base_kind, base_name, notes
+SELECT id, item_id, position, kind, rarity, base_kind, base_name, notes, output_quantity
 FROM recipes
 WHERE item_id = ?1
 ORDER BY position
@@ -187,28 +187,30 @@ func (q *Queries) GetRecipeForItem(ctx context.Context, itemID string) (Recipe, 
 		&i.BaseKind,
 		&i.BaseName,
 		&i.Notes,
+		&i.OutputQuantity,
 	)
 	return i, err
 }
 
 const insertRecipe = `-- name: InsertRecipe :one
 INSERT INTO recipes (
-    item_id, position, kind, rarity, base_kind, base_name, notes
+    item_id, position, kind, rarity, output_quantity, base_kind, base_name, notes
 ) VALUES (
     ?1, ?2, ?3, ?4,
-    ?5, ?6, ?7
+    ?5, ?6, ?7, ?8
 )
 RETURNING id
 `
 
 type InsertRecipeParams struct {
-	ItemID   string
-	Position int64
-	Kind     string
-	Rarity   string
-	BaseKind sql.NullString
-	BaseName sql.NullString
-	Notes    string
+	ItemID         string
+	Position       int64
+	Kind           string
+	Rarity         string
+	OutputQuantity int64
+	BaseKind       sql.NullString
+	BaseName       sql.NullString
+	Notes          string
 }
 
 func (q *Queries) InsertRecipe(ctx context.Context, arg InsertRecipeParams) (int64, error) {
@@ -217,6 +219,7 @@ func (q *Queries) InsertRecipe(ctx context.Context, arg InsertRecipeParams) (int
 		arg.Position,
 		arg.Kind,
 		arg.Rarity,
+		arg.OutputQuantity,
 		arg.BaseKind,
 		arg.BaseName,
 		arg.Notes,

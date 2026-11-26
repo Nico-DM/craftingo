@@ -59,7 +59,9 @@ python3 scripts/build_dataset.py
 DATABASE_URL='libsql://...?authToken=...' scripts/migrateup.sh
 
 # 3. Seed items and recipes. Safe to rerun: rows are upserted, and DM
-#    visibility edits are preserved.
+#    visibility edits are preserved. Seeding is round-trip bound (roughly 7k
+#    statements, one HTTP request each), so run it from a machine near the
+#    database region; the same seed against a local file takes under a second.
 DATABASE_URL='libsql://...?authToken=...' go run ./cmd/seed
 
 # 4. Create the first DM if the database has no accounts
@@ -96,8 +98,9 @@ of truth for items, recipes and stats; do not hand-edit `data/build`.
 - **Accounts**: DM and player roles, password + session cookie. DMs create
   accounts; there is no signup.
 - **Inventory**: raw material stacks (form + rarity + optional trait + tags) and
-  individual crafted items (tier, magic, trait, tags). Materials and crafted
-  items have separate add forms, filters and sorting.
+  crafted item stacks (tier, magic, trait, tags, quantity). Materials and
+  crafted items have separate add forms, filters and sorting. Batch crafts such
+  as `Arrows (20)` enter the inventory as a single stack of 20.
 - **List ordering**: filters and sorting apply immediately. The combined
   **Default** order is mundane before magic, Common to Legendary, category with
   alphabetical subtype, then name. Every sort option has a **Reverse** toggle
@@ -123,6 +126,8 @@ Short version:
 
 - A unit is rarity + optional trait + form (nine raw forms or an item) + tags.
 - A recipe is a list of requirement groups with homogeneous options.
+- A trailing bare `(N)` in an item name is a batch size: one craft produces N
+  units, and those units can be consumed individually by later recipes.
 - A unit counts toward every group it qualifies for.
 - Identical requirement groups collapse to the stricter quantity, not a sum.
 - Rarity is a minimum, not a fixed tier.

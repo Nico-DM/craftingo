@@ -2,6 +2,86 @@
 // web app and the crafting calculator.
 package catalog
 
+import (
+	"regexp"
+	"strings"
+)
+
+var (
+	batchQuantityRE = regexp.MustCompile(`\((\d+)\)\s*$`)
+	tierInNameRE    = regexp.MustCompile(`(?:^|\s)\+(\d+)\b`)
+)
+
+// BatchQuantity reads the output count encoded in a catalog name. A trailing
+// bare `(N)` is how the dataset spells "one craft makes N of these"
+// ("Arrows (20)", "Bead of Force (7)"). Parentheses with any other content
+// ("Luck Blade (3, Sword)") describe the item, not a batch.
+func BatchQuantity(name string) int {
+	m := batchQuantityRE.FindStringSubmatch(name)
+	if m == nil {
+		return 1
+	}
+	n := 0
+	for _, r := range m[1] {
+		n = n*10 + int(r-'0')
+	}
+	if n < 1 {
+		return 1
+	}
+	return n
+}
+
+// StripBatchQuantity removes a trailing output count from a name.
+func StripBatchQuantity(name string) string {
+	return strings.TrimSpace(batchQuantityRE.ReplaceAllString(name, ""))
+}
+
+// TierFromName recovers the `+N` tier from a generated item name
+// ("Arrows +3 (20)", "+2 Greataxe"). It returns 0 when the name has no tier.
+func TierFromName(name string) int {
+	m := tierInNameRE.FindStringSubmatch(name)
+	if m == nil {
+		return 0
+	}
+	n := 0
+	for _, r := range m[1] {
+		n = n*10 + int(r-'0')
+	}
+	return n
+}
+
+// UnitName is the name a crafted inventory instance carries. Batch items drop
+// the output count, and the scraped singular name wins when it is clean:
+// "Ammunition of Slaying, Aberrations (10)" becomes "Arrow of Slaying", while
+// "Arrows +3 (20)" becomes "+3 Arrow".
+func (it *Item) UnitName() string {
+	if it == nil {
+		return ""
+	}
+	if BatchQuantity(it.Name) <= 1 {
+		return it.Name
+	}
+	if it.ScrapedName != nil {
+		n := strings.TrimSpace(*it.ScrapedName)
+		if n != "" && !strings.ContainsAny(n, "()") {
+			return n
+		}
+	}
+	return StripBatchQuantity(it.Name)
+}
+
+// Tier is the item's generated tier, from its archetype or, for named batch
+// rows such as "Arrows +3 (20)", from its name.
+func (it *Item) Tier() int {
+	if it == nil {
+		return 0
+	}
+	if it.Archetype != nil && it.Archetype.Tier != nil {
+		return *it.Archetype.Tier
+	}
+	return TierFromName(it.Name)
+}
+
 // Form is one allowed input form. Kind is "raw", "item" or "generic".
 type Form struct {
 	Kind string `json:"kind"`
@@ -51,12 +131,23 @@ type BaseSelector struct {
 
 // Recipe is the canonical recipe tree for one item.
 type Recipe struct {
-	Kind         string        `json:"kind"`
-	Rarity       string        `json:"rarity"`
-	BaseSelector *BaseSelector `json:"base_selector,omitempty"`
-	Groups       []Group       `json:"groups"`
-	Extras       []Extra       `json:"extras"`
-	Notes        []string      `json:"notes"`
+	Kind string `json:"kind"`
+	// OutputQuantity is how many units one craft produces. Zero is treated as
+	// one so older recipes keep their behaviour.
+	OutputQuantity int           `json:"output_quantity"`
+	Rarity         string        `json:"rarity"`
+	BaseSelector   *BaseSelector `json:"base_selector,omitempty"`
+	Groups         []Group       `json:"groups"`
+	Extras         []Extra       `json:"extras"`
+	Notes          []string      `json:"notes"`
+}
+
+// OutputQty is OutputQuantity with the implicit default of one.
+func (r *Recipe) OutputQty() int {
+	if r == nil || r.OutputQuantity < 1 {
+		return 1
+	}
+	return r.OutputQuantity
 }
 
 // Archetype describes generated (tier or modifier) combos.

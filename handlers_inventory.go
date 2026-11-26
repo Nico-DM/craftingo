@@ -55,8 +55,8 @@ func (cfg *apiConfig) loadUnits(r *http.Request) ([]crafting.Unit, error) {
 					unit.Subtype = *it.Subtype
 				}
 				unit.Magic = unit.Magic || it.Magic
-				if unit.Tier == 0 && it.Archetype != nil && it.Archetype.Tier != nil {
-					unit.Tier = *it.Archetype.Tier
+				if unit.Tier == 0 {
+					unit.Tier = it.Tier()
 				}
 			}
 		}
@@ -166,7 +166,6 @@ func (cfg *apiConfig) handleInventoryAdd(w http.ResponseWriter, r *http.Request)
 			return
 		}
 		formName = name
-		quantity = 1
 	}
 	if name == "" {
 		redirectErr(w, r, "/inventory?error=Pick+a+form")
@@ -187,11 +186,13 @@ func (cfg *apiConfig) handleInventoryAdd(w http.ResponseWriter, r *http.Request)
 		itemID = &it.ID
 		category = it.Category
 		magic = it.Magic
+		name = it.UnitName()
+		formName = name
 		if rarity == "" {
 			rarity = it.Rarity
 		}
-		if tier == 0 && it.Archetype != nil && it.Archetype.Tier != nil {
-			tier = *it.Archetype.Tier
+		if tier == 0 {
+			tier = it.Tier()
 		}
 		// A crafted item inherits its name/type tags (Sword, Axe, ...), which
 		// recipes use to narrow a generic Weapon/Armor base.
@@ -353,8 +354,8 @@ func (cfg *apiConfig) handleInventoryUnit(w http.ResponseWriter, r *http.Request
 			item = found
 			unit.Category = found.Category
 			unit.Magic = found.Magic
-			if unit.Tier == 0 && found.Archetype != nil && found.Archetype.Tier != nil {
-				unit.Tier = *found.Archetype.Tier
+			if unit.Tier == 0 {
+				unit.Tier = found.Tier()
 			}
 		}
 	}

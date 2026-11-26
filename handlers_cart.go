@@ -261,16 +261,22 @@ func (cfg *apiConfig) handleCartFinalize(w http.ResponseWriter, r *http.Request)
 	}
 
 	// Aggregate the final amount taken from every real inventory row. Virtual
-	// outputs are simply not inserted when a later line consumes them.
+	// outputs start at their full batch size; later lines consume from that
+	// batch, and only the leftovers are inserted.
 	remaining := make(map[string]int, len(units))
 	for _, unit := range units {
 		remaining[unit.ID] = unit.Quantity
 	}
-	consumedVirtual := map[string]bool{}
+	virtualLeft := make(map[string]int, len(lines))
+	for _, line := range lines {
+		if line.Plan.Valid {
+			virtualLeft[virtualUnitID(line.ID)] = line.Plan.Output.Quantity
+		}
+	}
 	for _, line := range lines {
 		for _, a := range line.Plan.Consumed {
 			if strings.HasPrefix(a.UnitID, "cart:") {
-				consumedVirtual[a.UnitID] = true
+				virtualLeft[a.UnitID] -= a.Quantity
 				continue
 			}
 			remaining[a.UnitID] -= a.Quantity
@@ -309,7 +315,8 @@ func (cfg *apiConfig) handleCartFinalize(w http.ResponseWriter, r *http.Request)
 
 	for _, line := range lines {
 		out := line.Plan.Output
-		if consumedVirtual[virtualUnitID(line.ID)] {
+		left := virtualLeft[virtualUnitID(line.ID)]
+		if left <= 0 {
 			continue
 		}
 		tagJSON, _ := json.Marshal(out.Tags)
@@ -327,7 +334,7 @@ func (cfg *apiConfig) handleCartFinalize(w http.ResponseWriter, r *http.Request)
 			Tier:      int64(out.Tier),
 			Magic:     boolInt(out.Magic),
 			Tags:      string(tagJSON),
-			Quantity:  1,
+			Quantity:  int64(left),
 			Note:      nullString(nil),
 			CreatedAt: now(),
 			UpdatedAt: now(),

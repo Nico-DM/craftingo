@@ -8,8 +8,8 @@ import (
 )
 
 // Allocation is one unit consumed by a plan. Quantity is the number of items
-// taken from the stack (crafted items are always one item, even when their
-// trait quantity satisfies several requirement units).
+// taken from the stack; a crafted stack may contribute only part of its items,
+// or one item may satisfy several trait requirement units.
 type Allocation struct {
 	UnitID   string
 	Name     string
@@ -92,7 +92,7 @@ func (c *Calculator) PlanWithTrait(item *catalog.Item, units []Unit, preferredTr
 		}
 		amount := a.Quantity
 		if u.Kind == "crafted" {
-			amount = unitTraitAmount(u)
+			amount = a.Quantity * craftedTraitPerItem(u)
 		}
 		traitTotals[u.Trait] += amount
 	}
@@ -115,24 +115,23 @@ func (c *Calculator) PlanWithTrait(item *catalog.Item, units []Unit, preferredTr
 		}
 	}
 
+	name := item.UnitName()
 	out := Unit{
 		Kind:     "crafted",
 		FormKind: "item",
-		FormName: item.Name,
+		FormName: name,
 		ItemID:   item.ID,
 		Category: item.Category,
 		Subtype:  itemSubtypeOf(item),
-		Name:     item.Name,
+		Name:     name,
 		Rarity:   rarityName(outRank, recipeRarity),
 		Trait:    chosenTrait,
 		TraitQty: traitTotals[chosenTrait],
-		Quantity: 1,
+		Quantity: item.Recipe.OutputQty(),
 		Magic:    item.Magic,
 		Tags:     outputTags(item, groups, byID),
 	}
-	if item.Archetype != nil && item.Archetype.Tier != nil {
-		out.Tier = *item.Archetype.Tier
-	}
+	out.Tier = itemTier(item)
 
 	p.TraitTotals = traitTotals
 	p.Output = out
@@ -291,16 +290,26 @@ func consumeOption(units []Unit, g catalog.Group, opt catalog.Option, bound stri
 			break
 		}
 		u := cand.unit
-		if u.Kind == "crafted" {
-			// A crafted item is indivisible; using it spends the whole item.
-			need -= cand.amount
+		take := cand.amount
+		if u.Kind == "crafted" && traitBased {
+			// A crafted stack contributes TraitQty per item. Consume only as
+			// many items as the remaining trait units need.
+			perItem := craftedTraitPerItem(u)
+			items := (need + perItem - 1) / perItem
+			if items > u.Quantity {
+				items = u.Quantity
+			}
+			if items < 1 {
+				break
+			}
+			take = items * perItem
 			allocs = append(allocs, Allocation{
 				UnitID: u.ID, Name: u.Name, Kind: u.Kind,
-				Rarity: u.Rarity, Trait: u.Trait, TraitQty: u.TraitQty, Quantity: 1,
+				Rarity: u.Rarity, Trait: u.Trait, TraitQty: u.TraitQty, Quantity: items,
 			})
+			need -= take
 			continue
 		}
-		take := cand.amount
 		if take > need {
 			take = need
 		}
@@ -346,8 +355,12 @@ func boundTrait(g catalog.Group, prior []GroupPlan) string {
 			continue
 		}
 		amount := a.Quantity
-		if a.Kind == "crafted" && a.TraitQty > 0 {
-			amount = a.TraitQty
+		if a.Kind == "crafted" {
+			perItem := a.TraitQty
+			if perItem <= 0 {
+				perItem = 1
+			}
+			amount = a.Quantity * perItem
 		}
 		totals[a.Trait] += amount
 	}
@@ -435,6 +448,12 @@ func itemSubtypeOf(it *catalog.Item) string {
 		return ""
 	}
 	return *it.Subtype
+}
+
+// itemTier reads the tier from the archetype, falling back to the name for
+// named batch rows such as "Arrows +3 (20)" that are not generated templates.
+func itemTier(it *catalog.Item) int {
+	return it.Tier()
 }
 
 func rarityName(rank int, fallback string) string {

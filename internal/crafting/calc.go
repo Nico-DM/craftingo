@@ -172,15 +172,21 @@ func groupUsesTraits(g catalog.Group) bool {
 	return false
 }
 
-// unitTraitAmount is how many trait units one unit contributes when the group
-// is trait-based. Raw stacks contribute one per item; crafted items contribute
-// the full trait quantity they carry.
+// craftedTraitPerItem is the trait magnitude of one crafted item. A stack of
+// identical crafted units carries that same magnitude per item.
+func craftedTraitPerItem(u Unit) int {
+	if u.TraitQty > 0 {
+		return u.TraitQty
+	}
+	return 1
+}
+
+// unitTraitAmount is how many trait units one inventory unit contributes when
+// the group is trait-based. Raw stacks contribute one per item; crafted stacks
+// contribute their per-item trait magnitude times their quantity.
 func unitTraitAmount(u Unit) int {
 	if u.Kind == "crafted" {
-		if u.TraitQty > 0 {
-			return u.TraitQty
-		}
-		return 1
+		return craftedTraitPerItem(u) * max(1, u.Quantity)
 	}
 	if u.Quantity > 0 {
 		return u.Quantity
@@ -317,8 +323,8 @@ func (c *Calculator) derive(units []Unit) {
 				units[i].Name = it.Name
 			}
 			units[i].Magic = units[i].Magic || it.Magic
-			if units[i].Tier == 0 && units[i].Kind == "crafted" && it.Archetype != nil && it.Archetype.Tier != nil {
-				units[i].Tier = *it.Archetype.Tier
+			if units[i].Tier == 0 && units[i].Kind == "crafted" {
+				units[i].Tier = itemTier(it)
 			}
 		}
 	}

@@ -208,6 +208,7 @@ PAREN_RE = re.compile(r"\(([^()]*)\)")
 LEADING_PAREN_RE = re.compile(r"^\(([^()]*)\)\s*")
 AS_RE = re.compile(r"^As\s+(?:\(([^()]*)\)\s*)?(.+)$")
 TRAILING_COUNT_RE = re.compile(r"\s*\(\s*\d[\d,]*[^)]*\)\s*$")
+OUTPUT_QTY_RE = re.compile(r"\((\d+)\)\s*$")
 NARRATIVE_RE = re.compile(r"magic circle|Djinni", re.I)
 
 # ---------------------------------------------------------------------------
@@ -245,6 +246,18 @@ def clean(text: str) -> str:
     # "Acid Metal" is a slip for the Acidic trait; bare "Acid" is an item.
     text = re.sub(r"\bAcid\s+(?=[A-Z])", "Acidic ", text)
     return text
+
+
+def output_quantity(name: str) -> int:
+    """A trailing `(N)` is the batch size one craft produces: `Arrows (20)`.
+
+    Only a bare number counts; parentheses that carry a qualifier
+    (`Luck Blade (3, Sword)`) describe the item, not a quantity.
+    """
+    m = OUTPUT_QTY_RE.search(name)
+    if not m:
+        return 1
+    return max(1, int(m.group(1)))
 
 
 def name_keys(name: str) -> list[str]:
@@ -752,41 +765,100 @@ def merge_alternatives(per_alt: list[list[dict]], log: list[str]):
 # ---------------------------------------------------------------------------
 
 
-def simplify_material_tags(groups: list[dict], log: list[str]) -> None:
-    """'(Bone/Metal/Wood) Staff' is just 'Staff': drop universal material tags."""
-    universal = {"Bone", "Metal", "Wood"}
-    for g in groups:
-        forms = None
-        same_item = True
+def item_material_tags(item: dict | None, index: ItemIndex, seen: set[str] | None = None) -> set[str]:
+    """Material tags a crafted instance of this item can carry.
+
+    Inherited recipes follow their base selector, so a tier row like '+1 Shield'
+    reports the tags of the Shield it is built from.
+    """
+    if item is None:
+        return set()
+    seen = seen if seen is not None else set()
+    if item["id"] in seen:
+        return set()
+    seen.add(item["id"])
+    recipe = item.get("_recipe")
+    if not recipe:
+        return set()
+    if recipe["kind"] == "inherit":
+        selector = recipe.get("base_selector") or {}
+        if selector.get("kind") != "item":
+            return set()
+        return item_material_tags(index.find(selector.get("name", "")), index, seen)
+    tags = set()
+    for g in recipe["groups"]:
         for o in g["options"]:
+            for t in (o.get("output_tags") or []) + (o.get("output_tags_any") or []):
+                tags.add(canon_tag(t))
+    return tags
+
+
+def simplify_material_tags(groups: list[dict], index: ItemIndex, log: list[str]) -> None:
+    """'(Bone/Metal/Wood) Staff' is just 'Staff': drop material tags that exclude nothing.
+
+    The options together cover every material tag the consumed item can carry,
+    so the tag narrows no choice. An item that carries no material tags at all
+    makes the tag unsatisfiable, which is equally redundant.
+    """
+    for g in groups:
+        options = g["options"]
+        sig = None
+        same_item = True
+        for o in options:
             if len(o["forms"]) != 1 or o["forms"][0]["kind"] != "item":
                 same_item = False
                 break
-            sig = (o["forms"][0]["kind"], o["forms"][0].get("id") or o["forms"][0]["name"])
-            if forms is None:
-                forms = sig
-            elif forms != sig:
+            current = (
+                o["forms"][0]["kind"],
+                o["forms"][0].get("id") or o["forms"][0]["name"],
+                o["tier"],
+                tuple(sorted(o["traits"])),
+            )
+            if sig is None:
+                sig = current
+            elif sig != current:
                 same_item = False
                 break
-        if not same_item or forms is None:
+        if not same_item or sig is None:
             continue
 
+        form = options[0]["forms"][0]
+        target = index.by_id.get(form.get("id") or "") or index.find(form["name"])
+        if target is None:
+            continue
+        universal = item_material_tags(target, index)
+
         mat_tags, other_tags = set(), []
-        for o in g["options"]:
+        for o in options:
             for t in o["tags_all"] + o["tags_any"]:
                 if t in MATERIAL_TAGS:
                     mat_tags.add(canon_tag(t))
                 elif t not in other_tags:
                     other_tags.append(t)
-        if not universal <= mat_tags:
+        if not mat_tags:
+            continue
+        if universal and not universal <= mat_tags:
             continue
 
-        base = copy.deepcopy(g["options"][0])
+        base = copy.deepcopy(options[0])
         base["tags_all"], base["tags_any"] = [], []
-        base["output_tags"], base["output_tags_any"] = [], []
         base["traits"] = []
         for t in other_tags:
             base["tags_all"].append(t)
+        # Every remaining option is the same item, so the collapsed option can
+        # carry whatever any of them carried. Tags shared by all stay definite;
+        # the rest become a choice.
+        definite: set[str] | None = None
+        possible = []
+        for o in options:
+            out = [canon_tag(t) for t in o["output_tags"]]
+            for t in out + [canon_tag(t) for t in o["output_tags_any"]]:
+                if t not in possible:
+                    possible.append(t)
+            definite = set(out) if definite is None else definite & set(out)
+        shared = definite or set()
+        base["output_tags"] = [t for t in possible if t in shared]
+        base["output_tags_any"] = [t for t in possible if t not in shared]
         log.append(
             f"simplified {render_group(g)} -> {g['quantity']}x {base['forms'][0]['name']}"
         )
@@ -1025,7 +1097,9 @@ def render_recipe(recipe: dict | None) -> str:
             parts.append("Cast a spell")
         else:
             parts.append("narrative")
-    return "; ".join(parts) if parts else "(empty)"
+    body = "; ".join(parts) if parts else "(empty)"
+    qty = recipe.get("output_quantity") or 1
+    return f"{qty}× output :: {body}" if qty > 1 else body
 
 
 # ---------------------------------------------------------------------------
@@ -1122,6 +1196,7 @@ def build() -> int:
         r["_recipe"] = {
             "kind": "groups",
             "rarity": r.get("rarity") or "",
+            "output_quantity": output_quantity(r["name"]),
             "extras": dedupe_extras(extras),
             "groups": groups,
             "notes": notes,
@@ -1178,6 +1253,7 @@ def build() -> int:
             r["_recipe"] = {
                 "kind": "inherit",
                 "rarity": r.get("rarity") or "",
+                "output_quantity": output_quantity(r["name"]),
                 "base_selector": {"kind": archetype["kind"], "name": archetype["name"]},
                 "extras": [],
                 "groups": [],
@@ -1194,12 +1270,24 @@ def build() -> int:
         r["_recipe"] = {
             "kind": "groups",
             "rarity": r.get("rarity") or "",
+            "output_quantity": output_quantity(r["name"]),
             "extras": dedupe_extras(extras),
             "groups": groups,
             "notes": notes,
         }
 
     # post-process
+    # simplify_material_tags needs the tags a consumed item can carry, so each
+    # item's options are deduped and collapsed (which does not look at tags)
+    # before any output tags are computed, and simplification runs afterwards.
+    for r in items:
+        if r["_recipe"] and r["_recipe"]["kind"] == "groups":
+            dedupe_options(r["_recipe"]["groups"], r["name"], r["_notes"])
+            collapse_generic_material_options(r["_recipe"]["groups"], r["_notes"])
+    for r in items:
+        if r["_recipe"] and r["_recipe"]["kind"] == "groups":
+            apply_output_tags(r["name"], r["_recipe"]["groups"], r["_warnings"])
+
     for r in items:
         r["_template"] = bool(
             re.fullmatch(r"(Weapon|Armor|Ammunition) \+\d", r["name"])
@@ -1208,13 +1296,10 @@ def build() -> int:
         if not r["_recipe"] or r["_recipe"]["kind"] != "groups":
             continue
         groups = r["_recipe"]["groups"]
-        simplify_material_tags(groups, r["_notes"])
-        dedupe_options(groups, r["name"], r["_notes"])
-        collapse_generic_material_options(groups, r["_notes"])
+        simplify_material_tags(groups, index, r["_notes"])
         for i, g in enumerate(groups, 1):
             g["position"] = i
         link_trait_variables(groups, r["name"], r["_warnings"])
-        apply_output_tags(r["name"], groups, r["_warnings"])
         apply_dragon_checks(groups, r["name"], r["_warnings"])
         validate_groups(r["name"], groups, r["_warnings"])
         if r["_archetype"] is None:

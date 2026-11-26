@@ -74,14 +74,15 @@ type Item struct {
 }
 
 type Recipe struct {
-	ID       int64
-	ItemID   string
-	Position int64
-	Kind     string
-	Rarity   string
-	BaseKind sql.NullString
-	BaseName sql.NullString
-	Notes    string
+	ID             int64
+	ItemID         string
+	Position       int64
+	Kind           string
+	Rarity         string
+	BaseKind       sql.NullString
+	BaseName       sql.NullString
+	Notes          string
+	OutputQuantity int64
 }
 
 type RecipeExtra struct {

@@ -43,7 +43,7 @@
 <h2>This craft would reserve</h2>
 <div class="panel">
 {{range .Plan.Groups}}<div class="opt"><div><strong>{{.Required}}×</strong> {{template "option" .Option}}{{if .Trait}} · {{.Trait}}{{end}}</div><div class="small muted">{{range .Consumed}}{{.Name}} ×{{.Quantity}} · {{end}}</div></div>{{end}}
-<p class="small muted">Output: <span class="{{rarityClass .Plan.Output.Rarity}}">{{.Plan.Output.Rarity}}</span>{{if .Plan.Output.Tier}} · +{{.Plan.Output.Tier}}{{end}}{{if .Plan.Output.Trait}} · {{.Plan.Output.Trait}} ({{.Plan.Output.TraitQty}}){{else}} · Basic{{end}}</p>
+<p class="small muted">Output: {{.Plan.Output.Quantity}}× {{.Plan.Output.Name}} · <span class="{{rarityClass .Plan.Output.Rarity}}">{{.Plan.Output.Rarity}}</span>{{if .Plan.Output.Tier}} · +{{.Plan.Output.Tier}}{{end}}{{if .Plan.Output.Trait}} · {{.Plan.Output.Trait}} ({{.Plan.Output.TraitQty}}){{else}} · Basic{{end}}</p>
 </div>
 {{end}}
 {{end}}

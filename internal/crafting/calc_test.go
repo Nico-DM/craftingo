@@ -196,6 +196,31 @@ func TestCraftedTraitQuantityCountsTowardTraitGroup(t *testing.T) {
 	}
 }
 
+func TestCraftedTraitStackConsumesOnlyNeededItems(t *testing.T) {
+	item := &catalog.Item{
+		ID: "test", Name: "Test",
+		Recipe: &catalog.Recipe{Kind: "groups", Groups: []catalog.Group{{
+			Quantity: 8, TraitMode: "fixed",
+			Options: []catalog.Option{{Traits: []string{"Fiery"}}},
+		}}},
+	}
+	units := []Unit{{
+		ID: "swords", Kind: "crafted", ItemID: "shortsword", Name: "Shortsword",
+		Trait: "Fiery", TraitQty: 5, Quantity: 3,
+	}}
+	plan := (&Calculator{}).Plan(item, units)
+	if !plan.Valid {
+		t.Fatalf("expected valid plan: %s", plan.Error)
+	}
+	if len(plan.Consumed) != 1 || plan.Consumed[0].Quantity != 2 {
+		t.Fatalf("expected 2 of the 3 swords consumed for 8x Fiery, got %+v", plan.Consumed)
+	}
+	left := ApplyPlan(units, plan)
+	if len(left) != 1 || left[0].Quantity != 1 {
+		t.Fatalf("expected 1 sword left, got %+v", left)
+	}
+}
+
 func TestPlanSharedGroupsConsumeOnce(t *testing.T) {
 	item := &catalog.Item{
 		ID: "test", Name: "Test",
@@ -247,6 +272,66 @@ func TestPlanOutputTraitAndRarity(t *testing.T) {
 		t.Fatalf("output rarity = %q, want Rare (lowest consumed material)", plan.Output.Rarity)
 	}
 }
+
+func TestPlanBatchOutput(t *testing.T) {
+	item := &catalog.Item{
+		ID: "arrows-plus-3", Name: "Arrows +3 (20)", Rarity: "Very Rare", Category: "Ammunition",
+		ScrapedName: strPtr("+3 Arrow"), Magic: true,
+		Recipe: &catalog.Recipe{Kind: "groups", Rarity: "Very Rare", OutputQuantity: 20, Groups: []catalog.Group{{
+			Quantity: 2, TraitMode: "fixed",
+			Options: []catalog.Option{{Forms: []catalog.Form{{Kind: "raw", Name: "Metal"}}}},
+		}}},
+	}
+	units := []Unit{{ID: "metal", Kind: "material", FormKind: "raw", FormName: "Metal", Rarity: "Common", Quantity: 2}}
+	plan := (&Calculator{}).Plan(item, units)
+	if !plan.Valid {
+		t.Fatalf("expected a valid plan: %s", plan.Error)
+	}
+	if plan.Output.Quantity != 20 {
+		t.Fatalf("output quantity = %d, want 20", plan.Output.Quantity)
+	}
+	if plan.Output.Name != "+3 Arrow" {
+		t.Fatalf("output name = %q, want +3 Arrow", plan.Output.Name)
+	}
+	if plan.Output.Tier != 3 {
+		t.Fatalf("output tier = %d, want 3 from the name", plan.Output.Tier)
+	}
+}
+
+func TestBatchConsumptionAndOutput(t *testing.T) {
+	slaying := &catalog.Item{
+		ID: "slaying", Name: "Ammunition of Slaying, Aberrations (10)", Category: "Ammunition",
+		ScrapedName: strPtr("Arrow of Slaying"), Magic: true,
+		Recipe: &catalog.Recipe{Kind: "groups", Rarity: "Very Rare", OutputQuantity: 10, Groups: []catalog.Group{{
+			Quantity: 10, TraitMode: "fixed",
+			Options: []catalog.Option{{
+				Forms: []catalog.Form{{Kind: "generic", Name: "Ammunition"}},
+				Tier:  intPtr(3),
+			}},
+		}}},
+	}
+	units := []Unit{{
+		ID: "arrows", Kind: "crafted", FormKind: "item", ItemID: "arrows-plus-3",
+		Category: "Ammunition", Name: "+3 Arrow", Rarity: "Very Rare",
+		Tier: 3, Magic: true, Quantity: 20,
+	}}
+	plan := (&Calculator{}).Plan(slaying, units)
+	if !plan.Valid {
+		t.Fatalf("expected 20 arrows to satisfy 10x +3 ammunition: %s", plan.Error)
+	}
+	if len(plan.Consumed) != 1 || plan.Consumed[0].Quantity != 10 {
+		t.Fatalf("expected 10 arrows consumed, got %+v", plan.Consumed)
+	}
+	left := ApplyPlan(units, plan)
+	if len(left) != 1 || left[0].Quantity != 10 {
+		t.Fatalf("expected 10 arrows left, got %+v", left)
+	}
+	if plan.Output.Quantity != 10 || plan.Output.Name != "Arrow of Slaying" {
+		t.Fatalf("output = %dx %q, want 10x Arrow of Slaying", plan.Output.Quantity, plan.Output.Name)
+	}
+}
+
+func strPtr(s string) *string { return &s }
 
 func TestMinRarity(t *testing.T) {
 	item := &catalog.Item{

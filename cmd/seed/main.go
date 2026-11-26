@@ -109,10 +109,12 @@ func seedBatch(ctx context.Context, db *sql.DB, items []catalog.Item, now string
 		if err := q.UpsertItem(ctx, toUpsertParams(it, now)); err != nil {
 			return fmt.Errorf("item %s: %w", it.Name, err)
 		}
-		if err := q.DeleteRecipeForItem(ctx, it.ID); err != nil {
-			return err
-		}
 		if it.Recipe == nil {
+			// SaveRecipe replaces an existing recipe, so only an item that lost
+			// its recipe needs an explicit delete.
+			if err := q.DeleteRecipeForItem(ctx, it.ID); err != nil {
+				return err
+			}
 			continue
 		}
 		if err := catalog.SaveRecipe(ctx, q, it.ID, it.Recipe, it.Rarity); err != nil {
