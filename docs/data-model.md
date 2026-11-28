@@ -1,8 +1,9 @@
 # Craftingo data model
 
-The catalog is built from `data/items.tsv`. `scripts/build_dataset.py` normalizes it
-into `data/build/items.jsonl`; `cmd/seed` loads that JSON into SQLite (local file or
-Turso). The database is a derived artifact and can be rebuilt at any time.
+The catalog is built from `data/items.tsv` and `data/descriptions.md`.
+`scripts/build_dataset.py` normalizes them into `data/build/items.jsonl`;
+`cmd/seed` loads that JSON into SQLite (local file or Turso). The database is a
+derived artifact and can be rebuilt at any time.
 
 ## Units
 
@@ -34,6 +35,36 @@ Raw forms are `Bone`, `Fluid`, `Food`, `Glass`, `Hide`, `Metal`, `Mineral`,
 Tags are freeform but canonicalized (for example `Hardwood` -> `Wood`,
 `Leather` -> `Hide`, `10-Foot` -> `10-foot`). A tag in `tags_all` is required;
 one of `tags_any` is required when that list is non-empty.
+
+## Descriptions
+
+`data/descriptions.md` holds only the descriptions used by the catalog, in
+`#### Name` blocks with an optional `---` separator:
+
+```md
+#### Name
+
+---
+
+Markdown description.
+```
+
+The properties line from the original dump is ignored, and a trailing
+`***Base items.***` section is removed. Descriptions are Markdown; the server
+renders them with goldmark. Items are matched to descriptions through
+`scraped_name`, with fallbacks for a trailing ` Sword` and for normalized name
+keys. Items without a description keep `NULL` and are listed under
+`## Descriptions missing` in `data/build/report.md`.
+
+The full upstream dump is not committed. To regenerate the reduced file after
+changing `data/items.tsv`, keep it in `data/descriptions.full.md` and run:
+
+```sh
+python3 scripts/filter_descriptions.py
+```
+
+When the full dump repeats a heading, the existing entry in
+`data/descriptions.md` wins, so prior choices survive a rerun.
 
 ## Recipes
 
@@ -137,8 +168,9 @@ goose -dir sql/schema sqlite3 craftingo.db up
 DATABASE_URL=file:craftingo.db go run ./cmd/seed
 ```
 
-The build emits `data/build/items.jsonl`, `data/build/recipes.txt` (review aid) and
-`data/build/report.md` (conflicts/warnings).
+The build reads `data/items.tsv` and `data/descriptions.md`, and emits
+`data/build/items.jsonl`, `data/build/recipes.txt` (review aid) and
+`data/build/report.md` (conflicts, warnings and missing descriptions).
 
 Visibility is DM-owned at runtime. `cmd/seed` writes `visible` for new rows but
 does not overwrite it on existing rows, so reseeding the dataset does not undo

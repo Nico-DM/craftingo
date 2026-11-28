@@ -55,7 +55,7 @@ func main() {
 		"rarityClass": rarityClass,
 		"join":        joinNonEmpty,
 		"hasPrefix":   hasPrefix,
-		"desc":        descriptionText,
+		"markdown":    markdownText,
 		"add":         func(a, b int) int { return a + b },
 	}
 	tmpl := template.Must(template.New("").Funcs(funcs).ParseFS(templateFiles, "templates/*.html"))

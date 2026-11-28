@@ -32,7 +32,7 @@
 <label>Properties</label><input name="properties" value="{{if .Item.Properties}}{{.Item.Properties}}{{end}}" style="width:100%">
 <label>Short description</label><input name="short_description" value="{{if .Item.ShortDescription}}{{.Item.ShortDescription}}{{end}}" style="width:100%">
 <label>Intrinsic tags (comma separated)</label><input name="intrinsic_tags" value="{{.Tags}}" style="width:100%">
-<label>Description</label><textarea name="description" rows="8" style="width:100%">{{if .Item.Description}}{{.Item.Description}}{{end}}</textarea>
+<label>Description (Markdown)</label><textarea name="description" rows="8" style="width:100%">{{if .Item.Description}}{{.Item.Description}}{{end}}</textarea>
 <div style="margin-top:12px"><button>Save metadata</button></div>
 </form>
 

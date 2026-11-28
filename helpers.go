@@ -4,12 +4,22 @@ import (
 	"bytes"
 	"crypto/rand"
 	"encoding/base64"
+	"html/template"
 	"log"
 	"net/http"
 	"strings"
 	"time"
 
+	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/extension"
+
 	"github.com/Nico-DM/craftingo/internal/auth"
+)
+
+// markdownRenderer is safe for concurrent use. Goldmark does not emit raw HTML
+// unless explicitly allowed, so catalog descriptions cannot inject markup.
+var markdownRenderer = goldmark.New(
+	goldmark.WithExtensions(extension.GFM),
 )
 
 func now() string {
@@ -95,11 +105,14 @@ func joinNonEmpty(parts ...any) string {
 
 func hasPrefix(s, prefix string) bool { return strings.HasPrefix(s, prefix) }
 
-// descriptionText turns the dataset's double spaces into paragraph breaks with
-// a blank line between them. The surrounding template uses white-space:pre-wrap,
-// so the newlines are visible.
-func descriptionText(s string) string {
-	return strings.ReplaceAll(s, "  ", "\n\n")
+// markdownText renders a catalog description as HTML. Goldmark leaves raw HTML
+// out unless explicitly allowed, which is exactly what we want for dataset text.
+func markdownText(s string) template.HTML {
+	var buf bytes.Buffer
+	if err := markdownRenderer.Convert([]byte(s), &buf); err != nil {
+		return template.HTML(template.HTMLEscapeString(s)) // #nosec G203 -- escaped above
+	}
+	return template.HTML(buf.String()) // #nosec G203 -- goldmark escapes raw HTML
 }
 
 func urlMsg(s string) string {

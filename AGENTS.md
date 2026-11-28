@@ -29,8 +29,13 @@ PORT=8080 DATABASE_URL=file:craftingo.db go run .
 - `data/items.tsv` is the tracked source of truth (optional untracked
   `data/items_extra.tsv` is also read). Never hand-edit generated
   `data/build/*`; it is gitignored.
+- `data/descriptions.md` holds only the Markdown descriptions the catalog uses.
+  The full upstream dump (`data/descriptions.full.md`) is local and gitignored;
+  `scripts/filter_descriptions.py` reduces it and reports items without a
+  description. The build drops `***Base items.***` sections.
 - `python3 scripts/build_dataset.py` emits `items.jsonl`, `recipes.txt`, and
-  `report.md`; check `report.md` for merge conflicts and warnings.
+  `report.md`; check `report.md` for merge conflicts, warnings, and missing
+  descriptions.
 - `data/ingredients.draft.tsv` is local scratch, not build input.
 - Read `docs/data-model.md` and `docs/recipe-spec.md` before changing recipe
   matching or persistence. Key rule: a unit counts toward every group it

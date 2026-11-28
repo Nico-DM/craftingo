@@ -55,5 +55,5 @@
   {{if eq .Base.Recipe.Kind "groups"}}{{range .Base.Recipe.Groups}}{{template "formgroup" .}}{{end}}{{else}}<div class="small muted">As {{.Base.Recipe.BaseSelector.Name}}</div>{{end}}
 {{else}}<div class="small muted">No recipe.</div>{{end}}
 </div>
-{{if .Combo.Description}}<h2>Description</h2><div class="panel" style="white-space:pre-wrap">{{desc .Combo.Description}}</div>{{end}}
+{{if .Combo.Description}}<h2>Description</h2><div class="panel md">{{markdown .Combo.Description}}</div>{{end}}
 {{template "foot" .}}
