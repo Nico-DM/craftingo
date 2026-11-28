@@ -13,6 +13,10 @@ Everything the source data expresses ambiguously is resolved here: alternatives
 are merged into option groups, deprecated forms are replaced, `As X` inheritance
 is expanded, and anything that cannot be merged is reported instead of guessed.
 
+Descriptions live in data/descriptions.md as Markdown blocks. They are matched
+to items through `scraped_name`; the dataset no longer stores plain scraped
+text.
+
 Usage:
     python3 scripts/build_dataset.py
 Outputs:
@@ -30,10 +34,12 @@ import re
 import sys
 from collections import Counter
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 OUT = DATA / "build"
+DESCRIPTIONS = DATA / "descriptions.md"
 
 # ---------------------------------------------------------------------------
 # Vocabulary
@@ -200,8 +206,8 @@ RECIPE_OVERRIDES = {
     ],
 }
 
-QTY_RE = re.compile(r"^(\d+)(?:\s*-\s*(\d+))?\s*x\s+(.+)$", re.I)
-GP_RE = re.compile(r"^([\d,]+)\s*(?:x\s*)?GP$", re.I)
+QTY_RE = re.compile(r"^(\d+)(?:\s*-\s*(\d+))?\s*x\s+(.+)$", re.IGNORECASE)
+GP_RE = re.compile(r"^([\d,]+)\s*(?:x\s*)?GP$", re.IGNORECASE)
 RARITY_RE = re.compile(r"^(C|UC|R|VR|L)\s+(.+)$")
 TIER_RE = re.compile(r"^\+(\d)\s+(.+)$")
 PAREN_RE = re.compile(r"\(([^()]*)\)")
@@ -209,7 +215,7 @@ LEADING_PAREN_RE = re.compile(r"^\(([^()]*)\)\s*")
 AS_RE = re.compile(r"^As\s+(?:\(([^()]*)\)\s*)?(.+)$")
 TRAILING_COUNT_RE = re.compile(r"\s*\(\s*\d[\d,]*[^)]*\)\s*$")
 OUTPUT_QTY_RE = re.compile(r"\((\d+)\)\s*$")
-NARRATIVE_RE = re.compile(r"magic circle|Djinni", re.I)
+NARRATIVE_RE = re.compile(r"magic circle|Djinni", re.IGNORECASE)
 
 # ---------------------------------------------------------------------------
 # Small helpers
@@ -473,7 +479,7 @@ def classify_part(part: str, index: ItemIndex):
     return opt, f"unresolved: {name}"
 
 
-def parse_token(raw: str, index: ItemIndex):
+def parse_token(raw: str, index: ItemIndex) -> tuple[str, Any]:
     """Return ('group', group) or ('extra', extra) or ('as', info) or ('error', note)."""
     text = clean(raw)
     if text.startswith("As "):
@@ -1103,6 +1109,105 @@ def render_recipe(recipe: dict | None) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Descriptions
+# ---------------------------------------------------------------------------
+
+
+BASE_ITEMS_RE = re.compile(r"(?m)^\*\*\*Base items\.\*\*\*.*$")
+
+
+def strip_base_items(text: str) -> str:
+    """Drop the trailing `***Base items.***` section from a description."""
+    return BASE_ITEMS_RE.split(text, maxsplit=1)[0].rstrip()
+
+
+def parse_descriptions(text: str) -> dict[str, list[str]]:
+    """Parse data/descriptions.md into heading -> description variants.
+
+    Blocks look like:
+
+        #### Name
+
+        ---
+
+        Markdown description.
+
+    The optional properties line from the full dump is ignored. The trailing
+    `***Base items.***` section is removed. Duplicate headings are kept as
+    separate variants so the caller can keep an existing choice.
+    """
+    out: dict[str, list[str]] = {}
+    for block in re.split(r"(?m)^#### ", text)[1:]:
+        heading, _, body = block.partition("\n")
+        heading = heading.strip()
+        if not heading:
+            continue
+        if "\n---\n" in body:
+            body = body.split("\n---\n", 1)[1]
+        desc = strip_base_items(body).strip()
+        if desc:
+            out.setdefault(heading, []).append(desc)
+    return out
+
+
+def load_descriptions() -> dict[str, list[str]]:
+    if not DESCRIPTIONS.exists():
+        return {}
+    return parse_descriptions(DESCRIPTIONS.read_text())
+
+
+def description_lookup(descriptions: dict[str, list[str]]) -> dict[str, str]:
+    """Lower-case name keys -> canonical heading, for normalized fallbacks."""
+    lookup = {}
+    for heading in descriptions:
+        for key in name_keys(heading):
+            lookup.setdefault(key, heading)
+    return lookup
+
+
+def description_heading(
+    item: dict,
+    descriptions: dict[str, list[str]],
+    lookup: dict[str, str] | None = None,
+) -> str | None:
+    """Find the description heading for an item.
+
+    `scraped_name` is the upstream name recorded when the stat block was
+    matched, so it is the most reliable key. A few catalog rows append a
+    generic base ("Dragon Slayer Sword"), so that suffix is tried too. Finally
+    fall back to the same loose name keys used for item lookup.
+    """
+    if not descriptions:
+        return None
+    scraped = (item.get("scraped_name") or "").strip()
+    if scraped in descriptions:
+        return scraped
+    if scraped.endswith(" Sword") and scraped[:-6] in descriptions:
+        return scraped[:-6]
+    if lookup is None:
+        lookup = description_lookup(descriptions)
+    for key in name_keys(scraped) + name_keys(item.get("name", "")):
+        if key in lookup:
+            return lookup[key]
+    return None
+
+
+def pick_description(
+    variants: list[str], existing: list[str] | None = None
+) -> str:
+    """Choose one variant for a heading that appears more than once.
+
+    The full dump repeats a few headings across source books (Deck of Many
+    Things, Musical Instrument, Shawm, Trinket). `data/descriptions.md` is
+    authoritative for those, so an existing entry wins when there is more than
+    one variant. Otherwise use the variant from the dump.
+    """
+    if len(variants) > 1 and existing:
+        return existing[0]
+    return variants[0]
+
+
+# ---------------------------------------------------------------------------
 # Build
 # ---------------------------------------------------------------------------
 
@@ -1148,7 +1253,6 @@ def add_synthetic_tier_templates(items: list[dict]) -> None:
             "properties": "",
             "weight": "",
             "value": "",
-            "scraped_text": "",
         })
 
 
@@ -1305,6 +1409,20 @@ def build() -> int:
         if r["_archetype"] is None:
             r["_archetype"] = detect_modifier(r["_recipe"])
 
+    descriptions = load_descriptions()
+    if not descriptions:
+        print(
+            f"warning: {DESCRIPTIONS} is missing or empty; "
+            "items will have no description",
+            file=sys.stderr,
+        )
+    description_keys = description_lookup(descriptions)
+    for r in items:
+        heading = description_heading(r, descriptions, description_keys)
+        r["_description"] = (
+            pick_description(descriptions[heading]) if heading else None
+        )
+
     # serialize
     OUT.mkdir(parents=True, exist_ok=True)
     records = []
@@ -1334,7 +1452,7 @@ def build() -> int:
             "properties": r.get("properties") or None,
             "weight": r.get("weight") or None,
             "value": r.get("value") or None,
-            "description": r.get("scraped_text") or None,
+            "description": r.get("_description") or None,
             "scraped_name": r.get("scraped_name") or None,
             "stat_source_code": r.get("scraped_source_code") or None,
             "stat_source": r.get("scraped_source") or None,
@@ -1365,7 +1483,7 @@ def build() -> int:
 
 def write_report(items: list[dict], records: list[dict]) -> None:
     lines = ["# Dataset build report", ""]
-    merged, simplified, warnings, conflicts = [], [], [], []
+    merged, warnings, conflicts = [], [], []
     for r in items:
         if r["_notes"]:
             merged.append((r["name"], r["_notes"]))
@@ -1375,11 +1493,13 @@ def write_report(items: list[dict], records: list[dict]) -> None:
             warnings.append((r["name"], w))
     for r in records:
         merged.extend([])
+    missing_desc = [r["name"] for r in records if not r.get("description")]
     # simplification notes live in _notes with a marker
     lines.append(f"- items: {len(records)}")
     lines.append(f"- with a recipe: {sum(1 for r in records if r['recipe'])}")
     lines.append(f"- recipes that inherit a base: {sum(1 for r in records if r['recipe'] and r['recipe']['kind'] == 'inherit')}")
     lines.append(f"- archetypes: {sum(1 for r in records if r['archetype'])}")
+    lines.append(f"- descriptions: {len(records) - len(missing_desc)} present, {len(missing_desc)} missing")
     lines.append(f"- conflicts: {len(conflicts)}")
     lines.append(f"- warnings: {len(warnings)}")
     lines.append("")
@@ -1390,6 +1510,19 @@ def write_report(items: list[dict], records: list[dict]) -> None:
     if warnings:
         lines += ["## Warnings", ""]
         lines += [f"- {n}: {w}" for n, w in warnings]
+        lines.append("")
+    if missing_desc:
+        lines += [
+            "## Descriptions missing",
+            "",
+            (
+                "Items with no Markdown description. Many are mundane gear "
+                "whose source block is empty; custom and synthetic items also "
+                "appear here."
+            ),
+            "",
+        ]
+        lines += [f"- {n}" for n in missing_desc]
         lines.append("")
     lines += ["## Merge / normalization notes", ""]
     for n, notes in merged:
@@ -1406,6 +1539,8 @@ def print_summary(items: list[dict], records: list[dict]) -> None:
           f"{sum(1 for r in records if not r['recipe'])} missing)")
     print(f"requirement groups: {groups}  options: {options}")
     print(f"archetypes: {sum(1 for r in records if r['archetype'])}")
+    print(f"descriptions: {sum(1 for r in records if r.get('description'))} present, "
+          f"{sum(1 for r in records if not r.get('description'))} missing")
     print(f"conflicts: {sum(1 for r in items if r['_conflict'])}")
     print(f"warnings: {sum(len(r['_warnings']) for r in items)}")
     print(f"wrote {OUT / 'items.jsonl'}, {OUT / 'recipes.txt'}, {OUT / 'report.md'}")

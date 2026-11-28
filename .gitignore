@@ -11,9 +11,13 @@ data/build/
 # Scratch/review data that is not part of the build
 data/*.draft.tsv
 
+# Full Markdown dump; data/descriptions.md holds only the descriptions in use
+data/descriptions.full.md
+
 # Python
 __pycache__/
 *.py[cod]
+.ruff_cache/
 
 # Editors and OS junk
 .zed/
