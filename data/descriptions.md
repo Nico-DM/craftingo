@@ -42,6 +42,12 @@ You have a +1 bonus to AC while wearing this armor.
 
 You have a +1 bonus to attack and damage rolls made with this piece of magic ammunition. Once it hits a target, the ammunition is no longer magical.
 
+#### +1 Battling Clothes
+
+---
+
+This magical set of clothes grants a +1 bonus to AC and counts as rare armor for the purposes of applying runes and gaining their effects. It doesn't require any proficiency to use. If you are wearing a set of armor over the clothes, the clothes’ runes and bonus to AC get suppressed until you remove the armor.
+
 #### +1 Bloodwell Vial
 
 ---
@@ -139,6 +145,12 @@ While you are holding this wand, you gain a +1 bonus to spell attack rolls. In a
 
 You have a +1 bonus to attack and damage rolls made with this magic weapon.
 
+#### +1 Wraps of Unarmed Power
+
+---
+
+While wearing these wraps, you have a +1 bonus to attack rolls and damage rolls made with your Unarmed Strikes. Your unarmed strikes also count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
+
 #### +2 All-Purpose Tool
 
 ---
@@ -182,6 +194,12 @@ You have a +2 bonus to AC while wearing this armor.
 ---
 
 You have a +2 bonus to attack and damage rolls made with this piece of magic ammunition. Once it hits a target, the ammunition is no longer magical.
+
+#### +2 Battling Clothes
+
+---
+
+This magical set of clothes grants a +2 bonus to AC and counts as very rare armor for the purposes of applying runes and gaining their effects. It doesn't require any proficiency to use. If you are wearing a set of armor over the clothes, the clothes’ runes and bonus to AC get suppressed until you remove the armor.
 
 #### +2 Bloodwell Vial
 
@@ -280,6 +298,12 @@ While you are holding this wand, you gain a +2 bonus to spell attack rolls. In a
 
 You have a +2 bonus to attack and damage rolls made with this magic weapon.
 
+#### +2 Wraps of Unarmed Power
+
+---
+
+While wearing these wraps, you have a +2 bonus to attack rolls and damage rolls made with your Unarmed Strikes. Your unarmed strikes also count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
+
 #### +3 All-Purpose Tool
 
 ---
@@ -323,6 +347,12 @@ You have a +3 bonus to AC while wearing this armor.
 ---
 
 You have a +3 bonus to attack and damage rolls made with this piece of magic ammunition. Once it hits a target, the ammunition is no longer magical.
+
+#### +3 Battling Clothes
+
+---
+
+This magical set of clothes grants a +3 bonus to AC and counts as legendary armor for the purposes of applying runes and gaining their effects. It doesn't require any proficiency to use. If you are wearing a set of armor over the clothes, the clothes’ runes and bonus to AC get suppressed until you remove the armor.
 
 #### +3 Bloodwell Vial
 
@@ -420,6 +450,38 @@ While you are holding this wand, you gain a +3 bonus to spell attack rolls. In a
 ---
 
 You have a +3 bonus to attack and damage rolls made with this magic weapon.
+
+#### +3 Wraps of Unarmed Power
+
+---
+
+While wearing these wraps, you have a +3 bonus to attack rolls and damage rolls made with your Unarmed Strikes. Your unarmed strikes also count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
+
+#### +4 Ammunition
+
+---
+
+You have a +4 bonus to attack and damage rolls made with this piece of magic ammunition. Once it hits a target, the ammunition is no longer magical.
+
+#### +4 Shield
+
+---
+
+While holding this shield, you have a +4 bonus to AC. This bonus is in addition to the shield's normal bonus to AC.
+
+A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.
+
+#### +4 Weapon
+
+---
+
+You have a +4 bonus to attack and damage rolls made with this magic weapon.
+
+#### +4 Wraps of Unarmed Power
+
+---
+
+While wearing these wraps, you have a +4 bonus to attack rolls and damage rolls made with your Unarmed Strikes. Your unarmed strikes also count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.
 
 #### Acid (vial)
 
@@ -706,6 +768,14 @@ Once an arrow of slaying deals its extra damage to a creature, it becomes a nonm
 ---
 
 You gain a +2 bonus to AC against ranged attacks while you wield this shield. This bonus is in addition to the shield's normal bonus to AC. In addition, whenever an attacker makes a ranged attack against a target within 5 feet of you, you can use your reaction to become the target of the attack instead.
+
+#### Arrows (20)
+
+---
+
+Arrows are used with a weapon that has the ammunition property to make a ranged attack. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
+
+Arrows are typically stored in a *Quiver* (bought separately).
 
 #### Ascendant Dragon Vessel
 
@@ -1016,7 +1086,17 @@ A basket holds 2 cubic feet or 40 pounds of gear.
 
 ---
 
-***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
+- **Damage:** 1d12 Slashing
+- **Weapon Size:** Two-Handed, Heavy
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Titan
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
 #### Bead of Force
 
@@ -1039,6 +1119,18 @@ This spongy, flavorless, gelatinous bead dissolves on your tongue and provides a
 ---
 
 This spongy, flavorless, gelatinous bead dissolves in liquid, transforming up to a pint of the liquid into fresh, cold drinking water. The bead has no effect on magical liquids or harmful substances such as poison.
+
+#### Bedroll
+
+---
+
+A Bedroll sleeps one Small or Medium creature. While in a Bedroll, you automatically succeed on saving throws against extreme cold (see the *Dungeon Master's Guide*).
+
+#### Bell
+
+---
+
+When rung as an action, a Bell produces a sound that can be heard up to 60 feet away.
 
 #### Bell Branch
 
@@ -1114,6 +1206,12 @@ Additionally, you can focus your senses as an action to magically discern the di
 
 The wearer has disadvantage on Dexterity (Stealth) checks.
 
+#### Blanket
+
+---
+
+While wrapped in a blanket, you have Advantage on saving throws against extreme cold (see the *Dungeon Master's Guide*).
+
 #### Block and Tackle
 
 ---
@@ -1139,13 +1237,27 @@ If your attunement to the tattoo ends, the tattoo vanishes, and the needle reapp
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Ammo
+- **Reach or Range:** 9 / 36 cubes
+- **MOD Rune Groups:** Ranged, Light Ammo, Muscular
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
-***Loading.*** Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make.
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+#### Blowgun Needles (50)
+
+---
+
+Blowgun needles are used with a weapon that has the ammunition property to make a ranged attack. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
+
+Needles are typically stored in a *Pouch* (bought separately).
 
 #### Blue Dragon Scale Mail
 
@@ -1599,6 +1711,12 @@ Deduct the time you are invisible, in increments of 1 minute, from the cloak's m
 
 While wearing this cloak, you can use a bonus action to change the style, color, and apparent quality of the garment. The cloak's weight doesn't change. Regardless of its appearance, the cloak can't be anything but a cloak. Although it can duplicate the appearance of other magic cloaks, it doesn't gain their magical properties.
 
+#### Cloak of Personality
+
+---
+
+Your Charisma score is 19 while you wear this amulet. It has no effect on you if your Charisma score is already 19 or higher without it.
+
 #### Cloak of Protection
 
 ---
@@ -1637,7 +1755,15 @@ This elegant outfit of traveler's clothes magically mends itself to counteract d
 
 ---
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+- **Damage:** 1d8 Bludgeoning
+- **Weapon Size:** One-Handed
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Lucky
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
 #### Cobbler's Tools
 
@@ -1735,11 +1861,25 @@ Additionally, you can focus your senses as an action to magically discern the di
 
 The wearer has disadvantage on Dexterity (Stealth) checks.
 
+#### Costume Clothes
+
+---
+
+While wearing a Costume, you have Advantage on any ability check you make to impersonate the person or type of person it represents.
+
 #### Crossbow Bolt Case
 
 ---
 
 This wooden case can hold up to twenty *crossbow bolts*.
+
+#### Crossbow Bolts (20)
+
+---
+
+Crossbow bolts are used with a weapon that has the ammunition property to make a ranged attack. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
+
+Bolts are typically stored in a *Crossbow Bolt Case* (bought separately).
 
 #### Crowbar
 
@@ -1844,6 +1984,20 @@ You can use an action to press one side of the cube to cast the *gate* spell wit
 
 The cube has 3 charges. Each use of the cube expends 1 charge. The cube regains 1d3 expended charges daily at dawn.
 
+#### Cudgel
+
+---
+
+- **Damage:** 1d10 Bludgeoning
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Lucky
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
 #### Daern's Instant Fortress
 
 ---
@@ -1860,9 +2014,19 @@ The tower is made of adamantine, and its magic prevents it from being tipped ove
 
 ---
 
-***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Throwable
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
 ***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
 
@@ -1903,9 +2067,19 @@ This amulet is fashioned from a single shard of resilient extraplanar material o
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Throwable
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
 
-***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
 ***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
 
@@ -2636,6 +2810,12 @@ The creature exists for a duration specific to each figurine. At the end of the 
 
 ***Silver Raven.*** This silver statuette of a raven can become a raven for up to 12 hours. Once it has been used, it can't be used again until 2 days have passed. While in raven form, the figurine allows you to cast the *animal messenger* spell on it at will.
 
+#### Fine Clothes
+
+---
+
+Fine Clothes are made of expensive fabrics and adorned with expertly crafted details. Some events and locations admit only people wearing these clothes.
+
 #### Fire Absorbing Tattoo
 
 ---
@@ -2655,6 +2835,22 @@ If your attunement to the tattoo ends, the tattoo vanishes, and the needle reapp
 ---
 
 This kit includes a wooden rod, silken line, corkwood bobbers, steel hooks, lead sinkers, velvet lures, and narrow netting.
+
+#### Flail
+
+---
+
+- **Damage:** 1d8 Bludgeoning
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Reach
+- **Reach or Range:** 2 cubes
+- **MOD Rune Groups:** Melee, Crusher, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### Flail of Tiamat
 
@@ -2830,15 +3026,39 @@ You gain a +1 bonus to attack and damage rolls made with this magic weapon.
 
 When you hit a giant with it, the giant takes an extra 2d6 damage of the weapon's type and must succeed on a DC 15 Strength saving throw or fall prone. For the purpose of this weapon, "giant" refers to any creature with the giant type, including ettins and trolls.
 
+#### Giant Yoyo
+
+---
+
+- **Damage:** 1d8 Bludgeoning
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Throwable
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
+
 #### Glaive
 
 ---
 
-***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
-
-***Reach.*** This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon.
+- **Damage:** 1d10 Slashing
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** Reach
+- **Reach or Range:** 2 cubes
+- **MOD Rune Groups:** Melee, Cleaver, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
 ***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### Glamoured Studded Leather
 
@@ -2875,6 +3095,12 @@ Someone who is proficient with glassblower's tools has not only the ability to s
 
 ---
 *See the Tool Proficiencies entry for more information.*
+
+#### Gloves of Coordination
+
+---
+
+Your Dexterity score is 19 while you wear this amulet. It has no effect on you if your Dexterity score is already 19 or higher without it.
 
 #### Gloves of Missile Snaring
 
@@ -2924,27 +3150,59 @@ Additionally, you can focus your senses as an action to magically discern the di
 
 The wearer has disadvantage on Dexterity (Stealth) checks.
 
+#### Grappling Hook
+
+---
+
+As an action, you can throw the Grappling Hook at a railing, a ledge, or another catch within 50 feet of yourself, and the hook catches on if you succeed on a DC 13 Dexterity (Acrobatics) check. If you tied a Rope to the hook, you can then climb it.
+
 #### Greataxe
 
 ---
 
-***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
+- **Damage:** 1d12 Slashing
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Titan
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
 #### Greatclub
 
 ---
 
+- **Damage:** 1d12 Bludgeoning
+- **Weapon Size:** Two-Handed, Heavy
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Titan
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
 ***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
 #### Greatsword
 
 ---
 
-***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
+- **Damage:** 1d12 Slashing
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Lucky
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
 #### Green Dragon Scale Mail
 
@@ -2978,11 +3236,17 @@ Setting fire to a container full of gunpowder can cause it to explode, dealing f
 
 ---
 
-***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
-
-***Reach.*** This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon.
+- **Damage:** 1d10 Slashing
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** Reach
+- **Reach or Range:** 2 cubes
+- **MOD Rune Groups:** Melee, Cleaver, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
 ***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### Half Plate Armor
 
@@ -3010,13 +3274,19 @@ The hammer also has 5 charges. While attuned to it, you can expend 1 charge and 
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Ammo, Loading
+- **Reach or Range:** 9 / 36 cubes
+- **MOD Rune Groups:** Ranged, Light Ammo, Mechanic
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
 
 ***Loading.*** Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make.
 
@@ -3024,7 +3294,17 @@ If you use a weapon that has the ammunition property to make a melee attack, you
 
 ---
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+- **Damage:** 1d8 Slashing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Throwable
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
 ***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
 
@@ -3078,17 +3358,23 @@ The book has 3 charges, and it regains 1d3 expended charges daily at dawn. You c
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+- **Damage:** 1d10 Piercing
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** Ammo, Loading
+- **Reach or Range:** 18 / 72 cubes
+- **MOD Rune Groups:** Ranged, Heavy Ammo, Mechanic
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
-
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
 ***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
-***Loading.*** Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make.
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
-***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+***Loading.*** Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make.
 
 #### Helm of Brilliance
 
@@ -3204,6 +3490,22 @@ A cleric or paladin may create holy water by performing a special ritual. The ri
 ---
 
 A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius.
+
+#### Hooked Sword
+
+---
+
+- **Damage:** 1d6 Slashing
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Titan
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
 
 #### Horn
 
@@ -3412,15 +3714,21 @@ These iron horseshoes come in a set of four. While all four shoes are affixed to
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
-
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. The ammunition of a firearm is destroyed upon use.
-
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
-
-***Reload.*** A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice).
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** Ammo, Reload (6 Shots)
+- **Reach or Range:** 18 / 72 cubes
+- **MOD Rune Groups:** Ranged, Light Ammo, Firearm
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
 ***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+***Reload.*** A limited number of shots can be made with a weapon that has the reload property. You must then reload it using an action or a bonus action (your choice).
 
 #### Hunting Trap
 
@@ -3447,6 +3755,18 @@ As an action, you can touch a piece of writing up to one page in length and spea
 ---
 
 This flat iron rod has a button on one end. You can use an action to press the button, which causes the rod to become magically fixed in place. Until you or another creature uses an action to push the button again, the rod doesn't move, even if it is defying gravity. The rod can hold up to 8,000 pounds of weight. More weight causes the rod to deactivate and fall. A creature can use an action to make a DC 30 Strength check, moving the fixed rod up to 10 feet on a success.
+
+#### Ink
+
+---
+
+Ink comes in a 1-ounce bottle, which provides enough ink to write about 500 pages.
+
+#### Ink Pen
+
+---
+
+Using *Ink*, an Ink Pen is used to write or draw.
 
 #### Instrument of Illusions
 
@@ -3966,9 +4286,27 @@ An *identify* spell reveals that a creature is inside the flask, but the only wa
 
 An iron pot holds 1 gallon of liquid.
 
+#### Iron Spikes (10)
+
+---
+
+Iron Spikes come in bundles of ten. As an action, you can use a blunt object, such as a *Light Hammer*, to hammer a spike into wood, earth, or a similar material. You can do so to jam a door shut or to then tie a *Rope* or *Chain* to the Spike.
+
 #### Javelin
 
 ---
+
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Throwable
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
 ***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
 
@@ -4036,9 +4374,17 @@ A lamp casts bright light in a 15-foot radius and dim light for an additional 30
 
 ---
 
-***Special.*** You have disadvantage when you use a lance to attack a target within 5 feet of you. Also, a lance requires two hands to wield when you aren't mounted.
+- **Damage:** 1d10 Piercing
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** Reach
+- **Reach or Range:** 2 cubes
+- **MOD Rune Groups:** Melee, Impaler, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Reach.*** This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon.
+***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### Lantern of Revealing
 
@@ -4107,21 +4453,37 @@ If your attunement to the tattoo ends, the tattoo vanishes, and the needle reapp
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
-
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
-
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
-
-***Loading.*** Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make.
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** Ammo, Loading
+- **Reach or Range:** 12 / 48 cubes
+- **MOD Rune Groups:** Ranged, Light Ammo, Mechanic
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
 
 ***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+***Loading.*** Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make.
 
 #### Light Hammer
 
 ---
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+- **Damage:** 1d8 Bludgeoning
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Throwable
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
 ***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
 
@@ -4155,21 +4517,35 @@ This lock appears to be an ordinary lock (of the type described in chapter 5 of 
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+- **Damage:** 1d10 Piercing
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** Ammo
+- **Reach or Range:** 18 / 72 cubes
+- **MOD Rune Groups:** Ranged, Heavy Ammo, Muscular
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
-
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
 ***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
-***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
 
 #### Longsword
 
 ---
 
-***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
+- **Damage:** 1d10 Slashing
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Lucky
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
 #### Luck Blade
 
@@ -4254,6 +4630,20 @@ Proficiency with a musical instrument indicates you are familiar with the techni
 | Identify a tune  |  10 |
 | Improvise a tune |  20 |
 
+#### Mace
+
+---
+
+- **Damage:** 1d8 Bludgeoning
+- **Weapon Size:** One-Handed
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Lucky
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
 #### Mace of Disruption
 
 ---
@@ -4285,6 +4675,26 @@ The mace regains 1d3 expended charges daily at dawn.
 ---
 
 This lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting fires. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite. A magnifying glass grants advantage on any ability check made to appraise or inspect an item that is small or highly detailed.
+
+#### Magnum
+
+---
+
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Ammo, Reload (6 Shots)
+- **Reach or Range:** 9 / 36 cubes
+- **MOD Rune Groups:** Ranged, Heavy Ammo, Firearm
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+***Reload.*** A limited number of shots can be made with a weapon that has the reload property. You must then reload it using an action or a bonus action (your choice).
 
 #### Malice
 
@@ -4410,9 +4820,19 @@ If your attunement to the tattoo ends, the tattoo vanishes, and the needle reapp
 
 ---
 
+- **Damage:** 1d12 Bludgeoning
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** Reach
+- **Reach or Range:** 2 cubes
+- **MOD Rune Groups:** Melee, Crusher, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
 ***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
-***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### Medallion of Thoughts
 
@@ -4468,11 +4888,31 @@ In a similar way, you can use an action to speak a second command word and free 
 
 Mithral is a light, flexible metal. A mithral chain shirt or breastplate can be worn under normal clothes. If the armor normally imposes disadvantage on Dexterity (Stealth) checks or has a Strength requirement, the mithral version of the armor doesn't.
 
+#### Modern Bullets (10)
+
+---
+
+Modern Bullets are destroyed upon use in a modern firearm.
+
 #### Moon-Touched Sword
 
 ---
 
 In darkness, the unsheathed blade of this sword sheds moonlight, creating bright light in a 15-foot radius and dim light for an additional 15 feet.
+
+#### Morningstar
+
+---
+
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Lucky
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
 #### Musical Instrument
 
@@ -4784,17 +5224,41 @@ Proficiency with a musical instrument indicates you are familiar with the techni
 | Identify a tune  |  10 |
 | Improvise a tune |  20 |
 
+#### Paper (one sheet)
+
+---
+
+One sheet of Paper can hold about 250 handwritten words.
+
+#### Parchment (one sheet)
+
+---
+
+One sheet of Parchment can hold about 250 handwritten words.
+
 #### Pearl of Power
 
 ---
 
 While this pearl is on your person, you can use an action to speak its command word and regain one expended spell slot. If the expended slot was of 4th level or higher, the new slot is 3rd level. Once you have used the pearl, it can't be used again until the next dawn.
 
+#### Perfume
+
+---
+
+Perfume comes in a 4-ounce vial. For 1 hour after applying Perfume to yourself, you have Advantage on Charisma (Persuasion) checks made to influence an Indifferent Humanoid within 5 feet of yourself.
+
 #### Perfume of Bewitching
 
 ---
 
 This tiny vial contains magic perfume, enough for one use. You can use an action to apply the perfume to yourself, and its effect lasts 1 hour. For the duration, you have advantage on all Charisma checks directed at humanoids of challenge rating 1 or lower. Those subjected to the perfume's effect are not aware that they've been influenced by magic.
+
+#### Periapt of Awareness
+
+---
+
+Your Wisdom score is 19 while you wear this amulet. It has no effect on you if your Wisdom score is already 19 or higher without it.
 
 #### Periapt of Health
 
@@ -4824,11 +5288,19 @@ The next time you see a creature within 10 minutes after drinking this philter, 
 
 ---
 
+- **Damage:** 1d12 Piercing
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** Reach
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
 ***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
 
-***Reach.*** This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon.
-
-***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### Pipe of Smoke Monsters
 
@@ -5007,6 +5479,12 @@ A poisoner's kit is a favored resource for thieves, assassins, and others who en
 
 ---
 *See the Tool Proficiencies entry for more information.*
+
+#### Pole (10-foot)
+
+---
+
+A Pole is 10 feet long. You can use it to touch something up to 10 feet away. If you must make a Strength (Athletics) check as part of a High or Long Jump, you can use the Pole to vault, giving yourself Advantage on the check.
 
 #### Pole of Angling
 
@@ -5414,7 +5892,15 @@ As a bonus action on your turn, you can direct the whip to fly up to 20 feet and
 
 ---
 
-***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
+- **Damage:** 1d8 Bludgeoning
+- **Weapon Size:** One-Handed
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Lucky
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
 #### Quiver
 
@@ -5447,6 +5933,16 @@ If your attunement to the tattoo ends, the tattoo vanishes, and the needle reapp
 #### Rapier
 
 ---
+
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Finesse
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Agile
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
 ***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
 
@@ -5505,13 +6001,21 @@ Proficiency with a musical instrument indicates you are familiar with the techni
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Ammo, Reload (6 Shots)
+- **Reach or Range:** 9 / 36 cubes
+- **MOD Rune Groups:** Ranged, Light Ammo, Firearm
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. The ammunition of a firearm is destroyed upon use.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
 
-***Reload.*** A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice).
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+***Reload.*** A limited number of shots can be made with a weapon that has the reload property. You must then reload it using an action or a bonus action (your choice).
 
 #### Ring Mail
 
@@ -5870,6 +6374,12 @@ You gain these benefits while wearing the robe:
 - You have advantage on saving throws against spell and other magical effects.
 - Your spell save DC and spell attack bonus each increase by 2.
 
+#### Robes
+
+---
+
+A Robe has vocational or ceremonial significance. Some events and locations admit only people wearing a Robe bearing certain colors or symbols.
+
 #### Rod
 
 ---
@@ -6035,9 +6545,19 @@ If you hold this beetle-shaped medallion in your hand for 1 round, an inscriptio
 
 ---
 
-***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
+- **Damage:** 1d6 Slashing
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** Finesse
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Agile
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
+
+***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
 
 #### Scimitar of Speed
 
@@ -6193,41 +6713,87 @@ The front of this shield is shaped in the likeness of a face. While bearing the 
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
-
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
-
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** Two-Handed
+- **Additional Properties:** Ammo
+- **Reach or Range:** 12 / 48 cubes
+- **MOD Rune Groups:** Ranged, Light Ammo, Muscular
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
 
 ***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
 
 #### Shortsword
 
 ---
 
-***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** Finesse
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Agile
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
+
+***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
 
 #### Shotgun
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
-
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. The ammunition of a firearm is destroyed upon use.
-
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
-
-***Reload.*** A limited number of shots can be made with a weapon that has the reload property. A character must then reload it using an action or a bonus action (the character's choice).
+- **Damage:** 1d10 Piercing
+- **Weapon Size:** Two-Handed, Heavy
+- **Additional Properties:** Ammo, Reload (6 Shots)
+- **Reach or Range:** 18 / 72 cubes
+- **MOD Rune Groups:** Ranged, Heavy Ammo, Firearm
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
 ***Two-Handed.*** This weapon requires two hands to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+***Reload.*** A limited number of shots can be made with a weapon that has the reload property. You must then reload it using an action or a bonus action (your choice).
+
+#### Shovel
+
+---
+
+Working for 1 hour, you can use a Shovel to dig a hole that is 5 feet on each side in soil or similar material.
 
 #### Sickle
 
 ---
 
-***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons.
+- **Damage:** 1d6 Slashing
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Cleaver, Lucky
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
+
+#### Signal Whistle
+
+---
+
+When blown as an action, a Signal Whistle produces a sound that can be heard up to 600 feet away.
 
 #### Silk Rope (50 feet)
 
@@ -6261,11 +6827,27 @@ Some monsters that have immunity or resistance to nonmagical weapons are suscept
 
 ---
 
-***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in feet, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+- **Damage:** 1d6 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Ammo
+- **Reach or Range:** 9 / 36 cubes
+- **MOD Rune Groups:** Ranged, Light Ammo, Muscular
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
 
-***Ammunition.*** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
 
-If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Ammunition.** You can use a weapon that has the ammunition property to make a ranged attack only if you have ammunition to fire from the weapon. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack. Loading a one-handed weapon requires a free hand. At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield. If you use a weapon that has the ammunition property to make a melee attack, you treat the weapon as an improvised weapon. A sling must be loaded to deal any damage when used in this way.
+
+#### Sling Bullets (20)
+
+---
+
+Sling bullets are used with a weapon that has the ammunition property to make a ranged attack. Each time you attack with the weapon, you expend one piece of ammunition. Drawing the ammunition from a quiver, case, or other container is part of the attack (you need a free hand to load a one-handed weapon). At the end of the battle, you can recover half your expended ammunition by taking a minute to search the battlefield.
+
+Sling Bullets are typically stored in a *Pouch* (bought separately).
 
 #### Slippers of Spider Climbing
 
@@ -6348,9 +6930,19 @@ One ounce of the glue can cover a 1-foot square surface. The glue takes 1 minute
 
 ---
 
-***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Throwable
+- **MOD Rune Slots:** 1
+- **Power Rune Slots:** 0
 
-***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
 
 #### Spell Scroll (1st Level)
 
@@ -6812,6 +7404,12 @@ You can also use an action to cast the *pass without trace* spell from the staff
 
 ***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
 
+#### Steel Mirror
+
+---
+
+A handheld steel Mirror is useful for personal cosmetics but also for peeking around corners and reflecting light as a signal.
+
 #### Stirring Dragon Vessel
 
 ---
@@ -7188,6 +7786,22 @@ While attuned to the book, you can remove the tongue from the book's cover. If y
 
 Vecna watches anyone using this tome. He can also write cryptic messages in the book. These messages appear at midnight and fade away after they are read.
 
+#### Tonfa
+
+---
+
+- **Damage:** 1d6 Bludgeoning
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Crusher, Agile
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
+
 #### Topaz Annihilator
 
 ---
@@ -7220,13 +7834,29 @@ A creature subjected to this poison must succeed on a DC 15 Constitution saving 
 
 A druid can use this object as a spellcasting focus.
 
+#### Traveler's Clothes
+
+---
+
+Traveler's Clothes are resilient garments designed for travel in various environments.
+
 #### Trident
 
 ---
 
-***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
+- **Damage:** 1d8 Piercing
+- **Weapon Size:** One-Handed
+- **Additional Properties:** Thrown (6 / 18 cubes)
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Throwable
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Range.*** A weapon that can be used to make a ranged attack has a range shown in parentheses after the ammunition or thrown property. The range lists two numbers. The first is the weapon's normal range in 5-foot cubes, and the second indicates the weapon's maximum range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can't attack a target beyond the weapon's long range.
+
+***Thrown.*** If a weapon has the thrown property, you can throw the weapon to make a ranged attack. If the weapon is a melee weapon, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon. For example, if you throw a handaxe, you use your Strength, but if you throw a dagger, you can use either your Strength or your Dexterity, since the dagger has the finesse property.
 
 #### Trident of Fish Command
 
@@ -7532,11 +8162,39 @@ The wand regains 1d6 + 1 expended charges daily at dawn. If you expend the wand'
 | 96-97 | The target's skin turns bright blue for 1d10 days. If you chose a point in space, the creature nearest to that point is affected.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | 98-00 | If you targeted a creature, it must make a DC 15 Constitution saving throw. If you didn't target a creature, you become the target and must make the saving throw. If the saving throw fails by 5 or more, the target is instantly petrified. On any other failed save, the target is restrained and begins to turn to stone. While restrained in this way, the target must repeat the saving throw at the end of its next turn, becoming petrified on a failure or ending the effect on a success. The petrification lasts until the target is freed by the *greater restoration* spell or similar magic. |
 
+#### War Pick
+
+---
+
+- **Damage:** 1d12 Piercing
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** -
+- **Reach or Range:** 1 cube
+- **MOD Rune Groups:** Melee, Impaler, Titan
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
+
 #### Warhammer
 
 ---
 
-***Versatile.*** This weapon can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.
+- **Damage:** 1d12 Bludgeoning
+- **Weapon Size:** Two-handed, Heavy
+- **Additional Properties:** Reach
+- **Reach or Range:** 2 cubes
+- **MOD Rune Groups:** Melee, Crusher, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
+
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Heavy.*** Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small or Tiny creature to use effectively.
+
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### Waterskin
 
@@ -7589,9 +8247,19 @@ You can use an action to unfold and place the well of many worlds on a solid sur
 
 ---
 
-***Finesse.*** When making an attack with a finesse weapon, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.
+- **Damage:** 1d6 Slashing
+- **Weapon Size:** One-Handed, Light
+- **Additional Properties:** Reach
+- **Reach or Range:** 2 cubes
+- **MOD Rune Groups:** Melee, Cleaver, Long
+- **MOD Rune Slots:** 2
+- **Power Rune Slots:** 1
 
-***Reach.*** This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon.
+***One-Handed.*** This weapon requires one hand to use. This property is relevant only when you attack with the weapon, not when you simply hold it.
+
+***Light.*** A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons (see the rules on Two-Weapon Fighting).
+
+***Reach.*** This weapon adds 1 5-foot cube to your reach when you attack with it (already accounted for). This property also determines your reach for opportunity attacks with a reach weapon.
 
 #### White Dragon Scale Mail
 
